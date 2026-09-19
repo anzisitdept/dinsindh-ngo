@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --canvas-bg: #FBF9F5;
+  --canvas-card: #FFFFFF;
+  --text-main: #1C2333;
+  --text-muted: #576071;
+  --brand-indigo: #152238;
+  --brand-indigo-light: #243656;
+  --brand-crimson: #8C241D;
+  --brand-crimson-hover: #A62F27;
+  --brand-gold: #C68E2B;
+  --brand-gold-light: #EBB85A;
+  --border-light: #E4DFD7;
+  --border-dark: #2A364F;
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--canvas-bg);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Authentic Sindhi Ajrak Inspired Geometric Texture Pattern */
+.bg-ajrak-pattern {
+  background-color: #152238;
+  background-image: radial-gradient(#C68E2B 0.75px, transparent 0.75px), radial-gradient(#8C241D 0.75px, #152238 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.bg-ajrak-light {
+  background-color: #FBF9F5;
+  background-image: radial-gradient(#C68E2B 0.6px, transparent 0.6px), radial-gradient(#152238 0.6px, #FBF9F5 0.6px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1ECE4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C8BFB0;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8C241D;
+}
+
+/* Editorial Horizontal Line List Hover Effects */
+.editorial-hover-row {
+  transition: all 0.2s ease-in-out;
+}
+.editorial-hover-row:hover {
+  background-color: #F2EDE4;
+  padding-left: 0.75rem;
+}
