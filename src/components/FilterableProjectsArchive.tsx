@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { PROJECTS_DATA, ProjectItem } from "@/lib/data/projects";
-import { Search, Filter, ArrowUpRight, Calendar, MapPin, Building2, CheckCircle2, RefreshCw } from "lucide-react";
+import { Search, Filter, Calendar, MapPin, Building2, CheckCircle2, RefreshCw } from "lucide-react";
 
 export default function FilterableProjectsArchive({ initialDistrict }: { initialDistrict?: string }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -233,7 +233,7 @@ export default function FilterableProjectsArchive({ initialDistrict }: { initial
                 </div>
 
                 {/* District & Beneficiaries */}
-                <div className="lg:col-span-2 space-y-1 text-xs">
+                <div className="lg:col-span-3 space-y-1 text-xs">
                   <div className="flex items-center space-x-1 text-neutral-700 font-medium">
                     <MapPin className="w-3.5 h-3.5 text-rose-600 shrink-0" />
                     <span>{project.district}</span>
@@ -241,17 +241,6 @@ export default function FilterableProjectsArchive({ initialDistrict }: { initial
                   <div className="text-[11px] font-mono text-neutral-500">
                     Reach: <strong className="text-neutral-800">{project.beneficiaryCount}</strong>
                   </div>
-                </div>
-
-                {/* Action Link */}
-                <div className="lg:col-span-1 text-left lg:text-right pt-2 lg:pt-0">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="inline-flex items-center space-x-1 text-xs font-bold uppercase tracking-wider text-[#8C241D] hover:text-[#152238] transition-colors"
-                  >
-                    <span>View Record</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </Link>
                 </div>
 
               </div>

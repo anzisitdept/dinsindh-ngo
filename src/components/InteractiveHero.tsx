@@ -39,17 +39,15 @@ export default function InteractiveHero() {
     return () => clearInterval(timer);
   }, [heroSlides.length]);
 
-  const activeSlide = heroSlides[currentSlide];
-
   return (
     <section className="relative w-full bg-[#152238] text-white overflow-hidden font-sans border-b border-[#253754]">
       {/* Background Ajrak Accent Overlay */}
       <div className="absolute inset-0 opacity-10 bg-ajrak-pattern pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 min-h-[640px] items-stretch">
+      <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 min-h-[640px] items-stretch">
         
-        {/* Left Column: Asymmetric Content (7 cols) */}
-        <div className="lg:col-span-7 px-6 sm:px-8 lg:px-12 py-12 lg:py-16 flex flex-col justify-between z-10">
+        {/* Left Column: Asymmetric Content (7 cols on desktop) */}
+        <div className="lg:col-span-7 px-6 sm:px-8 lg:px-12 py-10 lg:py-16 flex flex-col justify-between z-10 order-1">
           
           <div className="space-y-6">
             {/* Top Institutional Badge */}
@@ -130,39 +128,40 @@ export default function InteractiveHero() {
                 )}
               </div>
             </div>
+          </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+          {/* Desktop Only Buttons & Legal Strip */}
+          <div className="hidden lg:block mt-8">
+            <div className="flex flex-row items-center gap-3 pt-2">
               <Link
                 href="/projects"
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-[#8C241D] hover:bg-[#A62F27] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider shadow-lg border border-amber-500/20 transition-all hover:translate-x-0.5"
+                className="inline-flex items-center space-x-2 px-5 py-3 bg-[#8C241D] hover:bg-[#A62F27] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider shadow-lg border border-amber-500/20 transition-all hover:translate-x-0.5"
               >
                 <span>Explore Project Archive</span>
                 <ArrowRight className="w-4 h-4 text-amber-300" />
               </Link>
               <Link
                 href="/where-we-work"
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-[#1F2E48] hover:bg-[#2A3C5C] text-neutral-200 border border-[#374866] font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all"
+                className="inline-flex items-center space-x-2 px-5 py-3 bg-[#1F2E48] hover:bg-[#2A3C5C] text-neutral-200 border border-[#374866] font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all"
               >
                 <MapPin className="w-4 h-4 text-rose-400" />
                 <span>Sindh Coverage Map</span>
               </Link>
             </div>
-          </div>
 
-          {/* Quick Legal Strip */}
-          <div className="mt-8 pt-4 border-t border-[#253754] flex flex-wrap items-center justify-between text-xs text-neutral-400 gap-2">
-            <span>HQ: Station Road, Shikarpur, Sindh</span>
-            <Link href="/about/legal" className="text-amber-400 hover:underline flex items-center space-x-1">
-              <span>View Registration Certificate</span>
-              <ChevronRight className="w-3 h-3" />
-            </Link>
+            <div className="mt-8 pt-4 border-t border-[#253754] flex items-center justify-between text-xs text-neutral-400">
+              <span>HQ: Station Road, Shikarpur, Sindh</span>
+              <Link href="/about/legal" className="text-amber-400 hover:underline flex items-center space-x-1 font-medium">
+                <span>View Registration Certificate</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
 
         </div>
 
-        {/* Right Column: Auto-Switching Hero Field Photography Slideshow (5 cols) */}
-        <div className="lg:col-span-5 relative min-h-[420px] lg:min-h-full border-t lg:border-t-0 lg:border-l border-[#2A364F] overflow-hidden group">
+        {/* Right Column: Hero Field Photography Slideshow (5 cols on desktop, Order 2 on mobile) */}
+        <div className="lg:col-span-5 relative min-h-[300px] sm:min-h-[380px] lg:min-h-full border-t lg:border-t-0 lg:border-l border-[#2A364F] overflow-hidden group order-2">
           
           {/* Slideshow Container */}
           <div className="absolute inset-0">
@@ -175,8 +174,9 @@ export default function InteractiveHero() {
               >
                 <Image
                   src={slide.image}
-                  alt={slide.title}
+                  alt="Hero slide"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover object-center w-full h-full"
                   priority={index === 0}
                 />
@@ -202,37 +202,41 @@ export default function InteractiveHero() {
             <ChevronRight className="w-4 h-4" />
           </button>
 
-          {/* Floating Documentary Overlay Card */}
-          <div className="absolute bottom-6 left-6 right-6 z-20 p-4 bg-[#0E1726]/95 backdrop-blur-sm border border-[#253754] shadow-2xl">
-            <div className="flex items-center justify-between mb-1.5">
-              <div className="flex items-center space-x-2 text-amber-400 text-[11px] font-mono font-bold">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>FIELD SPOTLIGHT • {activeSlide.location}</span>
-              </div>
-              
-              {/* Slide Indicators */}
-              <div className="flex space-x-1.5">
-                {heroSlides.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentSlide(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === currentSlide ? "bg-amber-400 w-4" : "bg-neutral-600 hover:bg-neutral-400"
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <h4 className="font-heading text-sm sm:text-base font-bold text-white transition-all">
-              {activeSlide.title}
-            </h4>
-            <p className="text-xs text-neutral-300 mt-1 line-clamp-2 leading-relaxed">
-              {activeSlide.description}
-            </p>
+          {/* Slide Indicator Dots */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex space-x-2 p-2 bg-[#0E1726]/80 backdrop-blur-sm border border-[#253754] rounded-full">
+            {heroSlides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-2 rounded-full transition-all ${
+                  idx === currentSlide ? "bg-amber-400 w-5" : "bg-neutral-500 hover:bg-neutral-300 w-2"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
           </div>
 
+        </div>
+
+        {/* Mobile Only: 2 Buttons in a single row directly below slider images */}
+        <div className="block lg:hidden order-3 px-4 py-4 bg-[#0E1726] border-t border-[#253754] z-10">
+          <div className="flex items-center justify-between gap-2">
+            <Link
+              href="/projects"
+              className="inline-flex items-center justify-center space-x-1.5 px-3 py-2.5 bg-[#8C241D] hover:bg-[#A62F27] text-white font-semibold text-[11px] sm:text-xs uppercase tracking-wider shadow-md border border-amber-500/20 text-center flex-1"
+            >
+              <span>Explore Project Archive</span>
+              <ArrowRight className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+            </Link>
+
+            <Link 
+              href="/about/legal" 
+              className="inline-flex items-center justify-center space-x-1 px-3 py-2.5 bg-[#1F2E48] border border-[#374866] text-amber-400 hover:text-amber-300 font-semibold text-[11px] sm:text-xs text-center flex-1"
+            >
+              <span>View Registration</span>
+              <ChevronRight className="w-3.5 h-3.5 shrink-0" />
+            </Link>
+          </div>
         </div>
 
       </div>
