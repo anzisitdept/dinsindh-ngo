@@ -2,10 +2,12 @@
 
 import React, { useState } from "react";
 import { ORGANIZATION_DATA } from "@/lib/data/organization";
-import { MapPin, Phone, Mail, Clock, ShieldCheck, Send, CheckCircle2 } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ShieldCheck, Send, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,9 +16,30 @@ export default function ContactPage() {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send email inquiry.");
+      }
+
+      setFormSubmitted(true);
+    } catch (err: any) {
+      setErrorMessage(err.message || "An error occurred while submitting your message. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -128,17 +151,33 @@ export default function ContactPage() {
                 <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto animate-bounce" />
                 <h3 className="font-heading font-bold text-xl text-white">Inquiry Successfully Transmitted</h3>
                 <p className="text-xs text-neutral-300 max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong>{formData.name}</strong>. Your message regarding <strong>{formData.inquiryType}</strong> has been logged to the Executive Director’s desk in Shikarpur.
+                  Thank you, <strong>{formData.name}</strong>. Your message regarding <strong>{formData.inquiryType}</strong> has been sent to <strong>dinsindh@gmail.com</strong> and logged to the Executive Secretariat.
                 </p>
                 <button
-                  onClick={() => setFormSubmitted(false)}
-                  className="px-4 py-2 bg-[#8C241D] text-white text-xs font-semibold uppercase tracking-wider"
+                  onClick={() => {
+                    setFormSubmitted(false);
+                    setFormData({
+                      name: "",
+                      email: "",
+                      organization: "",
+                      inquiryType: "Donor / Partnership",
+                      message: ""
+                    });
+                  }}
+                  className="px-4 py-2 bg-[#8C241D] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#A62F27] transition-colors"
                 >
                   Send Another Message
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 text-xs sm:text-sm font-sans">
+                
+                {errorMessage && (
+                  <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs flex items-center space-x-2">
+                    <AlertCircle className="w-4 h-4 shrink-0 text-red-500" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
@@ -208,10 +247,20 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-[#8C241D] hover:bg-[#A62F27] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider shadow-md transition-colors flex items-center justify-center space-x-2"
+                  disabled={submitting}
+                  className="w-full py-3.5 bg-[#8C241D] hover:bg-[#A62F27] disabled:bg-neutral-400 text-white font-semibold text-xs sm:text-sm uppercase tracking-wider shadow-md transition-colors flex items-center justify-center space-x-2 cursor-pointer disabled:cursor-not-allowed"
                 >
-                  <Send className="w-4 h-4 text-amber-300" />
-                  <span>Transmit Inquiry to Secretariat</span>
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 text-amber-300 animate-spin" />
+                      <span>Transmitting Email via SMTP...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 text-amber-300" />
+                      <span>Transmit Inquiry to Secretariat</span>
+                    </>
+                  )}
                 </button>
 
               </form>

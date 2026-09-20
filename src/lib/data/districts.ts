@@ -9,7 +9,6 @@ export interface DistrictInfo {
   keyProjects: string[];
   cboCount: number;
   description: string;
-  // SVG coordinates/path parameters for custom rendered SVG interactive map
   svgPath: string;
   labelCoords: { x: number; y: number };
 }
@@ -22,16 +21,17 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     isHeadquarters: true,
     activeProgramsCount: 8,
     projectsCount: 14,
-    activePrograms: ["Peace & Harmony", "Livelihoods", "WASH", "Emergency Relief", "Child Rights", "Education", "Health", "Human Rights"],
+    activePrograms: ["Peace & Harmony", "Child Rights", "Health & Disability", "Education", "WASH"],
     keyProjects: [
-      "Low-Cost Resilient Housing Scheme",
-      "Revival of Natak Mandlis for Religious Harmony",
-      "Closed School Activation & Girls Literacy"
+      "Provincial Headquarters & Secretariat",
+      "Peace & Tolerance Cultural Caravan",
+      "Special Education Center Support",
+      "Free Eye Care & Cataract Camp"
     ],
     cboCount: 12,
-    description: "Primary operational headquarters of DIN Pakistan. Central hub for interfaith peace building, CBO network coordination, and emergency flood recovery.",
-    svgPath: "M 210,130 L 260,110 L 290,140 L 270,180 L 220,170 Z",
-    labelCoords: { x: 245, y: 145 }
+    description: "Foundational headquarters of DIN Pakistan. Central operational base managing all community mobilization, peace building, child protection, and medical aid initiatives.",
+    svgPath: "M 200,90 L 260,85 L 270,140 L 210,145 Z",
+    labelCoords: { x: 235, y: 115 }
   },
   {
     id: "jacobabad",
@@ -39,15 +39,16 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     region: "Upper Sindh",
     activeProgramsCount: 6,
     projectsCount: 8,
-    activePrograms: ["Emergency Relief", "WASH", "Livelihoods", "Health", "Peace & Harmony"],
+    activePrograms: ["Peace & Harmony", "Emergency Relief", "Child Rights", "WASH"],
     keyProjects: [
-      "Flood-Affected Women Livelihood Rehabilitation",
-      "Emergency Shelter & Clean Water Response"
+      "Monsoon Disaster Response & Relief",
+      "Anti-Human Trafficking & Forced Marriage Prevention",
+      "FAFEN Election Observation Project"
     ],
     cboCount: 6,
-    description: "Highly heat and flood-vulnerable border district. Heavy focus on emergency shelter deployment, communal deep handpumps, and livestock distribution.",
-    svgPath: "M 150,90 L 220,80 L 240,120 L 190,135 L 140,115 Z",
-    labelCoords: { x: 185, y: 110 }
+    description: "Border district characterized by extreme summer temperatures and high flood risk. Focus area for emergency humanitarian response and child rights advocacy.",
+    svgPath: "M 180,45 L 260,35 L 250,90 L 190,95 Z",
+    labelCoords: { x: 220, y: 68 }
   },
   {
     id: "kashmor",
@@ -62,8 +63,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     ],
     cboCount: 5,
     description: "Border district along the Indus riverbed. Focus on inter-tribal peace building, child rights protection, and agricultural micro-credit.",
-    svgPath: "M 240,80 L 320,60 L 340,105 L 280,120 Z",
-    labelCoords: { x: 285, y: 90 }
+    svgPath: "M 255,40 L 335,25 L 350,75 L 265,85 Z",
+    labelCoords: { x: 300, y: 55 }
   },
   {
     id: "sukkur",
@@ -78,8 +79,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     ],
     cboCount: 4,
     description: "Major regional urban and logistics center. DIN coordinates regional donor meetings, election monitoring, and mobile medical camps here.",
-    svgPath: "M 270,140 L 330,125 L 340,165 L 290,175 Z",
-    labelCoords: { x: 305, y: 150 }
+    svgPath: "M 270,85 L 345,75 L 355,125 L 275,135 Z",
+    labelCoords: { x: 310, y: 105 }
   },
   {
     id: "ghotki",
@@ -94,8 +95,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     ],
     cboCount: 3,
     description: "Agricultural and industrial border district. Interventions center on landless peasant rights, voter education, and clean drinking water.",
-    svgPath: "M 320,100 L 400,90 L 410,145 L 340,150 Z",
-    labelCoords: { x: 360, y: 120 }
+    svgPath: "M 345,75 L 435,60 L 445,115 L 355,125 Z",
+    labelCoords: { x: 395, y: 92 }
   },
   {
     id: "khairpur",
@@ -110,8 +111,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     ],
     cboCount: 3,
     description: "Largest agricultural date-palm district in Sindh. DIN works with tenant farmers and youth literacy groups.",
-    svgPath: "M 290,175 L 370,165 L 380,240 L 300,230 Z",
-    labelCoords: { x: 335, y: 200 }
+    svgPath: "M 275,135 L 365,125 L 375,200 L 285,190 Z",
+    labelCoords: { x: 325, y: 162 }
   },
   {
     id: "dadu",
@@ -126,8 +127,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     ],
     cboCount: 3,
     description: "Flanked by the Kirthar mountains and Manchhar lake. High flood vulnerability area requiring ongoing emergency shelter and livestock replacement.",
-    svgPath: "M 180,180 L 260,175 L 245,265 L 170,250 Z",
-    labelCoords: { x: 215, y: 220 }
+    svgPath: "M 160,150 L 245,145 L 230,245 L 150,230 Z",
+    labelCoords: { x: 195, y: 190 }
   },
   {
     id: "naushahro-feroze",
@@ -139,8 +140,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Closed Primary School Activation"],
     cboCount: 2,
     description: "Central agrarian belt. Programs focus on primary education reopening and community female literacy centers.",
-    svgPath: "M 260,230 L 310,225 L 305,285 L 250,280 Z",
-    labelCoords: { x: 280, y: 255 }
+    svgPath: "M 245,190 L 305,185 L 295,250 L 235,245 Z",
+    labelCoords: { x: 270, y: 215 }
   },
   {
     id: "benazirabad",
@@ -152,8 +153,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Women CNIC Voter Registration Drive"],
     cboCount: 1,
     description: "Central administrative crossroads. Support for female civic participation and local governance observation.",
-    svgPath: "M 285,280 L 345,275 L 340,335 L 275,330 Z",
-    labelCoords: { x: 310, y: 305 }
+    svgPath: "M 275,245 L 345,240 L 335,310 L 265,305 Z",
+    labelCoords: { x: 305, y: 275 }
   },
   {
     id: "sanghar",
@@ -165,8 +166,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Disaster Emergency Ration Pack Deployment"],
     cboCount: 1,
     description: "Stretches from agricultural plains to the Thar desert edge. Rapid response during monsoon emergencies.",
-    svgPath: "M 345,240 L 430,230 L 440,330 L 345,315 Z",
-    labelCoords: { x: 390, y: 285 }
+    svgPath: "M 345,200 L 445,190 L 455,300 L 345,290 Z",
+    labelCoords: { x: 395, y: 245 }
   },
   {
     id: "jamshoro",
@@ -178,8 +179,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Drinking Water Handpump Project"],
     cboCount: 1,
     description: "Educational hub & hill-tract district. Technical collaboration with university researchers on water quality.",
-    svgPath: "M 180,265 L 240,260 L 225,360 L 165,340 Z",
-    labelCoords: { x: 200, y: 310 }
+    svgPath: "M 150,230 L 225,225 L 205,335 L 135,315 Z",
+    labelCoords: { x: 178, y: 280 }
   },
   {
     id: "hyderabad",
@@ -191,8 +192,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["SPO Provincial Network Advocacy"],
     cboCount: 0,
     description: "Second largest city in Sindh. Hub for regional NGO network meetings and government dialogue.",
-    svgPath: "M 230,340 L 275,335 L 270,380 L 225,375 Z",
-    labelCoords: { x: 250, y: 355 }
+    svgPath: "M 225,315 L 275,310 L 265,360 L 215,355 Z",
+    labelCoords: { x: 245, y: 335 }
   },
   {
     id: "tando-allahyar",
@@ -204,8 +205,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Artisan Guild Crafts Marketing"],
     cboCount: 0,
     description: "Agricultural and handicraft center. Focus on traditional Sindhi embroidery marketing.",
-    svgPath: "M 275,335 L 320,330 L 315,380 L 270,380 Z",
-    labelCoords: { x: 295, y: 355 }
+    svgPath: "M 275,310 L 325,305 L 315,360 L 265,360 Z",
+    labelCoords: { x: 295, y: 335 }
   },
   {
     id: "tm-khan",
@@ -217,8 +218,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Post-Flood Water Filtration Packs"],
     cboCount: 0,
     description: "Low-lying riverine agricultural district vulnerable to heavy monsoon inundation.",
-    svgPath: "M 225,375 L 270,380 L 260,430 L 215,420 Z",
-    labelCoords: { x: 245, y: 400 }
+    svgPath: "M 215,355 L 265,360 L 255,415 L 205,405 Z",
+    labelCoords: { x: 235, y: 382 }
   },
   {
     id: "umerkot",
@@ -230,8 +231,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Interfaith Dialogue & Desert Solar Well Initiative"],
     cboCount: 0,
     description: "Historic multi-cultural desert border district. Active interfaith peace advocacy and deep water wells.",
-    svgPath: "M 345,315 L 430,310 L 420,400 L 335,390 Z",
-    labelCoords: { x: 380, y: 350 }
+    svgPath: "M 345,290 L 445,280 L 435,380 L 335,370 Z",
+    labelCoords: { x: 390, y: 330 }
   },
   {
     id: "badin",
@@ -243,8 +244,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Coastal Cyclone & Monsoon Emergency Relief"],
     cboCount: 0,
     description: "Coastal district affected by sea erosion, storm surges, and heavy monsoon flooding.",
-    svgPath: "M 260,430 L 335,420 L 320,490 L 245,475 Z",
-    labelCoords: { x: 290, y: 455 }
+    svgPath: "M 255,415 L 340,405 L 325,480 L 240,465 Z",
+    labelCoords: { x: 285, y: 440 }
   },
   {
     id: "thatta",
@@ -256,8 +257,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Indus Delta Disaster Relief & Mobile Camps"],
     cboCount: 0,
     description: "Indus Delta coastal region. Mobile healthcare and clean drinking water during coastal emergencies.",
-    svgPath: "M 165,370 L 225,375 L 215,465 L 140,440 Z",
-    labelCoords: { x: 185, y: 420 }
+    svgPath: "M 135,345 L 205,350 L 195,445 L 120,420 Z",
+    labelCoords: { x: 165, y: 395 }
   },
   {
     id: "karachi",
@@ -269,7 +270,7 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     keyProjects: ["Provincial NGO Network Secretariat Collaboration"],
     cboCount: 0,
     description: "Provincial capital. DIN maintains institutional liaison with government ministries, UN headquarters, and national donor consortia.",
-    svgPath: "M 110,400 L 165,390 L 155,460 L 100,445 Z",
-    labelCoords: { x: 130, y: 425 }
+    svgPath: "M 75,370 L 135,360 L 125,435 L 65,420 Z",
+    labelCoords: { x: 100, y: 398 }
   }
 ];

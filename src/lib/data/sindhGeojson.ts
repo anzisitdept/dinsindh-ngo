@@ -1,0 +1,295 @@
+export const SINDH_GEOJSON = {
+  type: "FeatureCollection" as const,
+  features: [
+    {
+      type: "Feature" as const,
+      properties: { id: "jacobabad", name: "Jacobabad", region: "Upper Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.20, 28.60], [68.45, 28.72], [68.75, 28.90], [68.90, 29.05], [69.10, 29.20],
+          [69.20, 29.40], [69.00, 29.55], [68.70, 29.60], [68.45, 29.55], [68.20, 29.45],
+          [68.00, 29.30], [67.90, 29.10], [67.95, 28.90], [68.05, 28.72], [68.20, 28.60]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "kashmore", name: "Kashmor", region: "Upper Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [69.10, 29.20], [69.35, 29.10], [69.65, 28.95], [69.90, 28.90], [70.00, 28.85],
+          [70.05, 29.00], [69.95, 29.20], [69.80, 29.40], [69.55, 29.55], [69.35, 29.60],
+          [69.20, 29.55], [69.20, 29.40], [69.10, 29.20]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "shikarpur", name: "Shikarpur", region: "Upper Sindh", isHeadquarters: true },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.45, 28.72], [68.75, 28.90], [68.90, 29.05], [69.10, 29.20], [68.90, 29.30],
+          [68.75, 29.35], [68.55, 29.30], [68.35, 29.15], [68.20, 29.00], [68.25, 28.85],
+          [68.35, 28.78], [68.45, 28.72]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "ghotki", name: "Ghotki", region: "Upper Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [70.00, 28.85], [70.30, 28.80], [70.60, 28.72], [70.90, 28.65], [71.10, 28.75],
+          [71.20, 28.90], [71.10, 29.10], [70.90, 29.25], [70.65, 29.30], [70.35, 29.25],
+          [70.10, 29.15], [69.95, 29.00], [70.00, 28.85]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "sukkur", name: "Sukkur", region: "Upper Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.75, 28.90], [69.10, 29.20], [69.20, 29.40], [69.00, 29.50], [68.80, 29.55],
+          [68.55, 29.45], [68.45, 29.30], [68.40, 29.10], [68.55, 29.00], [68.70, 28.95],
+          [68.75, 28.90]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "larkana", name: "Larkana", region: "Upper Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [67.90, 29.10], [68.00, 29.30], [68.20, 29.45], [68.35, 29.55], [68.20, 29.70],
+          [68.00, 29.80], [67.75, 29.75], [67.55, 29.60], [67.50, 29.40], [67.55, 29.20],
+          [67.70, 29.10], [67.90, 29.10]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "qambar", name: "Qambar", region: "Upper Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [67.50, 27.80], [67.70, 27.85], [67.95, 27.90], [68.10, 28.05], [68.15, 28.25],
+          [68.10, 28.45], [67.95, 28.60], [67.70, 28.70], [67.45, 28.65], [67.25, 28.50],
+          [67.15, 28.30], [67.25, 28.10], [67.40, 27.95], [67.50, 27.80]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "khairpur", name: "Khairpur", region: "Upper Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.55, 29.00], [68.80, 29.00], [69.10, 28.95], [69.45, 28.85], [69.65, 28.80],
+          [69.90, 28.70], [70.05, 28.65], [70.05, 28.95], [69.90, 29.10], [69.65, 29.25],
+          [69.45, 29.35], [69.20, 29.40], [69.00, 29.30], [68.75, 29.20], [68.60, 29.10],
+          [68.55, 29.00]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "naushahroferoze", name: "Naushahro Feroze", region: "Central Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.35, 29.15], [68.55, 29.30], [68.75, 29.35], [68.80, 29.50], [68.70, 29.65],
+          [68.50, 29.70], [68.25, 29.68], [68.10, 29.55], [68.10, 29.35], [68.20, 29.25],
+          [68.35, 29.15]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "dadu", name: "Dadu", region: "Central Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [67.15, 28.30], [67.25, 28.50], [67.45, 28.65], [67.60, 28.85], [67.70, 29.10],
+          [67.55, 29.20], [67.50, 29.40], [67.35, 29.55], [67.15, 29.50], [66.95, 29.30],
+          [66.80, 29.05], [66.75, 28.80], [66.80, 28.55], [66.95, 28.35], [67.10, 28.25],
+          [67.15, 28.30]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "benazirabad", name: "Benazirabad", region: "Central Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.10, 29.35], [68.25, 29.30], [68.35, 29.15], [68.50, 29.00], [68.60, 28.90],
+          [68.80, 28.85], [69.00, 28.85], [69.10, 28.95], [69.00, 29.10], [68.90, 29.25],
+          [68.75, 29.40], [68.60, 29.55], [68.50, 29.70], [68.25, 29.68], [68.10, 29.55],
+          [68.10, 29.35]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "sanghar", name: "Sanghar", region: "Central Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [69.45, 28.85], [69.65, 28.80], [69.90, 28.70], [70.20, 28.60], [70.50, 28.55],
+          [70.75, 28.50], [70.90, 28.55], [70.85, 28.75], [70.70, 28.95], [70.45, 29.10],
+          [70.20, 29.20], [70.00, 29.25], [69.80, 29.15], [69.60, 29.00], [69.45, 28.85]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "jamshoro", name: "Jamshoro", region: "Lower Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [66.75, 28.80], [66.95, 28.85], [67.15, 28.90], [67.35, 28.95], [67.50, 29.00],
+          [67.60, 28.90], [67.70, 28.75], [67.75, 28.55], [67.65, 28.35], [67.50, 28.20],
+          [67.30, 28.10], [67.10, 28.05], [66.90, 28.10], [66.75, 28.25], [66.70, 28.45],
+          [66.70, 28.65], [66.75, 28.80]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "hyderabad", name: "Hyderabad", region: "Lower Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [67.60, 28.35], [67.75, 28.40], [67.90, 28.50], [68.00, 28.65], [68.05, 28.80],
+          [67.90, 28.90], [67.70, 28.90], [67.55, 28.80], [67.45, 28.65], [67.45, 28.50],
+          [67.55, 28.40], [67.60, 28.35]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "matiari", name: "Matiari", region: "Lower Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.00, 28.65], [68.20, 28.60], [68.40, 28.65], [68.50, 28.80], [68.40, 28.95],
+          [68.20, 29.00], [68.00, 28.95], [67.85, 28.85], [67.90, 28.75], [68.00, 28.65]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "tandoallahyar", name: "Tando Allahyar", region: "Lower Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.40, 28.65], [68.60, 28.60], [68.75, 28.65], [68.85, 28.75], [68.80, 28.90],
+          [68.60, 28.95], [68.40, 28.95], [68.25, 28.85], [68.30, 28.72], [68.40, 28.65]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "tando-muhammad-khan", name: "T.M Khan", region: "Lower Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [67.90, 28.20], [68.10, 28.20], [68.25, 28.30], [68.35, 28.45], [68.25, 28.60],
+          [68.05, 28.65], [67.90, 28.55], [67.80, 28.40], [67.85, 28.28], [67.90, 28.20]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "mirpurkhas", name: "Mirpur Khas", region: "Lower Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.90, 28.45], [69.10, 28.35], [69.35, 28.30], [69.60, 28.35], [69.75, 28.50],
+          [69.70, 28.70], [69.50, 28.80], [69.25, 28.85], [69.00, 28.80], [68.85, 28.65],
+          [68.90, 28.45]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "umerkot", name: "Umerkot", region: "Coastal / Desert Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [69.75, 28.00], [70.00, 27.95], [70.30, 27.90], [70.60, 27.88], [70.80, 27.95],
+          [70.90, 28.15], [70.80, 28.35], [70.55, 28.50], [70.25, 28.55], [70.00, 28.48],
+          [69.80, 28.35], [69.70, 28.18], [69.75, 28.00]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "tharparkar", name: "Tharparkar", region: "Coastal / Desert Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [70.00, 28.48], [70.25, 28.55], [70.55, 28.50], [70.80, 28.35], [71.00, 28.25],
+          [71.20, 28.10], [71.25, 27.85], [71.20, 27.60], [71.00, 27.40], [70.75, 27.25],
+          [70.50, 27.15], [70.20, 27.10], [69.95, 27.15], [69.75, 27.30], [69.65, 27.50],
+          [69.65, 27.70], [69.70, 27.90], [69.80, 28.10], [70.00, 28.28], [70.00, 28.48]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "badin", name: "Badin", region: "Coastal / Desert Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [68.35, 28.00], [68.55, 27.95], [68.80, 27.90], [69.05, 27.90], [69.30, 27.95],
+          [69.50, 28.05], [69.60, 28.20], [69.50, 28.35], [69.25, 28.40], [69.00, 28.45],
+          [68.75, 28.45], [68.55, 28.38], [68.40, 28.25], [68.30, 28.12], [68.35, 28.00]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "sujawal", name: "Sujawal", region: "Coastal / Desert Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [67.70, 27.75], [67.90, 27.70], [68.10, 27.68], [68.30, 27.72], [68.40, 27.85],
+          [68.35, 28.00], [68.15, 28.10], [67.95, 28.08], [67.75, 28.00], [67.60, 27.88],
+          [67.65, 27.78], [67.70, 27.75]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "thatta", name: "Thatta", region: "Coastal / Desert Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [66.90, 27.95], [67.10, 27.85], [67.30, 27.78], [67.55, 27.72], [67.70, 27.75],
+          [67.65, 27.90], [67.60, 28.05], [67.50, 28.20], [67.30, 28.30], [67.10, 28.25],
+          [66.95, 28.15], [66.85, 28.00], [66.90, 27.95]
+        ]]
+      }
+    },
+    {
+      type: "Feature" as const,
+      properties: { id: "karachi", name: "Karachi", region: "Coastal / Desert Sindh" },
+      geometry: {
+        type: "Polygon" as const,
+        coordinates: [[
+          [66.70, 24.85], [66.95, 24.82], [67.25, 24.78], [67.50, 24.80], [67.70, 24.90],
+          [67.80, 25.05], [67.75, 25.20], [67.55, 25.30], [67.30, 25.35], [67.05, 25.32],
+          [66.85, 25.22], [66.70, 25.08], [66.65, 24.95], [66.70, 24.85]
+        ]]
+      }
+    }
+  ]
+};

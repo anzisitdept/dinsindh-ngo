@@ -37,29 +37,8 @@ export default function OrganogramChart() {
       {/* Interactive HTML Tree Structure */}
       <div className="space-y-6 max-w-4xl mx-auto">
         
-        {/* Tier 1: General Body */}
-        <div className="border border-[#2A364F] bg-[#0E1726] p-4 shadow-md">
-          <div
-            onClick={() => toggleNode("general-body")}
-            className="flex items-center justify-between cursor-pointer select-none"
-          >
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-xs">
-                GB
-              </div>
-              <div>
-                <h4 className="font-heading font-bold text-base text-amber-400">
-                  General Body Assembly
-                </h4>
-                <p className="text-xs text-neutral-400">Highest Policy-Making Body (Founding Members & CBO Representatives)</p>
-              </div>
-            </div>
-            {expandedNodes["general-body"] ? <ChevronDown className="w-5 h-5 text-amber-400" /> : <ChevronRight className="w-5 h-5 text-neutral-400" />}
-          </div>
-        </div>
-
-        {/* Tier 2: Board of Directors */}
-        <div className="pl-6 sm:pl-10 border-l-2 border-amber-500/40 space-y-6">
+        {/* Tier 1: Board of Directors */}
+        <div className="space-y-6">
           <div className="border border-amber-500/40 bg-[#1A273E] p-4 shadow-md">
             <div
               onClick={() => toggleNode("board")}
