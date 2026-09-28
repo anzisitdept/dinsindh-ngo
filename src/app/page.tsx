@@ -85,9 +85,11 @@ export default function HomePage() {
       <section className="w-full bg-[#F5F3ED] py-14 border-b border-[#E2DDD5] text-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#152238]">
-              Collaborating International & Government Institutions
+          <div className="text-center mb-8">
+            <h3 className="inline-block font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#152238] leading-tight relative pb-3">
+              Our Donors
+              <span className="absolute left-0 bottom-0 h-1 w-full bg-[#8C241D]" />
+              <span className="absolute left-0 bottom-0 h-1 w-1/3 bg-amber-400" />
             </h3>
           </div>
 
