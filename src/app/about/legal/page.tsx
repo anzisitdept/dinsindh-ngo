@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ORGANIZATION_DATA } from "@/lib/data/organization";
+import { ORGANIZATION_DATA, CONTACT_LINKS } from "@/lib/data/organization";
 import { ShieldCheck, Download, ExternalLink, CheckCircle2, Eye, FileText, X } from "lucide-react";
 
 export default function LegalPage() {
@@ -15,9 +15,6 @@ export default function LegalPage() {
       {/* Header Banner */}
       <section className="bg-[#152238] text-white py-14 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-xs uppercase tracking-widest text-amber-400 font-mono font-semibold mb-2">
-            Institutional Transparency & Compliance
-          </div>
           <h1 className="font-heading text-3xl sm:text-4xl font-bold text-white max-w-3xl">
             Legal Status, Tax Registration & Audit Documents
           </h1>
@@ -135,7 +132,7 @@ export default function LegalPage() {
               <p>Registered Under Societies Act XXI of 1860 (Reg No. 01222, District Larkana)</p>
               <p>NTN: 3224579-3 | DUNS: 645786422</p>
               <div className="pt-2 text-[11px] text-neutral-400">
-                Official PDF copy stored at DIN Headquarters, Station Road, Shikarpur, Sindh.
+                Official PDF copy stored at DIN Headquarters, {CONTACT_LINKS.fullAddress}.
               </div>
             </div>
 

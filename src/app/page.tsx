@@ -1,14 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import InteractiveHero from "@/components/InteractiveHero";
-import CredibilityTicker from "@/components/CredibilityTicker";
+import OngoingProjectSpotlight from "@/components/OngoingProjectSpotlight";
 import ProjectSpotlightFilmstrip from "@/components/ProjectSpotlightFilmstrip";
-import InteractiveSindhMap from "@/components/InteractiveSindhMap";
 import { PROGRAM_AREAS } from "@/lib/data/programs";
 import { PARTNERS_DATA } from "@/lib/data/partners";
-import { ORGANIZATION_DATA } from "@/lib/data/organization";
-import { ArrowUpRight, ArrowRight, ShieldCheck, CheckCircle2, Building2, MapPin, Users, Award } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -17,61 +14,15 @@ export default function HomePage() {
       {/* 1. Asymmetric Interactive Hero */}
       <InteractiveHero />
 
-      {/* 2. Horizontal Credibility Ticker */}
-      <CredibilityTicker />
+      {/* 2. Current Ongoing Project — Solo Spotlight */}
+      <OngoingProjectSpotlight />
 
-      {/* 3. Who We Are — Condensed Institutional Narrative */}
-      <section className="w-full py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-[#E2DDD5]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          <div className="lg:col-span-5 space-y-4">
-            <div className="text-xs uppercase tracking-widest text-[#8C241D] font-mono font-bold">
-              Institutional Baseline • Established 2000
-            </div>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#152238] leading-tight">
-              A Quarter-Century of Grassroots Institutional Development in Sindh.
-            </h2>
-            <div className="w-16 h-1 bg-[#8C241D]" />
-          </div>
-
-          <div className="lg:col-span-7 space-y-5 text-sm text-neutral-700 leading-relaxed font-sans">
-            <p className="text-base text-neutral-800 font-medium leading-relaxed">
-              DIN Pakistan (Development Institutions' Network) is a legally registered non-governmental organization (Societies Registration Act XXI of 1860, Reg. No. 01222) dedicated to sustainable rural development, interfaith peace, maternal health, and disaster recovery across 18 districts of Sindh.
-            </p>
-            <p>
-              With a federated network of <strong className="text-[#152238]">40 affiliated Community-Based Organizations (CBOs)</strong> and 18 executed donor projects, DIN bridges grassroots community needs with major funding bodies including Save the Children, IOM (UN Migration), DAI-USAID, UNDP/DTCE, and the Government of Sindh.
-            </p>
-            
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Link
-                href="/about"
-                className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#8C241D] hover:text-[#152238] transition-colors border-b-2 border-[#8C241D] pb-0.5"
-              >
-                <span>Read Full Institutional Profile</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/about/legal"
-                className="inline-flex items-center space-x-1.5 text-xs font-mono text-neutral-600 hover:text-[#8C241D]"
-              >
-                <ShieldCheck className="w-4 h-4 text-emerald-700" />
-                <span>Verify Registration & NTN</span>
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 4. Featured Programs — Magazine Style Horizontal Rule List (NO Icon Grid) */}
+      {/* 3. Featured Programs */}
       <section className="w-full bg-[#152238] text-white py-16 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#253754]">
             <div>
-              <div className="text-xs uppercase tracking-widest text-amber-400 font-mono font-semibold mb-1">
-                Thematic Areas of Action
-              </div>
               <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
                 Core Program Pillars
               </h2>
@@ -127,26 +78,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Project Spotlight Filmstrip */}
+      {/* 4. Project Spotlight Filmstrip */}
       <ProjectSpotlightFilmstrip />
 
-      {/* 6. Interactive Sindh Map Section */}
-      <InteractiveSindhMap />
-
-      {/* 7. Donor & Partner Registry Strip */}
+      {/* 5. Donor & CBO Registry Strip */}
       <section className="w-full bg-[#F5F3ED] py-14 border-b border-[#E2DDD5] text-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-8">
-            <div className="text-xs uppercase tracking-widest text-[#8C241D] font-mono font-bold mb-1">
-              Institutional Donors & Partners
-            </div>
             <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#152238]">
               Collaborating International & Government Institutions
             </h3>
           </div>
 
-          {/* Typographic Partner Badges */}
+          {/* Typographic Donor Badges */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
             {PARTNERS_DATA.map((partner) => (
               <div
@@ -168,41 +113,68 @@ export default function HomePage() {
               href="/partners"
               className="text-xs font-bold uppercase tracking-wider text-[#8C241D] hover:underline"
             >
-              View Complete Partner Directory & 40 CBO Affiliations →
+              View Our Donors Directory & 40 CBO Affiliations →
             </Link>
           </div>
 
         </div>
       </section>
 
-      {/* 8. Institutional Call to Action */}
-      <section className="w-full bg-[#8C241D] text-white py-16 font-sans">
-        <div className="max-w-5xl mx-auto px-4 text-center space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-amber-400 text-slate-950 font-bold px-3 py-1 text-xs uppercase tracking-widest font-mono">
-            <ShieldCheck className="w-4 h-4" />
-            <span>Partner With DIN Pakistan</span>
+      {/* 6. Animated Emergency Relief & Donation Collection Call to Action */}
+      <section className="relative w-full bg-[#8C241D] text-white py-20 font-sans overflow-hidden">
+        {/* Animated Radar Pulse Background Effect */}
+        <div className="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
+          <div className="w-[500px] h-[500px] rounded-full border-2 border-amber-300 animate-ping" />
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 text-center space-y-8 relative z-10">
+          
+          {/* Animated Heartbeat / Collection Counter Badge */}
+          <div className="inline-flex items-center space-x-2 bg-amber-400 text-slate-950 font-bold px-4 py-1.5 text-xs uppercase tracking-wider shadow-lg rounded-full animate-bounce">
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-600 animate-pulse" />
+            <span>Active Emergency Relief Collection Campaign</span>
           </div>
           
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white max-w-3xl mx-auto leading-tight">
-            Ready to Co-Implement High-Impact Community Interventions in Sindh?
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white max-w-3xl mx-auto leading-tight">
+            Your Donation Directly Feeds & Shelters Flood-Affected Families in Sindh.
           </h2>
 
-          <p className="text-sm sm:text-base text-amber-100 max-w-2xl mx-auto leading-relaxed">
-            Whether you are an international donor, government department, or community foundation seeking a verified local implementing partner with 25 years of field experience in Upper & Lower Sindh.
+          <p className="text-base sm:text-lg text-amber-100 max-w-2xl mx-auto leading-relaxed">
+            100% of collection funds go directly toward urgent food rations, clean handpump installations, and emergency shelter kits across 18 districts.
           </p>
+
+          {/* Interactive Collection Impact Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left max-w-3xl mx-auto my-6">
+            <div className="p-4 bg-[#6E1C16] border border-amber-400/30 rounded-xs space-y-1">
+              <div className="text-amber-300 font-bold text-xs uppercase">Emergency Food Rations</div>
+              <div className="text-white font-extrabold text-lg">PKR 7,000 / Kit</div>
+              <p className="text-xs text-amber-100/80">Feeds a family of 6 for 30 days with essential flour, oil & pulses.</p>
+            </div>
+            <div className="p-4 bg-[#6E1C16] border border-amber-400/30 rounded-xs space-y-1">
+              <div className="text-amber-300 font-bold text-xs uppercase">Clean Drinking Water</div>
+              <div className="text-white font-extrabold text-lg">PKR 42,000 / Handpump</div>
+              <p className="text-xs text-amber-100/80">Installs a communal deep water pump serving 25 rural families.</p>
+            </div>
+            <div className="p-4 bg-[#6E1C16] border border-amber-400/30 rounded-xs space-y-1">
+              <div className="text-amber-300 font-bold text-xs uppercase">Disaster Shelter Kit</div>
+              <div className="text-white font-extrabold text-lg">PKR 98,000 / Unit</div>
+              <p className="text-xs text-amber-100/80">Provides heavy duty waterproof tarpaulins, bamboo & tools.</p>
+            </div>
+          </div>
 
           <div className="pt-2 flex flex-wrap justify-center items-center gap-4">
             <Link
-              href="/contact"
-              className="px-8 py-3.5 bg-[#152238] hover:bg-[#0E1726] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-xl transition-all border border-amber-400/30"
+              href="/donate"
+              className="px-8 py-4 bg-[#152238] hover:bg-[#0E1726] text-amber-300 font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-2xl transition-all border border-amber-400 scale-105 hover:scale-110 flex items-center space-x-2"
             >
-              Initiate Partnership Dialogue
+              <span>Donate to Relief Collection</span>
+              <ArrowRight className="w-4 h-4 text-amber-300" />
             </Link>
             <Link
-              href="/about/legal"
-              className="px-8 py-3.5 bg-white text-[#8C241D] hover:bg-neutral-100 text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-md transition-all"
+              href="/donate"
+              className="px-8 py-4 bg-white text-[#8C241D] hover:bg-neutral-100 text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-md transition-all"
             >
-              Download Legal Audits
+              Donate Us
             </Link>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { ORGANIZATION_DATA, CONTACT_LINKS } from "@/lib/data/organization";
 
 export async function POST(req: NextRequest) {
   try {
@@ -104,7 +105,7 @@ export async function POST(req: NextRequest) {
             <td style="background:#f9fafb;border-top:1px solid #e5e7eb;padding:18px 32px;">
               <p style="margin:0;font-size:11px;color:#6B7280;">
                 This notification was automatically generated from the DIN Pakistan contact form at 
-                <a href="https://dinsindh.org/contact" style="color:#8C241D;">dinsindh.org/contact</a>.<br/>
+                <a href="https://dinsindh.com/contact" style="color:#8C241D;">dinsindh.com/contact</a>.<br/>
                 Reply directly to <strong>${email}</strong> to respond.
               </p>
             </td>
@@ -121,7 +122,7 @@ export async function POST(req: NextRequest) {
     // Send email to DIN inbox
     await transporter.sendMail({
       from: `"DIN Pakistan Website" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_TO || "dinsindh@gmail.com",
+      to: process.env.SMTP_TO || ORGANIZATION_DATA.headquarters.emailGeneral,
       replyTo: email,
       subject: `[DIN Inquiry] ${inquiryType || "General"} — ${name}`,
       html: htmlContent,
@@ -152,10 +153,10 @@ ${message}
     <tr><td style="padding:28px 32px;font-size:13px;color:#374151;line-height:1.7;">
       <p>Dear <strong>${name}</strong>,</p>
       <p>Thank you for reaching out to <strong>DIN Pakistan Executive Secretariat</strong>. We have received your inquiry regarding <strong>${inquiryType}</strong> and it has been forwarded to the relevant desk in Shikarpur.</p>
-      <p>Our team will respond within <strong>2–3 working days</strong>. For urgent matters, please call our office directly at <strong>+92-726-520-155</strong>.</p>
+      <p>Our team will respond within <strong>2–3 working days</strong>. For urgent matters, please call our office directly at <strong>${ORGANIZATION_DATA.headquarters.phonePrimary}</strong> or message us on WhatsApp at <a href="${CONTACT_LINKS.whatsapp()}" style="color:#8C241D;">${ORGANIZATION_DATA.headquarters.phonePrimary}</a>.</p>
       <p style="margin-top:24px;padding-top:16px;border-top:1px solid #e5e7eb;font-size:11px;color:#6B7280;">
-        DIN Pakistan — Station Road, Shikarpur, Sindh<br/>
-        <a href="mailto:dinsindh@gmail.com" style="color:#8C241D;">dinsindh@gmail.com</a>
+        DIN Pakistan — ${CONTACT_LINKS.fullAddress}<br/>
+        <a href="mailto:${ORGANIZATION_DATA.headquarters.emailGeneral}" style="color:#8C241D;">${ORGANIZATION_DATA.headquarters.emailGeneral}</a>
       </p>
     </td></tr>
   </table>

@@ -186,9 +186,6 @@ export default function ProjectSpotlightFilmstrip() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b-2 border-[#152238]">
           <div>
-            <div className="text-xs uppercase tracking-widest text-[#8C241D] font-bold font-mono mb-1">
-              Field Operations & Track Record
-            </div>
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#152238]">
               Project Spotlight & Field Filmstrip
             </h2>

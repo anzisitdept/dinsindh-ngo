@@ -26,30 +26,35 @@ export const ORGANIZATION_DATA = {
   targetBeneficiariesCount: "250,000+",
   
   headquarters: {
-    address: "2nd Floor, Agha Khan Laboratory Building, Station Road",
+    address: "G.T Model Town, Near Jano Bypass Road",
     city: "Shikarpur",
     province: "Sindh",
     country: "Pakistan",
     postalCode: "78100",
-    phonePrimary: "+92 71 5632100",
-    phoneSecondary: "+92 300 3131842",
-    emailGeneral: "info@dinsindh.com",
-    emailPartnerships: "info@dinsindh.com",
+    phonePrimary: "03002273298",
+    phoneSecondary: "03337281266",
+    phonePrimaryDial: "+923002273298",
+    phoneSecondaryDial: "+923337281266",
+    whatsappNumber: "923002273298",
+    emailGeneral: "dinsindh@gmail.com",
+    emailPartnerships: "dinsindh@gmail.com",
     workingHours: "Monday – Saturday: 9:00 AM – 5:00 PM PST",
   },
-  
-  executiveLeadership: {
-    executiveDirector: "Mujahid Bhutto",
-    designation: "Executive Director & Founder Trustee",
-    bio: "Over 22 years of grassroots community development, disaster response, and indigenous rights advocacy across Upper and Lower Sindh.",
-  },
 
-  boardOfDirectors: [
-    { name: "Sikander Ali Khoso", role: "Chairperson / President", bio: "Development practitioner with 25+ years in community mobilization." },
-    { name: "Dr. Parveen Akhtar", role: "Vice President", bio: "Public health specialist focusing on maternal & child healthcare in rural Sindh." },
-    { name: "Mujahid Bhutto", role: "Executive Director / Member Secretary", bio: "Lead administrator and founder trustee of DIN Pakistan." },
-    { name: "Shahnaz Solangi", role: "Treasurer", bio: "Financial management expert and gender equality advocate." },
-    { name: "Ghulam Nabi Brohi", role: "Board Member / CBO Liaison", bio: "Grassroots CBO coordinator bridging district networks." }
+  bankDetails: {
+    bankName: "FIRST WOMEN BANK Limited",
+    accountTitle: "DEVELOPMENT INSTITUTION NET WORK SHP",
+    accountNumber: "021093410001",
+    branchCode: "0031",
+    iban: "PK12FWOM0031021093410001",
+    swiftCode: "FWOMPKKA",
+  },
+  
+  executiveTeam: [
+    { name: "Mujahid Bhutto", role: "Executive Director & Founder Trustee", bio: "Over 22 years of grassroots community development, disaster response, and indigenous rights advocacy across Upper and Lower Sindh." },
+    { name: "Program Coordinator", role: "Program Coordinator", bio: "Leads field operations, thematic program execution, CBO alignment, and emergency relief distribution." },
+    { name: "Program Officer", role: "Program Officer", bio: "Coordinates project implementation, field monitoring, donor reporting, and community liaison." },
+    { name: "Finance & Admin", role: "Finance & Admin Officer", bio: "Manages financial compliance, audit records, procurement, and administrative operations." }
   ],
 
   legalDocuments: [
@@ -81,4 +86,18 @@ export const ORGANIZATION_DATA = {
       verified: true
     }
   ]
+};
+
+export const CONTACT_LINKS = {
+  whatsapp: (message?: string) =>
+    `https://wa.me/${ORGANIZATION_DATA.headquarters.whatsappNumber}${
+      message ? `?text=${encodeURIComponent(message)}` : ""
+    }`,
+  phonePrimary: `tel:${ORGANIZATION_DATA.headquarters.phonePrimaryDial}`,
+  phoneSecondary: `tel:${ORGANIZATION_DATA.headquarters.phoneSecondaryDial}`,
+  email: `mailto:${ORGANIZATION_DATA.headquarters.emailGeneral}`,
+  map: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${ORGANIZATION_DATA.headquarters.address}, ${ORGANIZATION_DATA.headquarters.city}, ${ORGANIZATION_DATA.headquarters.province}, ${ORGANIZATION_DATA.headquarters.country}`
+  )}`,
+  fullAddress: `${ORGANIZATION_DATA.headquarters.address}, ${ORGANIZATION_DATA.headquarters.city}, ${ORGANIZATION_DATA.headquarters.province}, ${ORGANIZATION_DATA.headquarters.country}`
 };

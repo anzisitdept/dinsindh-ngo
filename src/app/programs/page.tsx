@@ -16,9 +16,6 @@ export default function ProgramsIndexPage() {
       {/* Header Banner */}
       <section className="bg-[#152238] text-white py-14 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-xs uppercase tracking-widest text-amber-400 font-mono font-semibold mb-2">
-            Institutional Focus Areas
-          </div>
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl">
             Our 8 Core Thematic Programs
           </h1>

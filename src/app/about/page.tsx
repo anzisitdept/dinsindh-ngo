@@ -16,14 +16,11 @@ export default function AboutPage() {
       {/* Header Banner */}
       <section className="bg-[#152238] text-white py-16 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-xs uppercase tracking-widest text-amber-400 font-mono font-semibold mb-2">
-            Institutional Background & Narrative
-          </div>
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl">
             About DIN Pakistan (Development Institutions' Network)
           </h1>
-          <p className="text-sm sm:text-base text-neutral-300 mt-3 max-w-2xl leading-relaxed">
-            Registered under the Societies Registration Act XXI of 1860 (Reg. No. 01222). Championing grassroots community empowerment, interfaith peace, and disaster recovery across Sindh since 2000.
+          <p className="text-sm sm:text-base text-amber-200 mt-3 max-w-2xl leading-relaxed font-medium">
+            Working for 25+ Years Across 18 Districts. Together with international donors and 40 Local Community Groups, DIN Pakistan helps poor families rebuild their lives after floods.
           </p>
         </div>
       </section>
@@ -45,7 +42,7 @@ export default function AboutPage() {
             </p>
 
             <p>
-              Over the past 25 years, DIN has built a federated network of <strong className="text-[#152238]">40 affiliated Community-Based Organizations (CBOs)</strong> spanning 18 districts. Our institutional focus centers on mobilizing indigenous leadership, reviving traditional peaceful conflict-resolution mechanisms (such as Natak Mandali street theater), and delivering climate-resilient livelihoods and clean drinking water infrastructure.
+              Over the past 25 years, DIN has built a federated network of <strong className="text-[#152238]">40 affiliated Community-Based Organizations (CBOs)</strong> spanning 18 districts. Our institutional focus centers on mobilizing indigenous leadership, delivering emergency flood relief collections, reviving traditional peaceful conflict-resolution mechanisms, and providing climate-resilient livelihoods and clean drinking water infrastructure.
             </p>
 
             <p>
@@ -57,7 +54,7 @@ export default function AboutPage() {
                 href="/about/governance"
                 className="inline-flex items-center space-x-2 px-5 py-2.5 bg-[#152238] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#8C241D] transition-colors"
               >
-                <span>View Governance & Board</span>
+                <span>View Executive Leadership</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
@@ -108,9 +105,6 @@ export default function AboutPage() {
         {/* Target Focus Groups */}
         <div className="bg-white p-8 sm:p-10 border border-[#E2DDD5] shadow-sm space-y-6">
           <div className="max-w-2xl">
-            <div className="text-xs uppercase tracking-widest text-[#8C241D] font-mono font-bold mb-1">
-              Beneficiary Inclusivity
-            </div>
             <h3 className="font-heading text-2xl font-bold text-[#152238]">
               Target Priority Communities
             </h3>

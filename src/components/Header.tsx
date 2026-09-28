@@ -10,10 +10,11 @@ import {
   ChevronDown,
   Phone,
   Mail,
-  ShieldCheck,
-  MapPin
+  MapPin,
+  MessageCircle,
+  Heart
 } from "lucide-react";
-import { ORGANIZATION_DATA } from "@/lib/data/organization";
+import { ORGANIZATION_DATA, CONTACT_LINKS } from "@/lib/data/organization";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,36 +25,30 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-md font-sans">
-      
+
       {/* Top Utility Bar — FIXED & ALWAYS VISIBLE (DARK DESIGN) */}
       <div className="bg-[#0E1726] border-b border-[#253754] text-xs text-neutral-300 px-4 sm:px-6 py-2">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4 sm:space-x-6 text-[11px] sm:text-xs">
-            <span className="flex items-center space-x-1.5 text-amber-400 font-medium">
-              <ShieldCheck className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>Reg. No: {ORGANIZATION_DATA.registrationNumber} (Societies Act 1860)</span>
-            </span>
-            <span className="hidden md:inline text-neutral-600">|</span>
-            <span className="hidden md:inline">NTN: {ORGANIZATION_DATA.ntn}</span>
-            <span className="hidden lg:inline text-neutral-600">|</span>
-            <span className="hidden lg:inline">DUNS: {ORGANIZATION_DATA.dunsNumber}</span>
-          </div>
-
-          <div className="flex items-center space-x-4 sm:space-x-6 text-[11px] sm:text-xs">
-            <a href={`tel:${ORGANIZATION_DATA.headquarters.phoneSecondary}`} className="flex items-center space-x-1.5 hover:text-amber-400 transition-colors">
+        <div className="max-w-7xl mx-auto flex items-center sm:justify-end overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs whitespace-nowrap">
+            <a href={CONTACT_LINKS.phonePrimary} className="flex items-center gap-1.5 hover:text-amber-400 transition-colors">
               <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span className="hidden sm:inline">{ORGANIZATION_DATA.headquarters.phoneSecondary}</span>
+              <span>{ORGANIZATION_DATA.headquarters.phonePrimary}</span>
             </a>
             <span className="text-neutral-600">|</span>
-            <a href={`mailto:${ORGANIZATION_DATA.headquarters.emailGeneral}`} className="flex items-center space-x-1.5 hover:text-amber-400 transition-colors">
+            <a href={CONTACT_LINKS.whatsapp()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-amber-400 transition-colors">
+              <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <span>WhatsApp</span>
+            </a>
+            <span className="text-neutral-600">|</span>
+            <a href={CONTACT_LINKS.email} className="flex items-center gap-1.5 hover:text-amber-400 transition-colors">
               <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span className="hidden sm:inline">{ORGANIZATION_DATA.headquarters.emailGeneral}</span>
+              <span>{ORGANIZATION_DATA.headquarters.emailGeneral}</span>
             </a>
             <span className="hidden md:inline text-neutral-600">|</span>
-            <span className="hidden md:flex items-center space-x-1 text-neutral-400">
+            <a href={CONTACT_LINKS.map} target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center gap-1 text-neutral-400 hover:text-amber-400 transition-colors">
               <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-              <span>Shikarpur, Sindh</span>
-            </span>
+              <span>{ORGANIZATION_DATA.headquarters.city}, {ORGANIZATION_DATA.headquarters.province}</span>
+            </a>
           </div>
         </div>
       </div>
@@ -61,16 +56,26 @@ export default function Header() {
       {/* Main Navbar — WHITE BACKGROUND, STABLE & STICKY */}
       <div className="w-full bg-white border-b border-neutral-200 py-2.5 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          
+
+          {/* Mobile Menu Toggle — LEFT of the logo */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden -ml-2 p-2 text-[#152238] hover:text-[#8C241D] focus:outline-none transition-transform duration-200 active:scale-90 shrink-0"
+            aria-label="Toggle Navigation Menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+
           {/* Standalone Enlarged Brand Logo */}
           <Link href="/" className="flex items-center group py-0.5">
-            <div className="relative h-14 sm:h-16 w-auto flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
+            <div className="relative h-11 sm:h-14 md:h-16 w-auto flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
               <Image
                 src="/din-logo-transparent.png"
                 alt="DIN Pakistan — Development Institutions' Network"
                 width={200}
                 height={70}
-                className="object-contain h-14 sm:h-16 w-auto drop-shadow-sm"
+                className="object-contain h-11 sm:h-14 md:h-16 w-auto drop-shadow-sm"
                 priority
               />
             </div>
@@ -80,11 +85,10 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold">
             <Link
               href="/"
-              className={`px-3 py-2 transition-colors ${
-                pathname === "/"
-                  ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                  : "text-[#152238] hover:text-[#8C241D]"
-              }`}
+              className={`px-3 py-2 transition-colors ${pathname === "/"
+                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
+                : "text-[#152238] hover:text-[#8C241D]"
+                }`}
             >
               Home
             </Link>
@@ -96,11 +100,10 @@ export default function Header() {
               onMouseLeave={() => setAboutDropdownOpen(false)}
             >
               <button
-                className={`px-3 py-2 flex items-center space-x-1 transition-colors ${
-                  isActive("/about")
-                    ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                    : "text-[#152238] hover:text-[#8C241D]"
-                }`}
+                className={`px-3 py-2 flex items-center space-x-1 transition-colors ${isActive("/about")
+                  ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
+                  : "text-[#152238] hover:text-[#8C241D]"
+                  }`}
               >
                 <span>About DIN</span>
                 <ChevronDown className="w-4 h-4 opacity-75" />
@@ -119,8 +122,8 @@ export default function Header() {
                     href="/about/governance"
                     className="block px-4 py-2.5 text-sm text-[#152238] hover:bg-[#FBF9F5] hover:text-[#8C241D] transition-colors"
                   >
-                    <div className="font-semibold">Governance & Organogram</div>
-                    <div className="text-xs text-neutral-500">Board & interactive org chart</div>
+                    <div className="font-semibold">Executive Leadership & Organogram</div>
+                    <div className="text-xs text-neutral-500">Leadership team & org chart</div>
                   </Link>
                   <Link
                     href="/about/legal"
@@ -134,88 +137,85 @@ export default function Header() {
             </div>
 
             <Link
+              href="/donate"
+              className={`px-3 py-2 transition-colors ${isActive("/donate")
+                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
+                : "text-[#152238] hover:text-[#8C241D]"
+                }`}
+            >
+              Donate Collections
+            </Link>
+
+            <Link
               href="/programs"
-              className={`px-3 py-2 transition-colors ${
-                isActive("/programs")
-                  ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                  : "text-[#152238] hover:text-[#8C241D]"
-              }`}
+              className={`px-3 py-2 transition-colors ${isActive("/programs")
+                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
+                : "text-[#152238] hover:text-[#8C241D]"
+                }`}
             >
               Programs
             </Link>
 
             <Link
               href="/projects"
-              className={`px-3 py-2 transition-colors ${
-                isActive("/projects")
-                  ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                  : "text-[#152238] hover:text-[#8C241D]"
-              }`}
+              className={`px-3 py-2 transition-colors ${isActive("/projects")
+                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
+                : "text-[#152238] hover:text-[#8C241D]"
+                }`}
             >
               Project Archive
             </Link>
 
             <Link
               href="/where-we-work"
-              className={`px-3 py-2 transition-colors ${
-                isActive("/where-we-work")
-                  ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                  : "text-[#152238] hover:text-[#8C241D]"
-              }`}
+              className={`px-3 py-2 transition-colors ${isActive("/where-we-work")
+                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
+                : "text-[#152238] hover:text-[#8C241D]"
+                }`}
             >
               Where We Work
             </Link>
 
             <Link
               href="/partners"
-              className={`px-3 py-2 transition-colors ${
-                isActive("/partners")
-                  ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                  : "text-[#152238] hover:text-[#8C241D]"
-              }`}
+              className={`px-3 py-2 transition-colors ${isActive("/partners")
+                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
+                : "text-[#152238] hover:text-[#8C241D]"
+                }`}
             >
-              Partners
+              Our Donors
             </Link>
 
             <Link
               href="/gallery"
-              className={`px-3 py-2 transition-colors ${
-                isActive("/gallery")
-                  ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                  : "text-[#152238] hover:text-[#8C241D]"
-              }`}
+              className={`px-3 py-2 transition-colors ${isActive("/gallery")
+                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
+                : "text-[#152238] hover:text-[#8C241D]"
+                }`}
             >
               Gallery
             </Link>
 
             <Link
               href="/contact"
-              className={`px-3 py-2 transition-colors ${
-                isActive("/contact")
-                  ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                  : "text-[#152238] hover:text-[#8C241D]"
-              }`}
+              className={`px-3 py-2 transition-colors ${isActive("/contact")
+                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
+                : "text-[#152238] hover:text-[#8C241D]"
+                }`}
             >
               Contact
             </Link>
           </nav>
 
-          {/* Action Button & Mobile Toggle */}
+          {/* Donate Action Button — visible on all sizes, animated on mobile */}
           <div className="flex items-center space-x-3">
             <Link
-              href="/contact"
-              className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-[#8C241D] hover:bg-[#A62F27] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg border border-amber-500/20"
+              href="/donate"
+              className="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden px-3 sm:px-5 py-2 sm:py-2.5 bg-[#8C241D] hover:bg-[#A62F27] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg border border-amber-500/20 transition-[transform,background-color,box-shadow] duration-200 hover:scale-[0.94] active:scale-[0.88] md:hover:scale-100 md:active:scale-100 animate-pulse md:animate-none"
             >
-              <span>Partner With Us</span>
+              <Heart className="w-3.5 h-3.5 fill-current shrink-0" />
+              <span className="relative">Donate Now</span>
             </Link>
-
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-[#152238] hover:text-[#8C241D] focus:outline-none"
-              aria-label="Toggle Navigation Menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
 
         </div>
@@ -223,9 +223,6 @@ export default function Header() {
         {/* Mobile Drawer */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-neutral-200 px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top-4 duration-200 text-[#152238]">
-            <div className="text-[11px] text-[#8C241D] font-mono font-bold pb-2 border-b border-neutral-200">
-              Reg. No: 01222 (Societies Act 1860) | Shikarpur, Sindh
-            </div>
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
@@ -233,7 +230,15 @@ export default function Header() {
             >
               Home
             </Link>
-            
+
+            <Link
+              href="/donate"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-base font-bold text-[#8C241D]"
+            >
+              Donate Collections
+            </Link>
+
             <div className="py-1">
               <span className="block text-xs uppercase font-bold tracking-widest text-[#8C241D] mb-1">About DIN</span>
               <div className="pl-3 space-y-2 border-l-2 border-[#8C241D]">
@@ -249,7 +254,7 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block text-sm text-neutral-700 hover:text-[#8C241D]"
                 >
-                  Governance & Organogram
+                  Executive Leadership & Organogram
                 </Link>
                 <Link
                   href="/about/legal"
@@ -287,7 +292,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-semibold text-[#152238] hover:text-[#8C241D]"
             >
-              Partners & Donors
+              Our Donors & CBOs
             </Link>
             <Link
               href="/gallery"
@@ -306,11 +311,11 @@ export default function Header() {
 
             <div className="pt-2">
               <Link
-                href="/contact"
+                href="/donate"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full inline-flex items-center justify-center py-2.5 bg-[#8C241D] text-white font-bold text-xs uppercase tracking-wider text-center"
               >
-                Partner With Us
+                Donate Now
               </Link>
             </div>
           </div>

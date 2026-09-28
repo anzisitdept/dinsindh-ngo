@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 import { ORGANIZATION_DATA } from "@/lib/data/organization";
 
 export const metadata: Metadata = {
@@ -55,8 +56,33 @@ export default function RootLayout({
       "postalCode": ORGANIZATION_DATA.headquarters.postalCode,
       "addressCountry": "PK"
     },
-    "telephone": ORGANIZATION_DATA.headquarters.phoneSecondary,
+    "telephone": ORGANIZATION_DATA.headquarters.phonePrimaryDial,
+    "faxNumber": ORGANIZATION_DATA.headquarters.phoneSecondaryDial,
     "email": ORGANIZATION_DATA.headquarters.emailGeneral,
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": ORGANIZATION_DATA.headquarters.phonePrimaryDial,
+        "contactType": "customer service",
+        "areaServed": "PK",
+        "availableLanguage": ["en", "ur", "sd"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": ORGANIZATION_DATA.headquarters.phoneSecondaryDial,
+        "contactType": "technical support",
+        "areaServed": "PK",
+        "availableLanguage": ["en", "ur", "sd"]
+      }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    ],
     "areaServed": "Sindh, Pakistan",
     "url": "https://dinsindh.com"
   };
@@ -73,6 +99,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <WhatsAppWidget />
       </body>
     </html>
   );

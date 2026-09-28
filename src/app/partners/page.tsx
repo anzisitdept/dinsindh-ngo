@@ -4,8 +4,8 @@ import { PARTNERS_DATA, AFFILIATED_CBOS } from "@/lib/data/partners";
 import { Building2, Users, ShieldCheck, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Partners & Donors — Institutional Directory & CBO Network | DIN Pakistan",
-  description: "Complete list of DIN Pakistan's institutional donor partners (Save the Children, IOM, USAID, UNDP, ACTED) and 40 affiliated grassroots CBOs.",
+  title: "Our Donors — Institutional Directory & CBO Network | DIN Pakistan",
+  description: "Complete list of DIN Pakistan's institutional donors (Save the Children, IOM, USAID, UNDP, ACTED) and 40 affiliated grassroots CBOs.",
 };
 
 export default function PartnersPage() {
@@ -15,11 +15,8 @@ export default function PartnersPage() {
       {/* Header Banner */}
       <section className="bg-[#152238] text-white py-14 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-xs uppercase tracking-widest text-amber-400 font-mono font-semibold mb-2">
-            Institutional Alliances
-          </div>
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl">
-            Partners, Donors & CBO Network
+            Our Donors & CBO Network
           </h1>
           <p className="text-sm sm:text-base text-neutral-300 mt-2 max-w-2xl leading-relaxed">
             Collaborating with international humanitarian agencies, UN organizations, provincial government departments, and 40 federated CBOs across Sindh.
@@ -32,11 +29,8 @@ export default function PartnersPage() {
         {/* Donor Directory */}
         <div className="space-y-6">
           <div>
-            <div className="text-xs uppercase tracking-widest text-[#8C241D] font-mono font-bold mb-1">
-              Funding & Co-Implementation Agencies
-            </div>
             <h2 className="font-heading text-2xl font-bold text-[#152238]">
-              International Donors & UN Partners
+              Our Institutional Donors & UN Agencies
             </h2>
           </div>
 
@@ -55,7 +49,7 @@ export default function PartnersPage() {
                 </div>
 
                 <div className="pt-3 border-t border-[#E2DDD5] text-[11px] font-mono text-neutral-500">
-                  Status: Verified Institutional Partner
+                  Status: Verified Institutional Donor
                 </div>
               </div>
             ))}
@@ -65,9 +59,6 @@ export default function PartnersPage() {
         {/* 40 Affiliated CBO Network Directory */}
         <div className="bg-white p-8 sm:p-10 border border-[#E2DDD5] shadow-sm space-y-6">
           <div>
-            <div className="text-xs uppercase tracking-widest text-[#8C241D] font-mono font-bold mb-1">
-              Grassroots Infrastructure
-            </div>
             <h2 className="font-heading text-2xl font-bold text-[#152238]">
               Directory of 40 Affiliated CBOs (Community-Based Organizations)
             </h2>

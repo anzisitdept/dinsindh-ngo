@@ -158,7 +158,7 @@ export default function FilterableProjectsArchive({ initialDistrict }: { initial
         <div className="hidden lg:grid grid-cols-12 gap-4 px-6 py-3 bg-[#F2EDE4] font-mono text-xs font-bold text-[#152238] uppercase tracking-wider">
           <div className="col-span-2">Year & Status</div>
           <div className="col-span-4">Project Title & Summary</div>
-          <div className="col-span-3">Funding Donor / Partner</div>
+          <div className="col-span-3">Funding Donor</div>
           <div className="col-span-2">District / Beneficiaries</div>
           <div className="col-span-1 text-right">Details</div>
         </div>

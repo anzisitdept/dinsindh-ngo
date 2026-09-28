@@ -1,7 +1,7 @@
 export interface PartnerItem {
   id: string;
   name: string;
-  category: "Donor & UN Partner" | "Government Institution" | "National & International Network" | "Technical Partner";
+  category: "Donor & UN Agency" | "Government Institution" | "National & International Network" | "Technical Agency";
   acronym?: string;
   description: string;
   logoText: string;
@@ -12,7 +12,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
   {
     id: "save-the-children",
     name: "Save the Children International",
-    category: "Donor & UN Partner",
+    category: "Donor & UN Agency",
     acronym: "SCI",
     description: "International humanitarian organization collaborating with DIN on child protection, Child-Friendly Safe Spaces, and emergency relief.",
     logoText: "Save the Children",
@@ -21,7 +21,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
   {
     id: "iom",
     name: "International Organization for Migration (IOM)",
-    category: "Donor & UN Partner",
+    category: "Donor & UN Agency",
     acronym: "IOM",
     description: "UN Migration Agency funding low-cost resilient housing construction, communal handpumps, and shelter kits in Upper Sindh.",
     logoText: "IOM UN Migration",
@@ -30,7 +30,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
   {
     id: "undp-dtce",
     name: "UNDP / DTCE Pakistan",
-    category: "Donor & UN Partner",
+    category: "Donor & UN Agency",
     acronym: "UNDP",
     description: "United Nations Development Programme & Devolution Trust for Community Empowerment supporting local peace councils and social cohesion.",
     logoText: "UNDP / DTCE",
@@ -39,7 +39,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
   {
     id: "dai-usaid",
     name: "DAI-Pakistan / USAID",
-    category: "Donor & UN Partner",
+    category: "Donor & UN Agency",
     acronym: "DAI / USAID",
     description: "Development Alternatives Incorporated & USAID funding the landmark Natak Mandali street theater revival for religious harmony.",
     logoText: "USAID / DAI",
@@ -48,7 +48,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
   {
     id: "acted",
     name: "ACTED International",
-    category: "Donor & UN Partner",
+    category: "Donor & UN Agency",
     acronym: "ACTED",
     description: "French international NGO providing disaster emergency shelter kits and rapid flood response assistance.",
     logoText: "ACTED France",
@@ -57,7 +57,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
   {
     id: "muslim-charity-uk",
     name: "Muslim Charity UK",
-    category: "Donor & UN Partner",
+    category: "Donor & UN Agency",
     acronym: "MC UK",
     description: "UK-based international relief agency supporting maternal health clinics and flood-affected women livelihood toolkits.",
     logoText: "Muslim Charity UK",
@@ -129,7 +129,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
   {
     id: "pmhc",
     name: "Pakistan Mental Health Coalition",
-    category: "Technical Partner",
+    category: "Technical Agency",
     acronym: "PMHC",
     description: "Technical network supporting DIN in psychosocial trauma counseling for flood-affected children and mothers.",
     logoText: "PMHC Pakistan",

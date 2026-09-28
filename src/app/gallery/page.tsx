@@ -19,9 +19,6 @@ export default function GalleryPage() {
       {/* Header Banner */}
       <section className="bg-[#152238] text-white py-12 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-xs uppercase tracking-widest text-amber-400 font-mono font-semibold mb-1">
-            Photo Archive
-          </div>
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl">
             Field Photography Gallery
           </h1>

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { ORGANIZATION_DATA } from "@/lib/data/organization";
-import { MapPin, Phone, Mail, Clock, ShieldCheck, Send, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { ORGANIZATION_DATA, CONTACT_LINKS } from "@/lib/data/organization";
+import { MapPin, Phone, Mail, Clock, ShieldCheck, Send, CheckCircle2, Loader2, AlertCircle, MessageCircle } from "lucide-react";
 
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -12,7 +12,7 @@ export default function ContactPage() {
     name: "",
     email: "",
     organization: "",
-    inquiryType: "Donor / Partnership",
+    inquiryType: "Donor / Co-Implementation",
     message: ""
   });
 
@@ -48,9 +48,6 @@ export default function ContactPage() {
       {/* Header Banner */}
       <section className="bg-[#152238] text-white py-14 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-xs uppercase tracking-widest text-amber-400 font-mono font-semibold mb-2">
-            Institutional Dialogue & Headquarters
-          </div>
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl">
             Contact DIN Pakistan Headquarters
           </h1>
@@ -80,8 +77,18 @@ export default function ContactPage() {
                   <div>
                     <div className="font-bold text-amber-300">Physical Address:</div>
                     <div className="leading-relaxed">
-                      {ORGANIZATION_DATA.headquarters.address}, {ORGANIZATION_DATA.headquarters.city}, {ORGANIZATION_DATA.headquarters.province}, Pakistan
+                      {ORGANIZATION_DATA.headquarters.address},<br />
+                      {ORGANIZATION_DATA.headquarters.city}, {ORGANIZATION_DATA.headquarters.province}, {ORGANIZATION_DATA.headquarters.country} — {ORGANIZATION_DATA.headquarters.postalCode}
                     </div>
+                    <a
+                      href={CONTACT_LINKS.map}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 mt-2 text-[11px] font-mono uppercase tracking-wider text-amber-400 hover:text-amber-300 transition-colors"
+                    >
+                      <MapPin className="w-3 h-3" />
+                      <span>Get Directions</span>
+                    </a>
                   </div>
                 </div>
 
@@ -89,8 +96,28 @@ export default function ContactPage() {
                   <Phone className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <div className="font-bold text-amber-300">Executive Contact Line:</div>
-                    <div>Office: {ORGANIZATION_DATA.headquarters.phonePrimary}</div>
-                    <div>Cell / Secretariat: {ORGANIZATION_DATA.headquarters.phoneSecondary}</div>
+                    <div>
+                      Office: <a href={CONTACT_LINKS.phonePrimary} className="hover:text-amber-400 transition-colors">{ORGANIZATION_DATA.headquarters.phonePrimary}</a>
+                    </div>
+                    <div>
+                      Cell / Secretariat: <a href={CONTACT_LINKS.phoneSecondary} className="hover:text-amber-400 transition-colors">{ORGANIZATION_DATA.headquarters.phoneSecondary}</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3 border-t border-[#253754] pt-3">
+                  <MessageCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-bold text-amber-300">WhatsApp (Fastest):</div>
+                    <a
+                      href={CONTACT_LINKS.whatsapp("Assalam-o-Alaikum! I would like to inquire about DIN Pakistan's programs.")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 mt-1 px-3 py-2 bg-[#25D366] hover:bg-[#1EBE5A] text-white text-xs font-bold uppercase tracking-wider transition-colors"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>Message {ORGANIZATION_DATA.headquarters.phonePrimary}</span>
+                    </a>
                   </div>
                 </div>
 
@@ -98,8 +125,8 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <div className="font-bold text-amber-300">Email Desks:</div>
-                    <div>General: {ORGANIZATION_DATA.headquarters.emailGeneral}</div>
-                    <div>Partnerships: {ORGANIZATION_DATA.headquarters.emailPartnerships}</div>
+                    <div className="break-all">General: <a href={CONTACT_LINKS.email} className="hover:text-amber-400 transition-colors">{ORGANIZATION_DATA.headquarters.emailGeneral}</a></div>
+                    <div className="break-all">Donations: <a href={`mailto:${ORGANIZATION_DATA.headquarters.emailPartnerships}`} className="hover:text-amber-400 transition-colors">{ORGANIZATION_DATA.headquarters.emailPartnerships}</a></div>
                   </div>
                 </div>
 
@@ -114,7 +141,7 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-2 border-t border-[#253754] text-xs font-mono text-neutral-400">
-                Executive Director: <strong className="text-white">{ORGANIZATION_DATA.executiveLeadership.executiveDirector}</strong>
+                Executive Director: <strong className="text-white">{ORGANIZATION_DATA.executiveTeam[0].name}</strong>
               </div>
             </div>
 
@@ -135,9 +162,6 @@ export default function ContactPage() {
           <div className="lg:col-span-7 bg-white p-8 sm:p-10 border border-[#E2DDD5] shadow-sm space-y-6">
             
             <div>
-              <div className="text-xs uppercase tracking-widest text-[#8C241D] font-mono font-bold mb-1">
-                Institutional Routing Form
-              </div>
               <h2 className="font-heading text-2xl font-bold text-[#152238]">
                 Send an Inquiry to DIN Executive Secretariat
               </h2>
@@ -151,7 +175,7 @@ export default function ContactPage() {
                 <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto animate-bounce" />
                 <h3 className="font-heading font-bold text-xl text-white">Inquiry Successfully Transmitted</h3>
                 <p className="text-xs text-neutral-300 max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong>{formData.name}</strong>. Your message regarding <strong>{formData.inquiryType}</strong> has been sent to <strong>dinsindh@gmail.com</strong> and logged to the Executive Secretariat.
+                  Thank you, <strong>{formData.name}</strong>. Your message regarding <strong>{formData.inquiryType}</strong> has been sent to <strong>{ORGANIZATION_DATA.headquarters.emailGeneral}</strong> and logged to the Executive Secretariat. For anything urgent, message us on WhatsApp at <a href={CONTACT_LINKS.whatsapp()} target="_blank" rel="noopener noreferrer" className="underline text-emerald-300">{ORGANIZATION_DATA.headquarters.phonePrimary}</a>.
                 </p>
                 <button
                   onClick={() => {
@@ -160,7 +184,7 @@ export default function ContactPage() {
                       name: "",
                       email: "",
                       organization: "",
-                      inquiryType: "Donor / Partnership",
+                      inquiryType: "Donor / Co-Implementation",
                       message: ""
                     });
                   }}
@@ -224,7 +248,7 @@ export default function ContactPage() {
                       onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                       className="w-full px-3 py-2.5 bg-[#FBF9F5] border border-[#E2DDD5] text-neutral-900 focus:outline-none focus:border-[#8C241D]"
                     >
-                      <option value="Donor / Partnership">Donor / Co-Implementation Proposal</option>
+                      <option value="Donor / Co-Implementation">Donor / Co-Implementation Proposal</option>
                       <option value="Government Liaison">Government / District Administration</option>
                       <option value="Community CBO">CBO Affiliation / Community Support</option>
                       <option value="Media Inquiry">Media / Research Request</option>
