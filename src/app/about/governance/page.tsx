@@ -1,7 +1,6 @@
 import React from "react";
 import OrganogramChart from "@/components/OrganogramChart";
 import { ORGANIZATION_DATA } from "@/lib/data/organization";
-import { ShieldCheck, UserCheck, Users, Briefcase } from "lucide-react";
 
 export const metadata = {
   title: "Executive Leadership & Organogram | DIN Pakistan",
@@ -31,14 +30,14 @@ export default function GovernancePage() {
           <OrganogramChart />
         </div>
 
-        {/* Executive Leadership Roster */}
+        {/* Executive Roster */}
         <div className="space-y-6">
           <div>
             <h2 className="font-heading text-2xl font-bold text-[#152238]">
-              Executive Leadership & Key Operational Team
+              Executive
             </h2>
             <p className="text-xs sm:text-sm text-neutral-600 mt-1 max-w-2xl">
-              Led by Executive Director Mujahid Bhutto alongside dedicated coordinators and officers ensuring transparent fund utilization and program integrity.
+              Led by Executive Director Mujahid Ali Bhutto alongside dedicated coordinators and officers ensuring transparent fund utilization and program integrity.
             </p>
           </div>
 

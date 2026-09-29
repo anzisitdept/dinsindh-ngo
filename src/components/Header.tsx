@@ -237,7 +237,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-semibold text-[#152238] hover:text-[#8C241D]"
             >
-              Completed Projects (18 Projects)
+              Completed Projects (15 Projects)
             </Link>
             <Link
               href="/where-we-work"

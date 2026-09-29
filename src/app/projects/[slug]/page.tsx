@@ -50,7 +50,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             className="inline-flex items-center space-x-1.5 text-xs font-mono text-amber-400 hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to All 18 Project Records</span>
+            <span>Back to All 15 Project Records</span>
           </Link>
 
           <div>

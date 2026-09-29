@@ -10,7 +10,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="w-full font-sans bg-[#FBF9F5] text-neutral-900">
-      
+
       {/* Header Banner */}
       <section className="bg-[#152238] text-white py-16 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,18 +21,15 @@ export default function AboutPage() {
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl leading-tight">
             About Development Institutions Network (DIN)
           </h1>
-          <p className="text-sm sm:text-base text-amber-200 mt-3 max-w-3xl leading-relaxed font-medium">
-            An indigenous, non-governmental, not-for-profit, and non-sectarian organization established on February 2nd, 2005 — dedicated to poverty reduction, social harmony, and basic human rights across Sindh.
-          </p>
         </div>
       </section>
 
       {/* Main Narrative Content */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-14">
-        
+
         {/* About Organization & Niche */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          
+
           {/* Main About Text */}
           <div className="lg:col-span-8 space-y-6 text-sm leading-relaxed text-neutral-700">
             <div>
@@ -68,39 +65,7 @@ export default function AboutPage() {
 
           {/* Sidebar: Niche of Organization & Navigation */}
           <div className="lg:col-span-4 space-y-6">
-            
-            {/* Niche Card */}
-            <div className="bg-[#152238] text-white p-7 border border-[#253754] shadow-md space-y-4">
-              <div className="flex items-center gap-2 text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">
-                <Compass className="w-4 h-4" />
-                <span>Niche of Organization</span>
-              </div>
-              <div className="w-12 h-1 bg-[#8C241D]" />
-              <p className="font-heading text-lg font-bold text-amber-200 leading-snug">
-                "Development and peace initiatives rooted with positive indigenous practices."
-              </p>
-            </div>
 
-            {/* Quick Actions */}
-            <div className="bg-white border border-[#E2DDD5] p-6 space-y-3">
-              <div className="font-heading font-bold text-sm text-[#152238]">
-                Explore Governance & Contact
-              </div>
-              <Link
-                href="/about/governance"
-                className="w-full inline-flex items-center justify-between px-4 py-3 bg-[#152238] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#8C241D] transition-colors"
-              >
-                <span>Executive Leadership & Organogram</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="w-full inline-flex items-center justify-between px-4 py-3 bg-[#FBF9F5] border border-[#E2DDD5] text-neutral-800 text-xs font-semibold uppercase tracking-wider hover:border-[#8C241D] transition-colors"
-              >
-                <span>Contact Headquarters</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
 
           </div>
 
@@ -108,7 +73,7 @@ export default function AboutPage() {
 
         {/* Vision & Mission Quote Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
+
           {/* Vision Block */}
           <div className="p-8 bg-[#152238] text-white border-l-4 border-amber-400 shadow-lg space-y-4">
             <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
@@ -149,7 +114,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            
+
             <div className="p-5 bg-[#FBF9F5] border border-[#E2DDD5] space-y-2">
               <div className="font-heading font-bold text-base text-[#152238]">Women & Female Youth</div>
               <p className="text-xs text-neutral-600 leading-relaxed">

@@ -29,7 +29,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-neutral-300/90 leading-relaxed max-w-md">
-              A legally registered non-profit development network operating across 18 districts of Sindh since 2000. Dedicated to rural livelihoods, interfaith peace, clean water and sanitation, alongside 40 affiliated CBOs.
+              A legally registered non-profit development network operating across 4 districts of Sindh since 2000. Dedicated to rural livelihoods, interfaith peace, clean water and sanitation, alongside 40 affiliated CBOs.
             </p>
 
             {/* Legal Badges */}

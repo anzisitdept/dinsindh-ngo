@@ -1,3 +1,5 @@
+import type { GalleryFilter } from "./gallery";
+
 export interface ProjectItem {
   id: string;
   slug: string;
@@ -16,6 +18,8 @@ export interface ProjectItem {
   keyAchivements: string[];
   beneficiaryCount: string;
   featuredImage: string;
+  featuredImages?: string[];
+  galleryCategory?: GalleryFilter;
 }
 
 export const PROJECTS_DATA: ProjectItem[] = [
@@ -41,12 +45,13 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "Electric water coolers installed at hospital facilities"
     ],
     beneficiaryCount: "25,000+ Villagers",
-    featuredImage: "/hand-pump.jpeg"
+    featuredImage: "/hand-pump.jpeg",
+    galleryCategory: "WASH & Infrastructure"
   },
   {
     id: "proj-ong-startups",
     slug: "new-business-startups-vendor-micro-enterprises",
-    title: "New Business Startups (Vegetable Carts, Fruit Carts, Fry Carts & Cabins)",
+    title: "New Business Startups (Vegetable Carts, Fruit Carts, Fry Carts & Shop Cabins)",
     status: "Ongoing",
     years: "2024–2026",
     duration: "24 Months",
@@ -64,7 +69,8 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "Micro-enterprise vendor training active across 30 Union Councils"
     ],
     beneficiaryCount: "5,000+ Family Members",
-    featuredImage: "/veg-cart.jpeg"
+    featuredImage: "/veg-cart.jpeg",
+    galleryCategory: "Business Startups"
   },
   {
     id: "proj-ong-shelter",
@@ -87,7 +93,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "Integrated sanitation blocks and water harvesting kits provided"
     ],
     beneficiaryCount: "12,500 Beneficiaries",
-    featuredImage: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1000&auto=format&fit=crop"
+    featuredImage: "/h-5.jpeg"
   },
   {
     id: "proj-ong-masjid",
@@ -110,7 +116,14 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "Roof slab, dome framework and water tank in progress"
     ],
     beneficiaryCount: "3,500 Village Residents",
-    featuredImage: "/masjid-cover.jpeg"
+    featuredImage: "/masjid-construction/masjid-1.jpeg",
+    featuredImages: [
+      "/masjid-construction/masjid-1.jpeg",
+      "/masjid-construction/masjid-2.jpeg",
+      "/masjid-construction/masjid-3.jpeg",
+      "/masjid-construction/masjid-4.jpeg"
+    ],
+    galleryCategory: "Community & Mosque"
   },
 
   // COMPLETED PROJECTS (15 items)

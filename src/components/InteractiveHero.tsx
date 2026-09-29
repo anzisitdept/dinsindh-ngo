@@ -66,43 +66,35 @@ export default function InteractiveHero() {
           </div>
 
           <aside className="lg:col-span-4">
-            <div className="bg-[#0E1726] border border-[#253754] p-6 sm:p-7">
-              <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-amber-400">
-                Signature
-              </div>
-              <div className="w-12 h-1 bg-[#8C241D] mt-2" />
+            <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-amber-400">
+              Signature
+            </div>
+            <div className="w-12 h-1 bg-[#8C241D] mt-2" />
 
-              <div className="mt-5">
-                <p className="font-heading text-lg sm:text-xl font-bold text-white">
-                  {EXECUTIVE_MESSAGE.signature.name}
-                </p>
-                <p className="text-sm text-amber-400 font-semibold mt-0.5">
-                  {EXECUTIVE_MESSAGE.signature.designation}
-                </p>
-                <p className="text-xs text-neutral-400 mt-1.5">
-                  {EXECUTIVE_MESSAGE.signature.organization}
-                </p>
-                <p className="text-xs text-neutral-500 font-mono mt-1">
-                  {EXECUTIVE_MESSAGE.signature.location}
-                </p>
-              </div>
+            <div className="mt-5">
+              <p className="font-heading text-lg sm:text-xl font-bold text-white">
+                {EXECUTIVE_MESSAGE.signature.name}
+              </p>
+              <p className="text-sm text-amber-400 font-semibold mt-0.5">
+                {EXECUTIVE_MESSAGE.signature.designation}
+              </p>
+              <p className="text-xs text-neutral-400 mt-1.5">
+                {EXECUTIVE_MESSAGE.signature.organization}
+              </p>
+              <p className="text-xs text-neutral-500 font-mono mt-1">
+                {EXECUTIVE_MESSAGE.signature.location}
+              </p>
+            </div>
 
-              <div className="mt-6 pt-5 border-t border-[#253754] space-y-2.5">
-                <Link
-                  href="/where-we-work"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#8C241D] hover:bg-[#A62F27] text-white font-bold uppercase tracking-wider text-[10px] transition-colors border border-amber-500/30"
-                >
-                  <span>View Ongoing Projects</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-amber-300" />
-                </Link>
-                <Link
-                  href="/about"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#1F2E48] hover:bg-[#2A3C5C] text-neutral-200 border border-[#374866] font-semibold uppercase tracking-wider text-[10px] transition-colors"
-                >
-                  <MapPin className="w-3.5 h-3.5 text-rose-400" />
-                  <span>About Us</span>
-                </Link>
-              </div>
+            <div className="mt-6 pt-5 border-t border-[#253754] space-y-2.5">
+              <Link
+                href="/where-we-work"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#8C241D] hover:bg-[#A62F27] text-white font-bold uppercase tracking-wider text-[10px] transition-colors border border-amber-500/30"
+              >
+                <span>View Ongoing Projects</span>
+                <ArrowRight className="w-3.5 h-3.5 text-amber-300" />
+              </Link>
+
 
             </div>
           </aside>

@@ -1,24 +1,29 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, ChevronRight, Users, ShieldCheck, UserCheck, Briefcase, Award, Layers } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
+import { ORGANIZATION_DATA } from "@/lib/data/organization";
+
+const EXECUTIVE_ROLE_HEADINGS = ["Program Coordinator", "Program Officer", "Finance & Admin"];
 
 export default function OrganogramChart() {
   const [expandedNodes, setExpandedNodes] = useState<Record<string, boolean>>({
-    "general-body": true,
-    "board": true,
-    "ed": true,
-    "programs": true,
-    "field": true
+    board: true,
+    executive: true
   });
 
   const toggleNode = (nodeId: string) => {
     setExpandedNodes((prev) => ({ ...prev, [nodeId]: !prev[nodeId] }));
   };
 
+  const board = ORGANIZATION_DATA.boardOfDirectors;
+  const executive = ORGANIZATION_DATA.executiveTeam;
+  const director = executive[0];
+  const roles = executive.filter((member) => EXECUTIVE_ROLE_HEADINGS.includes(member.name));
+
   return (
     <div className="w-full bg-[#152238] text-white p-6 sm:p-10 border border-[#2A364F] shadow-2xl font-sans">
-      
+
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-8 border-b border-[#253754]">
         <div>
@@ -31,73 +36,97 @@ export default function OrganogramChart() {
         </div>
       </div>
 
-      {/* Interactive HTML Tree Structure */}
-      <div className="space-y-6 max-w-4xl mx-auto">
-        
-        {/* Tier 1: Executive Director Section */}
-        <div className="space-y-6">
+      <div className="space-y-8 max-w-4xl mx-auto">
+
+        {/* Tier 1: Chairman & Board of Directors */}
+        <div>
           <div className="border border-[#8C241D] bg-[#1F2E48] p-5 shadow-md">
-            <div
-              onClick={() => toggleNode("ed")}
-              className="flex items-center justify-between cursor-pointer select-none"
+            <button
+              onClick={() => toggleNode("board")}
+              className="w-full flex items-center justify-between cursor-pointer select-none text-left"
+              aria-expanded={expandedNodes["board"]}
             >
               <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 bg-[#8C241D] text-white font-bold flex items-center justify-center text-sm shadow-md">
+                <div className="w-10 h-10 bg-[#8C241D] text-white font-bold flex items-center justify-center text-xs shadow-md shrink-0">
+                  BOD
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-lg text-white">
+                    Chairman &amp; Board of Directors
+                  </h4>
+                  <p className="text-xs text-amber-300">
+                    Governing Board of DIN Pakistan
+                  </p>
+                </div>
+              </div>
+              {expandedNodes["board"] ? (
+                <ChevronDown className="w-5 h-5 text-amber-400 shrink-0" />
+              ) : (
+                <ChevronRight className="w-5 h-5 text-neutral-400 shrink-0" />
+              )}
+            </button>
+          </div>
+
+          {expandedNodes["board"] && (
+            <div className="pl-6 sm:pl-10 border-l-2 border-[#8C241D] mt-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {board.map((member) => (
+                  <div
+                    key={member.name}
+                    className="p-4 bg-[#0E1726] border border-[#253754] hover:border-amber-400/40 transition-colors"
+                  >
+                    <div className="text-base font-bold text-white">{member.name}</div>
+                    <div className="text-xs text-amber-400 font-semibold mt-0.5">{member.role}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Tier 2: Executive */}
+        <div>
+          <div className="border border-[#8C241D] bg-[#1F2E48] p-5 shadow-md">
+            <button
+              onClick={() => toggleNode("executive")}
+              className="w-full flex items-center justify-between cursor-pointer select-none text-left"
+              aria-expanded={expandedNodes["executive"]}
+            >
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 bg-[#8C241D] text-white font-bold flex items-center justify-center text-sm shadow-md shrink-0">
                   ED
                 </div>
                 <div>
                   <h4 className="font-heading font-bold text-lg text-white">
-                    Executive Director & Secretariat
+                    Executive
                   </h4>
-                  <p className="text-xs text-amber-300">Mujahid Bhutto • Executive Director & Founder Trustee</p>
+                  <p className="text-xs text-amber-300">
+                    {director.name} • {director.role}
+                  </p>
                 </div>
               </div>
-              {expandedNodes["ed"] ? <ChevronDown className="w-5 h-5 text-amber-400" /> : <ChevronRight className="w-5 h-5 text-neutral-400" />}
-            </div>
+              {expandedNodes["executive"] ? (
+                <ChevronDown className="w-5 h-5 text-amber-400 shrink-0" />
+              ) : (
+                <ChevronRight className="w-5 h-5 text-neutral-400 shrink-0" />
+              )}
+            </button>
           </div>
 
-          {/* Tier 2: Executive Team Departments */}
-          {expandedNodes["ed"] && (
-            <div className="pl-6 sm:pl-10 border-l-2 border-[#8C241D] space-y-4">
+          {expandedNodes["executive"] && (
+            <div className="pl-6 sm:pl-10 border-l-2 border-[#8C241D] mt-5">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                
-                {/* Role 1: Program Coordinator */}
-                <div className="p-4 bg-[#0E1726] border border-[#253754] hover:border-amber-400/40 transition-colors">
-                  <div className="text-base font-bold text-white">Program Coordinator</div>
-                  <div className="text-xs text-amber-400 font-semibold mt-0.5">Programs & Field Operations</div>
-                  <ul className="mt-3 text-xs text-neutral-300 space-y-1.5">
-                    <li>• WASH & Infrastructure Operations Lead</li>
-                    <li>• Community Mobilization Lead</li>
-                    <li>• Program Coordination</li>
-                  </ul>
-                </div>
-
-                {/* Role 2: Program Officer */}
-                <div className="p-4 bg-[#0E1726] border border-[#253754] hover:border-amber-400/40 transition-colors">
-                  <div className="text-base font-bold text-white">Program Officer</div>
-                  <div className="text-xs text-amber-400 font-semibold mt-0.5">Project Monitoring & Execution</div>
-                  <ul className="mt-3 text-xs text-neutral-300 space-y-1.5">
-                    <li>• Field Monitoring & Reporting</li>
-                    <li>• Project Quality Assurance</li>
-                    <li>• Community Field Liaison</li>
-                  </ul>
-                </div>
-
-                {/* Role 3: Finance & Admin */}
-                <div className="p-4 bg-[#0E1726] border border-[#253754] hover:border-amber-400/40 transition-colors">
-                  <div className="text-base font-bold text-white">Finance & Admin</div>
-                  <div className="text-xs text-amber-400 font-semibold mt-0.5">Financial Compliance & Logistics</div>
-                  <ul className="mt-3 text-xs text-neutral-300 space-y-1.5">
-                    <li>• Financial Accounts & Audits</li>
-                    <li>• Procurement & Logistics</li>
-                    <li>• Donor Financial Reporting</li>
-                  </ul>
-                </div>
-
+                {roles.map((member) => (
+                  <div
+                    key={member.name}
+                    className="p-4 bg-[#0E1726] border border-[#253754] hover:border-amber-400/40 transition-colors"
+                  >
+                    <div className="text-base font-bold text-white">{member.name}</div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
-
         </div>
 
       </div>

@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Link from "next/link";
-import FilterableProjectsArchive from "@/components/FilterableProjectsArchive";
+import OngoingProjectsList from "@/components/OngoingProjectsList";
 import { CORE_OPERATING_DISTRICTS } from "@/lib/data/districts";
 import { MapPin, ArrowUpRight, Heart, FolderKanban } from "lucide-react";
 
@@ -10,14 +10,7 @@ export const metadata = {
     "Current active DIN Pakistan programmes across Shikarpur, Jacobabad, Kashmor & Kandhkot and Larkana — donor-funded multi-year projects, health infrastructure, WASH and livelihood initiatives in Upper Sindh.",
 };
 
-export default async function OngoingProjectsPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
-  const { district } = await searchParams;
-  const initialDistrict = typeof district === "string" ? district : undefined;
-
+export default function OngoingProjectsPage() {
   return (
     <div className="w-full font-sans bg-[#FBF9F5] text-neutral-900">
 
@@ -46,50 +39,37 @@ export default async function OngoingProjectsPage({
               <div className="w-16 h-1 bg-[#8C241D] mt-2" />
             </div>
             <p className="text-xs text-neutral-600 max-w-md leading-relaxed">
-              Select a district to filter the project register below.
+              Core field districts where DIN Pakistan teams are currently delivering programmes.
             </p>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            {CORE_OPERATING_DISTRICTS.map((districtInfo) => {
-              const filterTerm = districtInfo.name.split(" & ")[0];
-              const isActiveFilter =
-                initialDistrict?.toLowerCase() === filterTerm.toLowerCase();
-
-              return (
-                <Link
-                  key={districtInfo.id}
-                  href={`/where-we-work?district=${encodeURIComponent(filterTerm)}`}
-                  className={`p-4 bg-white border shadow-xs transition-colors group ${
-                    isActiveFilter
-                      ? "border-[#8C241D] ring-1 ring-[#8C241D]"
-                      : "border-[#E2DDD5] hover:border-[#8C241D]"
-                  }`}
-                >
-                  <div className="flex items-start gap-2">
-                    <MapPin className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                    <span className="font-heading font-bold text-sm sm:text-base text-[#152238] group-hover:text-[#8C241D] transition-colors leading-snug">
-                      {districtInfo.name}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-[10px] font-mono text-neutral-500 mt-2">
-                    <FolderKanban className="w-3 h-3 text-amber-600" />
-                    <span>{districtInfo.projectsCount} projects</span>
-                    <span>•</span>
-                    <span>{districtInfo.region}</span>
-                  </div>
-                </Link>
-              );
-            })}
+            {CORE_OPERATING_DISTRICTS.map((districtInfo) => (
+              <div
+                key={districtInfo.id}
+                className="p-4 bg-white border border-[#E2DDD5] shadow-xs"
+              >
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                  <span className="font-heading font-bold text-sm sm:text-base text-[#152238] leading-snug">
+                    {districtInfo.name}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-[10px] font-mono text-neutral-500 mt-2">
+                  <FolderKanban className="w-3 h-3 text-amber-600" />
+                  <span>{districtInfo.projectsCount} projects</span>
+                  <span>•</span>
+                  <span>{districtInfo.region}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Filterable Ongoing Project Register */}
+      {/* Ongoing Project Register */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <Suspense fallback={<div className="p-8 text-center text-neutral-500 font-mono">Loading Ongoing Projects...</div>}>
-          <FilterableProjectsArchive initialDistrict={initialDistrict} initialStatus="Ongoing" />
-        </Suspense>
+        <OngoingProjectsList />
       </section>
 
       {/* Support CTA */}

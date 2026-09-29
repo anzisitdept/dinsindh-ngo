@@ -136,7 +136,7 @@ export default async function ProgramDetailPage({ params }: { params: Promise<{ 
               href="/projects"
               className="text-xs font-bold uppercase tracking-wider text-[#8C241D] hover:underline mt-2 sm:mt-0"
             >
-              Browse All 18 Projects →
+              Browse All 15 Projects →
             </Link>
           </div>
 

@@ -1,10 +1,20 @@
+export type GalleryCategory =
+  | "WASH & Infrastructure"
+  | "Public Health"
+  | "Livelihoods"
+  | "Business Startups"
+  | "Fiddayah & Fitrana"
+  | "Community & Mosque";
+
+export type GalleryFilter = "All" | GalleryCategory;
+
 export interface GalleryItem {
   id: string;
   src: string;
-  category: "WASH & Infrastructure" | "Public Health" | "Livelihoods" | "Business Startups" | "Fiddayah & Fitrana" | "Community & Mosque";
+  category: GalleryCategory;
 }
 
-export const GALLERY_CATEGORIES = [
+export const GALLERY_CATEGORIES: GalleryFilter[] = [
   "All",
   "WASH & Infrastructure",
   "Public Health",
@@ -12,7 +22,11 @@ export const GALLERY_CATEGORIES = [
   "Business Startups",
   "Fiddayah & Fitrana",
   "Community & Mosque"
-] as const;
+];
+
+export function isGalleryFilter(value: string): value is GalleryFilter {
+  return (GALLERY_CATEGORIES as string[]).includes(value);
+}
 
 export const GALLERY_DATA: GalleryItem[] = [
   // WASH & INFRASTRUCTURE

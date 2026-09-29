@@ -9,12 +9,14 @@ import { Search, Filter, Calendar, MapPin, Building2, CheckCircle2, RefreshCw } 
 export default function FilterableProjectsArchive({
   initialDistrict,
   initialStatus,
+  lockStatus,
 }: {
   initialDistrict?: string;
   initialStatus?: ProjectItem["status"];
+  lockStatus?: ProjectItem["status"];
 }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedStatus, setSelectedStatus] = useState<string>(initialStatus || "All");
+  const [selectedStatus, setSelectedStatus] = useState<string>(lockStatus || initialStatus || "All");
   const [selectedProgram, setSelectedProgram] = useState<string>("All");
   const [selectedDonor, setSelectedDonor] = useState<string>("All");
   const [selectedDistrict, setSelectedDistrict] = useState<string>(initialDistrict || "All");
@@ -24,6 +26,14 @@ export default function FilterableProjectsArchive({
     []
   );
   const completedCount = PROJECTS_DATA.length - ongoingCount;
+
+  const scopedCount = useMemo(
+    () =>
+      lockStatus
+        ? PROJECTS_DATA.filter((p) => p.status === lockStatus).length
+        : PROJECTS_DATA.length,
+    [lockStatus]
+  );
 
   // Extract unique donors
   const uniqueDonors = useMemo(() => {
@@ -35,6 +45,8 @@ export default function FilterableProjectsArchive({
   // Filter projects
   const filteredProjects = useMemo(() => {
     return PROJECTS_DATA.filter((p) => {
+      if (lockStatus && p.status !== lockStatus) return false;
+
       const matchesSearch =
         searchQuery === "" ||
         p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -50,11 +62,11 @@ export default function FilterableProjectsArchive({
 
       return matchesSearch && matchesStatus && matchesProgram && matchesDonor && matchesDistrict;
     });
-  }, [searchQuery, selectedStatus, selectedProgram, selectedDonor, selectedDistrict]);
+  }, [searchQuery, selectedStatus, selectedProgram, selectedDonor, selectedDistrict, lockStatus]);
 
   const resetFilters = () => {
     setSearchQuery("");
-    setSelectedStatus(initialStatus || "All");
+    setSelectedStatus(lockStatus || initialStatus || "All");
     setSelectedProgram("All");
     setSelectedDonor("All");
     setSelectedDistrict("All");
@@ -80,7 +92,7 @@ export default function FilterableProjectsArchive({
           </div>
 
           {/* Reset button */}
-          {(selectedStatus !== "All" || selectedProgram !== "All" || selectedDonor !== "All" || selectedDistrict !== "All" || searchQuery) && (
+          {((!lockStatus && selectedStatus !== "All") || selectedProgram !== "All" || selectedDonor !== "All" || selectedDistrict !== "All" || searchQuery) && (
             <button
               onClick={resetFilters}
               className="px-4 py-2.5 bg-[#8C241D] hover:bg-[#A62F27] text-white text-xs font-semibold uppercase tracking-wider flex items-center space-x-1.5 shrink-0"
@@ -92,21 +104,23 @@ export default function FilterableProjectsArchive({
         </div>
 
         {/* Filter Chips */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs pt-2 border-t border-[#253754]">
+        <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-2 border-t border-[#253754] ${lockStatus ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           
           {/* Filter 1: Status */}
-          <div>
-            <label className="block text-amber-400 font-mono text-[10px] uppercase mb-1">Status</label>
-            <select
-              value={selectedStatus}
-              onChange={(e) => setSelectedStatus(e.target.value)}
-              className="w-full bg-[#0E1726] border border-[#253754] text-neutral-200 py-2 px-3 text-xs focus:outline-none focus:border-amber-400"
-            >
-              <option value="All">All Statuses ({PROJECTS_DATA.length} Total)</option>
-              <option value="Ongoing">Ongoing ({ongoingCount} Active)</option>
-              <option value="Completed">Completed ({completedCount} Archive)</option>
-            </select>
-          </div>
+          {!lockStatus && (
+            <div>
+              <label className="block text-amber-400 font-mono text-[10px] uppercase mb-1">Status</label>
+              <select
+                value={selectedStatus}
+                onChange={(e) => setSelectedStatus(e.target.value)}
+                className="w-full bg-[#0E1726] border border-[#253754] text-neutral-200 py-2 px-3 text-xs focus:outline-none focus:border-amber-400"
+              >
+                <option value="All">All Statuses ({PROJECTS_DATA.length} Total)</option>
+                <option value="Ongoing">Ongoing ({ongoingCount} Active)</option>
+                <option value="Completed">Completed ({completedCount} Archive)</option>
+              </select>
+            </div>
+          )}
 
           {/* Filter 2: Donor Category */}
           <div>
@@ -156,7 +170,9 @@ export default function FilterableProjectsArchive({
         </div>
 
         <div className="flex items-center justify-between text-xs text-neutral-400 font-mono pt-1">
-          <span>Showing <strong>{filteredProjects.length}</strong> of <strong>{PROJECTS_DATA.length}</strong> audited project records</span>
+          <span>
+            Showing <strong>{filteredProjects.length}</strong> of <strong>{scopedCount}</strong> audited project records
+          </span>
           <span>Legal Reg. No. 01222</span>
         </div>
       </div>
@@ -180,7 +196,7 @@ export default function FilterableProjectsArchive({
               onClick={resetFilters}
               className="mt-3 text-xs font-bold text-[#8C241D] uppercase tracking-wider underline"
             >
-              Reset Search &amp; View All {PROJECTS_DATA.length} Projects
+              Reset Search &amp; View All {scopedCount} Projects
             </button>
           </div>
         ) : (
