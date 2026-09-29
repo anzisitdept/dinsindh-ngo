@@ -16,9 +16,7 @@ export default function ProjectsPage() {
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl">
             Completed Projects List (2004–2026)
           </h1>
-          <p className="text-sm sm:text-base text-neutral-300 mt-2 max-w-2xl leading-relaxed">
-            Filterable database of completed field initiatives delivered in partnership with international donors, UN agencies, and grassroots CBO networks. Projects currently under implementation are listed separately under Ongoing Projects.
-          </p>
+
         </div>
       </section>
 

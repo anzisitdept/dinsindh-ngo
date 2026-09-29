@@ -19,11 +19,7 @@ export default function OngoingProjectsPage() {
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl">
             Ongoing Projects
           </h1>
-          <p className="text-sm sm:text-base text-neutral-300 mt-2 max-w-2xl leading-relaxed">
-            Every intervention currently running on the ground across Shikarpur, Jacobabad,
-            Kashmor &amp; Kandhkot, and Larkana — from donor-funded multi-year programmes to
-            community infrastructure built with local village committees.
-          </p>
+
         </div>
       </section>
 

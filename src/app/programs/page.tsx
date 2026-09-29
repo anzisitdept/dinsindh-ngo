@@ -13,16 +13,13 @@ export const metadata = {
 export default function ProgramsIndexPage() {
   return (
     <div className="w-full font-sans bg-[#FBF9F5] text-neutral-900">
-      
+
       {/* Header Banner */}
       <section className="bg-[#152238] text-white py-14 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl">
-            Our 3 Core Thematic Programs
+            Our Core Thematic Programs
           </h1>
-          <p className="text-sm sm:text-base text-neutral-300 mt-2 max-w-2xl leading-relaxed">
-            Delivering targeted community interventions across 18 districts of Sindh, from resilient rural livelihoods to clean water and indigenous peace restoration.
-          </p>
         </div>
       </section>
 
@@ -34,9 +31,8 @@ export default function ProgramsIndexPage() {
           return (
             <div
               key={program.slug}
-              className={`grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-white border border-[#E2DDD5] shadow-sm p-6 sm:p-10 ${
-                isEven ? "" : "lg:flex-row-reverse"
-              }`}
+              className={`grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-white border border-[#E2DDD5] shadow-sm p-6 sm:p-10 ${isEven ? "" : "lg:flex-row-reverse"
+                }`}
             >
               {/* Text Side */}
               <div className={`lg:col-span-7 space-y-5 ${isEven ? "" : "lg:order-2"}`}>
