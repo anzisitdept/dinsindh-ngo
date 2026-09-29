@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { PROJECTS_DATA } from "@/lib/data/projects";
 import OngoingProjectCardImage from "@/components/OngoingProjectCardImage";
-import { Building2, CalendarRange, Users, Images } from "lucide-react";
+import { Building2, Images } from "lucide-react";
 
 const ONGOING_PROJECTS = PROJECTS_DATA.filter((p) => p.status === "Ongoing");
 
@@ -68,26 +68,12 @@ export default function OngoingProjectsList() {
                 ))}
               </ul>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-[#E2DDD5] text-xs">
+              <div className="pt-4 border-t border-[#E2DDD5] text-xs">
                 <div className="flex items-start gap-2">
                   <Building2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                   <div>
                     <div className="text-[10px] font-mono uppercase text-neutral-500">Funding Partner</div>
                     <div className="font-semibold text-[#152238] leading-snug">{project.donor}</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CalendarRange className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                  <div>
-                    <div className="text-[10px] font-mono uppercase text-neutral-500">Duration</div>
-                    <div className="font-semibold text-[#152238] leading-snug">{project.duration}</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Users className="w-4 h-4 text-[#8C241D] shrink-0 mt-0.5" />
-                  <div>
-                    <div className="text-[10px] font-mono uppercase text-neutral-500">Beneficiaries</div>
-                    <div className="font-semibold text-[#152238] leading-snug">{project.beneficiaryCount}</div>
                   </div>
                 </div>
               </div>

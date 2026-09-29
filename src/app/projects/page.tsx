@@ -9,7 +9,7 @@ export const metadata = {
 export default function ProjectsPage() {
   return (
     <div className="w-full font-sans bg-[#FBF9F5] text-neutral-900">
-      
+
       {/* Header Banner */}
       <section className="bg-[#152238] text-white py-14 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

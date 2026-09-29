@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import OngoingProjectsList from "@/components/OngoingProjectsList";
-import { CORE_OPERATING_DISTRICTS } from "@/lib/data/districts";
-import { MapPin, ArrowUpRight, Heart, FolderKanban } from "lucide-react";
+import { ArrowUpRight, Heart } from "lucide-react";
 
 export const metadata = {
   title: "Ongoing Projects | DIN Pakistan",
@@ -25,45 +24,6 @@ export default function OngoingProjectsPage() {
             Kashmor &amp; Kandhkot, and Larkana — from donor-funded multi-year programmes to
             community infrastructure built with local village committees.
           </p>
-        </div>
-      </section>
-
-      {/* Core District Strip */}
-      <section className="bg-[#F5F3ED] border-b border-[#E2DDD5] py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
-            <div>
-              <h2 className="font-heading text-2xl font-bold text-[#152238]">
-                Districts With Active Work
-              </h2>
-              <div className="w-16 h-1 bg-[#8C241D] mt-2" />
-            </div>
-            <p className="text-xs text-neutral-600 max-w-md leading-relaxed">
-              Core field districts where DIN Pakistan teams are currently delivering programmes.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            {CORE_OPERATING_DISTRICTS.map((districtInfo) => (
-              <div
-                key={districtInfo.id}
-                className="p-4 bg-white border border-[#E2DDD5] shadow-xs"
-              >
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                  <span className="font-heading font-bold text-sm sm:text-base text-[#152238] leading-snug">
-                    {districtInfo.name}
-                  </span>
-                </div>
-                <div className="flex items-center gap-1.5 text-[10px] font-mono text-neutral-500 mt-2">
-                  <FolderKanban className="w-3 h-3 text-amber-600" />
-                  <span>{districtInfo.projectsCount} projects</span>
-                  <span>•</span>
-                  <span>{districtInfo.region}</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
