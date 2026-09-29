@@ -19,7 +19,7 @@ export default function GovernancePage() {
             Executive Leadership & Organogram
           </h1>
           <p className="text-sm text-neutral-300 mt-2 max-w-2xl">
-            DIN Pakistan maintains an agile operational hierarchy under the Executive Director, driving field relief operations, community mobilization, and project execution across 18 districts of Sindh.
+            DIN Pakistan maintains an agile operational hierarchy under the Executive Director, driving field operations, community mobilization, and project execution across 18 districts of Sindh.
           </p>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function GovernancePage() {
               Executive Leadership & Key Operational Team
             </h2>
             <p className="text-xs sm:text-sm text-neutral-600 mt-1 max-w-2xl">
-              Led by Executive Director Mujahid Bhutto alongside dedicated coordinators and officers ensuring transparent relief distribution and program integrity.
+              Led by Executive Director Mujahid Bhutto alongside dedicated coordinators and officers ensuring transparent fund utilization and program integrity.
             </p>
           </div>
 

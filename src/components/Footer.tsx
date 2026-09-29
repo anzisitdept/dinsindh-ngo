@@ -29,7 +29,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-neutral-300/90 leading-relaxed max-w-md">
-              A legally registered non-profit development network operating across 18 districts of Sindh since 2000. Dedicated to rural livelihoods, interfaith peace, maternal health, child protection, and community empowerment alongside 40 affiliated CBOs.
+              A legally registered non-profit development network operating across 18 districts of Sindh since 2000. Dedicated to rural livelihoods, interfaith peace, clean water and sanitation, alongside 40 affiliated CBOs.
             </p>
 
             {/* Legal Badges */}
@@ -55,25 +55,16 @@ export default function Footer() {
                 <Link href="/" className="hover:text-amber-400 transition-colors block py-0.5">Home</Link>
               </li>
               <li>
-                <Link href="/donate" className="hover:text-amber-400 text-amber-300 font-bold transition-colors block py-0.5">Donate Collections</Link>
-              </li>
-              <li>
                 <Link href="/about" className="hover:text-amber-400 transition-colors block py-0.5">About DIN & Story</Link>
               </li>
               <li>
                 <Link href="/about/governance" className="hover:text-amber-400 transition-colors block py-0.5">Executive Leadership & Organogram</Link>
               </li>
               <li>
-                <Link href="/about/legal" className="hover:text-amber-400 transition-colors block py-0.5">Legal & Compliance</Link>
-              </li>
-              <li>
                 <Link href="/projects" className="hover:text-amber-400 transition-colors block py-0.5">Project Archive (18 Projects)</Link>
               </li>
               <li>
-                <Link href="/where-we-work" className="hover:text-amber-400 transition-colors block py-0.5">Where We Work (Sindh Map)</Link>
-              </li>
-              <li>
-                <Link href="/partners" className="hover:text-amber-400 transition-colors block py-0.5">Our Donors & CBOs</Link>
+                <Link href="/where-we-work" className="hover:text-amber-400 transition-colors block py-0.5">Ongoing Projects</Link>
               </li>
               <li>
                 <Link href="/gallery" className="hover:text-amber-400 transition-colors block py-0.5">Field Photo Gallery</Link>
@@ -141,7 +132,7 @@ export default function Footer() {
                 className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 bg-[#8C241D] hover:bg-[#A62F27] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg hover:shadow-red-900/30 border border-amber-500/30 active:scale-95"
               >
                 <Heart className="w-4 h-4 text-rose-300 fill-rose-300 shrink-0" />
-                <span>Donate to Relief Collection</span>
+                <span>Donate Now</span>
               </Link>
             </div>
           </div>

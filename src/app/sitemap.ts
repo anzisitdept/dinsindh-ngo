@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/programs",
     "/projects",
     "/where-we-work",
-    "/partners",
     "/gallery",
     "/contact"
   ].map((route) => ({

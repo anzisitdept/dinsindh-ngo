@@ -51,8 +51,8 @@ export const ORGANIZATION_DATA = {
   },
   
   executiveTeam: [
-    { name: "Mujahid Bhutto", role: "Executive Director & Founder Trustee", bio: "Over 22 years of grassroots community development, disaster response, and indigenous rights advocacy across Upper and Lower Sindh." },
-    { name: "Program Coordinator", role: "Program Coordinator", bio: "Leads field operations, thematic program execution, CBO alignment, and emergency relief distribution." },
+    { name: "Mujahid Bhutto", role: "Executive Director & Founder Trustee", bio: "Over 22 years of grassroots community development, indigenous rights advocacy, and peacebuilding across Upper and Lower Sindh." },
+    { name: "Program Coordinator", role: "Program Coordinator", bio: "Leads field operations, thematic program execution, CBO alignment, and community outreach." },
     { name: "Program Officer", role: "Program Officer", bio: "Coordinates project implementation, field monitoring, donor reporting, and community liaison." },
     { name: "Finance & Admin", role: "Finance & Admin Officer", bio: "Manages financial compliance, audit records, procurement, and administrative operations." }
   ],

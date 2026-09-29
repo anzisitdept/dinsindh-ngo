@@ -15,6 +15,7 @@ import {
   Heart
 } from "lucide-react";
 import { ORGANIZATION_DATA, CONTACT_LINKS } from "@/lib/data/organization";
+import { PROGRAM_AREAS } from "@/lib/data/programs";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -125,26 +126,9 @@ export default function Header() {
                     <div className="font-semibold">Executive Leadership & Organogram</div>
                     <div className="text-xs text-neutral-500">Leadership team & org chart</div>
                   </Link>
-                  <Link
-                    href="/about/legal"
-                    className="block px-4 py-2.5 text-sm text-[#152238] hover:bg-[#FBF9F5] hover:text-[#8C241D] transition-colors"
-                  >
-                    <div className="font-semibold">Legal & Transparency</div>
-                    <div className="text-xs text-neutral-500">Registration, NTN & DUNS certificates</div>
-                  </Link>
                 </div>
               )}
             </div>
-
-            <Link
-              href="/donate"
-              className={`px-3 py-2 transition-colors ${isActive("/donate")
-                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                : "text-[#152238] hover:text-[#8C241D]"
-                }`}
-            >
-              Donate Collections
-            </Link>
 
             <Link
               href="/programs"
@@ -173,17 +157,7 @@ export default function Header() {
                 : "text-[#152238] hover:text-[#8C241D]"
                 }`}
             >
-              Where We Work
-            </Link>
-
-            <Link
-              href="/partners"
-              className={`px-3 py-2 transition-colors ${isActive("/partners")
-                ? "text-[#8C241D] font-bold border-b-2 border-[#8C241D]"
-                : "text-[#152238] hover:text-[#8C241D]"
-                }`}
-            >
-              Our Donors
+              Ongoing Projects
             </Link>
 
             <Link
@@ -231,14 +205,6 @@ export default function Header() {
               Home
             </Link>
 
-            <Link
-              href="/donate"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-base font-bold text-[#8C241D]"
-            >
-              Donate Collections
-            </Link>
-
             <div className="py-1">
               <span className="block text-xs uppercase font-bold tracking-widest text-[#8C241D] mb-1">About DIN</span>
               <div className="pl-3 space-y-2 border-l-2 border-[#8C241D]">
@@ -256,13 +222,6 @@ export default function Header() {
                 >
                   Executive Leadership & Organogram
                 </Link>
-                <Link
-                  href="/about/legal"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-sm text-neutral-700 hover:text-[#8C241D]"
-                >
-                  Legal Status & Tax NTN
-                </Link>
               </div>
             </div>
 
@@ -271,7 +230,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-semibold text-[#152238] hover:text-[#8C241D]"
             >
-              Programs (8 Core Pillars)
+              Programs ({PROGRAM_AREAS.length} Core Pillars)
             </Link>
             <Link
               href="/projects"
@@ -285,14 +244,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-semibold text-[#152238] hover:text-[#8C241D]"
             >
-              Where We Work (Sindh Map)
-            </Link>
-            <Link
-              href="/partners"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-base font-semibold text-[#152238] hover:text-[#8C241D]"
-            >
-              Our Donors & CBOs
+              Ongoing Projects
             </Link>
             <Link
               href="/gallery"

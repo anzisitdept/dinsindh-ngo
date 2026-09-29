@@ -66,9 +66,9 @@ export default function OrganogramChart() {
                   <div className="text-base font-bold text-white">Program Coordinator</div>
                   <div className="text-xs text-amber-400 font-semibold mt-0.5">Programs & Field Operations</div>
                   <ul className="mt-3 text-xs text-neutral-300 space-y-1.5">
-                    <li>• Relief & WASH Operations Lead</li>
+                    <li>• WASH & Infrastructure Operations Lead</li>
                     <li>• Community Mobilization Lead</li>
-                    <li>• Emergency Response Coordination</li>
+                    <li>• Program Coordination</li>
                   </ul>
                 </div>
 
@@ -89,7 +89,7 @@ export default function OrganogramChart() {
                   <div className="text-xs text-amber-400 font-semibold mt-0.5">Financial Compliance & Logistics</div>
                   <ul className="mt-3 text-xs text-neutral-300 space-y-1.5">
                     <li>• Financial Accounts & Audits</li>
-                    <li>• Relief Procurement & Logistics</li>
+                    <li>• Procurement & Logistics</li>
                     <li>• Donor Financial Reporting</li>
                   </ul>
                 </div>

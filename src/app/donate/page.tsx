@@ -49,11 +49,11 @@ export default function DonatePage() {
 
             <div className="inline-flex items-center space-x-2 bg-[#8C241D] text-amber-300 border border-amber-500/30 px-3.5 py-1.5 text-xs font-mono font-bold uppercase tracking-wider shadow-md rounded-full">
               <Heart className="w-4 h-4 text-rose-400 fill-rose-400 animate-pulse" />
-              <span>100% Direct Emergency Relief Collection</span>
+              <span>100% Direct Donation Account</span>
             </div>
 
             <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-white leading-tight">
-              Every Contribution Delivers Relief, Clean Water &amp; Health Across Sindh.
+              Every Contribution Builds Livelihoods, Clean Water &amp; Health Across Sindh.
             </h1>
 
           </div>
@@ -207,66 +207,6 @@ export default function DonatePage() {
                 <Send className="w-4 h-4" />
                 <span>Submit Donation Receipt Notice</span>
               </Link>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* 3. Step-by-Step Transparent Collection Process */}
-      <section className="bg-[#F5F3ED] py-16 border-t border-[#E2DDD5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#152238]">
-              The 4-Step Relief Collection & Distribution Cycle
-            </h2>
-            <p className="text-xs sm:text-sm text-neutral-600 mt-2">
-              Every donated rupee follows a transparent, audited pathway from collection to field delivery.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-            <div className="p-6 bg-white border border-[#E2DDD5] shadow-xs space-y-3">
-              <div className="w-10 h-10 bg-[#152238] text-amber-400 font-bold flex items-center justify-center font-mono text-sm">
-                01
-              </div>
-              <h3 className="font-heading font-bold text-base text-[#152238]">Fund Collection</h3>
-              <p className="text-xs text-neutral-600 leading-relaxed">
-                Donations are received in DIN Pakistan's official First Women Bank Limited account or registered mobile wallets with complete audit logging.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white border border-[#E2DDD5] shadow-xs space-y-3">
-              <div className="w-10 h-10 bg-[#152238] text-amber-400 font-bold flex items-center justify-center font-mono text-sm">
-                02
-              </div>
-              <h3 className="font-heading font-bold text-base text-[#152238]">Needs Assessment</h3>
-              <p className="text-xs text-neutral-600 leading-relaxed">
-                40 affiliated CBO liaisons perform field surveys in Upper & Lower Sindh to identify the most vulnerable flood-affected households.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white border border-[#E2DDD5] shadow-xs space-y-3">
-              <div className="w-10 h-10 bg-[#152238] text-amber-400 font-bold flex items-center justify-center font-mono text-sm">
-                03
-              </div>
-              <h3 className="font-heading font-bold text-base text-[#152238]">Bulk Procurement</h3>
-              <p className="text-xs text-neutral-600 leading-relaxed">
-                Emergency kits, handpumps, and shelter materials are procured at transparent wholesale pricing with vendor receipts.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white border border-[#E2DDD5] shadow-xs space-y-3">
-              <div className="w-10 h-10 bg-[#152238] text-amber-400 font-bold flex items-center justify-center font-mono text-sm">
-                04
-              </div>
-              <h3 className="font-heading font-bold text-base text-[#152238]">Field Distribution</h3>
-              <p className="text-xs text-neutral-600 leading-relaxed">
-                Relief supplies are handed over directly to beneficiaries in organized distribution camps with photo verification and reports.
-              </p>
             </div>
 
           </div>

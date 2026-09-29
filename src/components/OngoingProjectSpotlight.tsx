@@ -11,16 +11,13 @@ import {
   Building2,
   ArrowUpRight
 } from "lucide-react";
+import { FEATURED_ONGOING_INITIATIVE } from "@/lib/data/spotlightProjects";
 
 export default function OngoingProjectSpotlight() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [
-    { src: "/masjid-construction/masjid-1.jpeg", caption: "Site Preparation & Foundation Layout" },
-    { src: "/masjid-construction/masjid-2.jpeg", caption: "Structural Masonry & Wall Raising" },
-    { src: "/masjid-construction/masjid-3.jpeg", caption: "Minaret & Dome Structural Works" },
-    { src: "/masjid-construction/masjid-4.jpeg", caption: "Finishing, Flooring & Wiring" }
-  ];
+  const initiative = FEATURED_ONGOING_INITIATIVE;
+  const slides = initiative.slides;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,11 +38,11 @@ export default function OngoingProjectSpotlight() {
               <span>Current Ongoing Project</span>
             </div>
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#152238] leading-tight">
-              Construction of Bilal Jamia Masjid
+              {initiative.title}
             </h2>
             <div className="flex items-center gap-1.5 text-xs font-mono text-neutral-600 mt-2">
               <MapPin className="w-3.5 h-3.5 text-rose-600 shrink-0" />
-              <span>Village Wali Muhammad Shar, District Shikarpur, Sindh</span>
+              <span>{initiative.location}</span>
             </div>
           </div>
         </div>
@@ -56,14 +53,14 @@ export default function OngoingProjectSpotlight() {
             <HardHat className="w-5 h-5 text-amber-500 shrink-0" />
             <div>
               <div className="text-[10px] font-mono uppercase text-neutral-500">Project Status</div>
-              <div className="text-sm font-bold text-[#152238]">Under Construction</div>
+              <div className="text-sm font-bold text-[#152238]">{initiative.status}</div>
             </div>
           </div>
           <div className="bg-white p-4 flex items-start gap-3">
             <Building2 className="w-5 h-5 text-rose-600 shrink-0" />
             <div>
               <div className="text-[10px] font-mono uppercase text-neutral-500">Thematic Area</div>
-              <div className="text-sm font-bold text-[#152238]">Community Infrastructure</div>
+              <div className="text-sm font-bold text-[#152238]">{initiative.programArea}</div>
             </div>
           </div>
         </div>
@@ -144,34 +141,21 @@ export default function OngoingProjectSpotlight() {
             </div>
 
             <p className="text-sm text-neutral-700 leading-relaxed">
-              DIN Pakistan is constructing a new community Jamia Masjid at Village Wali Muhammad Shar to
-              give residents and neighbouring hamlets a permanent place of worship. The ground floor
-              doubles as a children&apos;s madrasa and a community gathering hall for welfare meetings,
-              nikah ceremonies, and relief coordination.
+              {initiative.summary}
             </p>
 
             <ul className="space-y-2.5 text-xs text-neutral-700">
-              <li className="flex items-start gap-2.5">
-                <span className="text-[#8C241D] font-bold shrink-0">01</span>
-                <span>Excavation, PCC plinth and stone masonry foundation completed.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-[#8C241D] font-bold shrink-0">02</span>
-                <span>Load-bearing walls and minaret scaffolding raised to full height.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-[#8C241D] font-bold shrink-0">03</span>
-                <span>Roof slab, dome framework and water storage tank in progress.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-[#8C241D] font-bold shrink-0">04</span>
-                <span>Sanitation block, electrical wiring and marble flooring scheduled next.</span>
-              </li>
+              {initiative.progress.map((step, index) => (
+                <li key={step} className="flex items-start gap-2.5">
+                  <span className="text-[#8C241D] font-bold shrink-0">{String(index + 1).padStart(2, "0")}</span>
+                  <span>{step}</span>
+                </li>
+              ))}
             </ul>
 
             <div className="pt-4 border-t border-[#E2DDD5]">
               <div className="text-[10px] font-mono uppercase text-neutral-500">Implementing Organization</div>
-              <div className="text-sm font-bold text-[#152238] mt-0.5">DIN Pakistan &amp; Local Village Committee</div>
+              <div className="text-sm font-bold text-[#152238] mt-0.5">{initiative.implementingBody}</div>
             </div>
 
             <Link

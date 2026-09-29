@@ -7,10 +7,14 @@ export interface DistrictInfo {
   projectsCount: number;
   activePrograms: string[];
   keyProjects: string[];
+  keyUnionCouncils?: string[];
   cboCount: number;
   description: string;
   svgPath: string;
   labelCoords: { x: number; y: number };
+  landmarkName?: string;
+  landmarkImage?: string;
+  shortKeyPoints?: string[];
 }
 
 export const SINDH_DISTRICTS: DistrictInfo[] = [
@@ -19,17 +23,24 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     name: "Shikarpur",
     region: "Upper Sindh",
     isHeadquarters: true,
-    activeProgramsCount: 8,
+    activeProgramsCount: 3,
     projectsCount: 14,
-    activePrograms: ["Peace & Harmony", "Child Rights", "Health & Disability", "Education", "WASH"],
+    activePrograms: ["Peace & Harmony", "Livelihoods", "WASH"],
     keyProjects: [
       "Provincial Headquarters & Secretariat",
       "Peace & Tolerance Cultural Caravan",
-      "Special Education Center Support",
-      "Free Eye Care & Cataract Camp"
+      "Community Water Point Construction"
     ],
+    keyUnionCouncils: ["Sultan Kot", "Garhi Yasin", "Khanpur", "Madeji"],
     cboCount: 12,
-    description: "Foundational headquarters of DIN Pakistan. Central operational base managing all community mobilization, peace building, child protection, and medical aid initiatives.",
+    description: "Foundational headquarters of DIN Pakistan. Central operational base managing all community mobilization, peace building, rural livelihoods, and clean water access.",
+    landmarkName: "Shahi Bazaar & Historic Secretariat",
+    landmarkImage: "/h-1.jpeg",
+    shortKeyPoints: [
+      "Provincial Headquarters & Command Base",
+      "Peace & Tolerance Cultural Caravan Hub",
+      "Rural Water, Sanitation & Livelihood Works"
+    ],
     svgPath: "M 200,90 L 260,85 L 270,140 L 210,145 Z",
     labelCoords: { x: 235, y: 115 }
   },
@@ -37,48 +48,88 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     id: "jacobabad",
     name: "Jacobabad",
     region: "Upper Sindh",
-    activeProgramsCount: 6,
+    activeProgramsCount: 3,
     projectsCount: 8,
-    activePrograms: ["Peace & Harmony", "Emergency Relief", "Child Rights", "WASH"],
+    activePrograms: ["Peace & Harmony", "Livelihoods", "WASH"],
     keyProjects: [
-      "Monsoon Disaster Response & Relief",
-      "Anti-Human Trafficking & Forced Marriage Prevention",
-      "FAFEN Election Observation Project"
+      "Post-Flood WASH & Shelter Recovery",
+      "Community Peace Councils & Dialogue",
+      "Voter Awareness & Legal Literacy Drive"
     ],
+    keyUnionCouncils: ["Thul", "Garhi Khairo"],
     cboCount: 6,
-    description: "Border district characterized by extreme summer temperatures and high flood risk. Focus area for emergency humanitarian response and child rights advocacy.",
+    description: "Border district characterized by extreme summer temperatures and high flood risk. Focus area for WASH infrastructure, peace building, and rural livelihoods.",
+    landmarkName: "Victoria Clock Tower & Frontier Base",
+    landmarkImage: "/h-2.jpeg",
+    shortKeyPoints: [
+      "Post-Flood Recovery & Water Access Base",
+      "WASH Clean Water & Solar Pump Stations",
+      "Legal Literacy & Rights Awareness Drive"
+    ],
     svgPath: "M 180,45 L 260,35 L 250,90 L 190,95 Z",
     labelCoords: { x: 220, y: 68 }
   },
   {
     id: "kashmor",
-    name: "Kashmor",
+    name: "Kashmor & Kandhkot",
     region: "Upper Sindh",
-    activeProgramsCount: 5,
+    activeProgramsCount: 3,
     projectsCount: 6,
-    activePrograms: ["Peace & Harmony", "Child Rights", "WASH", "Livelihoods"],
+    activePrograms: ["Peace & Harmony", "Livelihoods", "WASH"],
     keyProjects: [
       "Natak Mandli Peace Revival",
-      "Child Protection & Anti-Child Marriage Vigilance"
+      "Women Artisan & Livelihood Centers"
     ],
+    keyUnionCouncils: ["Tangwani", "Kandhkot"],
     cboCount: 5,
-    description: "Border district along the Indus riverbed. Focus on inter-tribal peace building, child rights protection, and agricultural micro-credit.",
+    description: "Border district along the Indus riverbed, with Kandhkot as a key operational union council. Focus on inter-tribal peace building, rural livelihoods, and clean water access.",
+    landmarkName: "Guddu Barrage & Indus River Basin",
+    landmarkImage: "/soler-water-wall.jpeg",
+    shortKeyPoints: [
+      "Natak Mandali Peace & Harmony Revival",
+      "Women Artisan Enterprise Network",
+      "Rural Micro-Enterprise & Livelihood Aid"
+    ],
     svgPath: "M 255,40 L 335,25 L 350,75 L 265,85 Z",
     labelCoords: { x: 300, y: 55 }
+  },
+  {
+    id: "larkana",
+    name: "Larkana",
+    region: "Upper Sindh",
+    activeProgramsCount: 2,
+    projectsCount: 5,
+    activePrograms: ["Livelihoods", "WASH"],
+    keyProjects: [
+      "Registrar of Societies Registration & Legal Anchor",
+      "Livelihood Rehabilitation & Clean Water Access"
+    ],
+    keyUnionCouncils: ["Larkana", "Mirob"],
+    cboCount: 4,
+    description: "Northern Sindh plains district where DIN holds its Societies Act registration and runs rural livelihood and clean water interventions alongside federated village committees.",
+    landmarkName: "Mohenjo-Daro UNESCO World Heritage",
+    landmarkImage: "/h-5.jpeg",
+    shortKeyPoints: [
+      "DIN Official Charter & Registration Base",
+      "Community Water Point Construction",
+      "Women's Enterprise & Skills Centers"
+    ],
+    svgPath: "M 105,40 L 175,25 L 185,80 L 115,95 Z",
+    labelCoords: { x: 145, y: 60 }
   },
   {
     id: "sukkur",
     name: "Sukkur",
     region: "Upper Sindh",
-    activeProgramsCount: 6,
+    activeProgramsCount: 2,
     projectsCount: 7,
-    activePrograms: ["Health", "Human Rights", "Peace & Harmony", "Education"],
+    activePrograms: ["Peace & Harmony", "WASH"],
     keyProjects: [
-      "Super Flood Medical Mobile Response",
-      "Democracy & Election Observation Campaign"
+      "Regional Donor Coordination Secretariat",
+      "Community Peace Councils & Dialogue"
     ],
     cboCount: 4,
-    description: "Major regional urban and logistics center. DIN coordinates regional donor meetings, election monitoring, and mobile medical camps here.",
+    description: "Major regional urban and logistics center. DIN coordinates regional donor meetings, peacebuilding forums, and water infrastructure here.",
     svgPath: "M 270,85 L 345,75 L 355,125 L 275,135 Z",
     labelCoords: { x: 310, y: 105 }
   },
@@ -86,15 +137,15 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     id: "ghotki",
     name: "Ghotki",
     region: "Upper Sindh",
-    activeProgramsCount: 5,
+    activeProgramsCount: 3,
     projectsCount: 5,
-    activePrograms: ["Livelihoods", "Human Rights", "WASH", "Peace & Harmony"],
+    activePrograms: ["Livelihoods", "Peace & Harmony", "WASH"],
     keyProjects: [
-      "FAFEN Polling Station Observation",
+      "Landless Worker Legal Literacy",
       "Rural Handpump Installation"
     ],
     cboCount: 3,
-    description: "Agricultural and industrial border district. Interventions center on landless peasant rights, voter education, and clean drinking water.",
+    description: "Industrial and canal-command border district. Interventions center on landless worker rights, community peace forums, and clean drinking water.",
     svgPath: "M 345,75 L 435,60 L 445,115 L 355,125 Z",
     labelCoords: { x: 395, y: 92 }
   },
@@ -102,15 +153,15 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     id: "khairpur",
     name: "Khairpur",
     region: "Upper Sindh",
-    activeProgramsCount: 4,
+    activeProgramsCount: 2,
     projectsCount: 5,
-    activePrograms: ["Education", "Livelihoods", "Child Rights"],
+    activePrograms: ["Livelihoods", "Peace & Harmony"],
     keyProjects: [
-      "Girls Not Brides Early Marriage Campaign",
-      "Peasant Sharecropper Legal Literacy"
+      "Community Legal Literacy & Tenancy Rights",
+      "Women Artisan Enterprise Centers"
     ],
     cboCount: 3,
-    description: "Largest agricultural date-palm district in Sindh. DIN works with tenant farmers and youth literacy groups.",
+    description: "Large inland district of date-palm groves and rural hamlets. DIN works with tenant households and women artisan groups.",
     svgPath: "M 275,135 L 365,125 L 375,200 L 285,190 Z",
     labelCoords: { x: 325, y: 162 }
   },
@@ -118,15 +169,15 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     id: "dadu",
     name: "Dadu",
     region: "Central Sindh",
-    activeProgramsCount: 5,
+    activeProgramsCount: 3,
     projectsCount: 6,
-    activePrograms: ["Emergency Relief", "Livelihoods", "Health", "WASH"],
+    activePrograms: ["Livelihoods", "Peace & Harmony", "WASH"],
     keyProjects: [
       "Post-Flood Women Livelihood Rehabilitation",
-      "Mobile Healthcare for Isolated Villages"
+      "Resilient Shelter & Water Access"
     ],
     cboCount: 3,
-    description: "Flanked by the Kirthar mountains and Manchhar lake. High flood vulnerability area requiring ongoing emergency shelter and livestock replacement.",
+    description: "Flanked by the Kirthar mountains and Manchhar lake. High flood vulnerability area requiring resilient shelter design and livestock replacement.",
     svgPath: "M 160,150 L 245,145 L 230,245 L 150,230 Z",
     labelCoords: { x: 195, y: 190 }
   },
@@ -134,12 +185,12 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     id: "naushahro-feroze",
     name: "Naushahro Feroze",
     region: "Central Sindh",
-    activeProgramsCount: 3,
+    activeProgramsCount: 1,
     projectsCount: 4,
-    activePrograms: ["Education", "Livelihoods"],
-    keyProjects: ["Closed Primary School Activation"],
+    activePrograms: ["Livelihoods"],
+    keyProjects: ["Women Livelihood & Enterprise Centers"],
     cboCount: 2,
-    description: "Central agrarian belt. Programs focus on primary education reopening and community female literacy centers.",
+    description: "Central agrarian belt. Programs focus on rural livelihoods, women enterprise groups, and community savings schemes.",
     svgPath: "M 245,190 L 305,185 L 295,250 L 235,245 Z",
     labelCoords: { x: 270, y: 215 }
   },
@@ -147,12 +198,12 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     id: "benazirabad",
     name: "Shaheed Benazirabad",
     region: "Central Sindh",
-    activeProgramsCount: 3,
+    activeProgramsCount: 1,
     projectsCount: 3,
-    activePrograms: ["Human Rights", "Education"],
-    keyProjects: ["Women CNIC Voter Registration Drive"],
+    activePrograms: ["Peace & Harmony"],
+    keyProjects: ["Women Civic Participation & Awareness Drive"],
     cboCount: 1,
-    description: "Central administrative crossroads. Support for female civic participation and local governance observation.",
+    description: "Central administrative crossroads. Support for female civic participation, legal awareness, and local governance dialogue.",
     svgPath: "M 275,245 L 345,240 L 335,310 L 265,305 Z",
     labelCoords: { x: 305, y: 275 }
   },
@@ -160,12 +211,12 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     id: "sanghar",
     name: "Sanghar",
     region: "Central Sindh",
-    activeProgramsCount: 3,
+    activeProgramsCount: 2,
     projectsCount: 3,
-    activePrograms: ["Emergency Relief", "WASH"],
-    keyProjects: ["Disaster Emergency Ration Pack Deployment"],
+    activePrograms: ["Livelihoods", "WASH"],
+    keyProjects: ["Flood-Affected Household Livelihood Recovery"],
     cboCount: 1,
-    description: "Stretches from agricultural plains to the Thar desert edge. Rapid response during monsoon emergencies.",
+    description: "Stretches from the Indus plains to the Thar desert edge. Focus on household livelihoods and community water points.",
     svgPath: "M 345,200 L 445,190 L 455,300 L 345,290 Z",
     labelCoords: { x: 395, y: 245 }
   },
@@ -173,12 +224,12 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     id: "jamshoro",
     name: "Jamshoro",
     region: "Lower Sindh",
-    activeProgramsCount: 3,
+    activeProgramsCount: 1,
     projectsCount: 2,
-    activePrograms: ["Health", "WASH"],
+    activePrograms: ["WASH"],
     keyProjects: ["Drinking Water Handpump Project"],
     cboCount: 1,
-    description: "Educational hub & hill-tract district. Technical collaboration with university researchers on water quality.",
+    description: "University and hill-tract district. Technical collaboration with university researchers on water quality.",
     svgPath: "M 150,230 L 225,225 L 205,335 L 135,315 Z",
     labelCoords: { x: 178, y: 280 }
   },
@@ -186,9 +237,9 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     id: "hyderabad",
     name: "Hyderabad",
     region: "Lower Sindh",
-    activeProgramsCount: 4,
+    activeProgramsCount: 1,
     projectsCount: 4,
-    activePrograms: ["Human Rights", "Partnerships"],
+    activePrograms: ["Peace & Harmony"],
     keyProjects: ["SPO Provincial Network Advocacy"],
     cboCount: 0,
     description: "Second largest city in Sindh. Hub for regional NGO network meetings and government dialogue.",
@@ -204,7 +255,7 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     activePrograms: ["Livelihoods"],
     keyProjects: ["Artisan Guild Crafts Marketing"],
     cboCount: 0,
-    description: "Agricultural and handicraft center. Focus on traditional Sindhi embroidery marketing.",
+    description: "Handicraft and market center. Focus on traditional Sindhi embroidery marketing.",
     svgPath: "M 275,310 L 325,305 L 315,360 L 265,360 Z",
     labelCoords: { x: 295, y: 335 }
   },
@@ -214,10 +265,10 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     region: "Lower Sindh",
     activeProgramsCount: 2,
     projectsCount: 2,
-    activePrograms: ["WASH", "Emergency Relief"],
-    keyProjects: ["Post-Flood Water Filtration Packs"],
+    activePrograms: ["WASH"],
+    keyProjects: ["Water Filtration & Handpump Works"],
     cboCount: 0,
-    description: "Low-lying riverine agricultural district vulnerable to heavy monsoon inundation.",
+    description: "Low-lying riverine district vulnerable to heavy monsoon inundation.",
     svgPath: "M 215,355 L 265,360 L 255,415 L 205,405 Z",
     labelCoords: { x: 235, y: 382 }
   },
@@ -240,8 +291,8 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     region: "Coastal / Desert Sindh",
     activeProgramsCount: 3,
     projectsCount: 3,
-    activePrograms: ["Emergency Relief", "WASH"],
-    keyProjects: ["Coastal Cyclone & Monsoon Emergency Relief"],
+    activePrograms: ["WASH"],
+    keyProjects: ["Coastal Cyclone & Monsoon Recovery"],
     cboCount: 0,
     description: "Coastal district affected by sea erosion, storm surges, and heavy monsoon flooding.",
     svgPath: "M 255,415 L 340,405 L 325,480 L 240,465 Z",
@@ -253,10 +304,10 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     region: "Coastal / Desert Sindh",
     activeProgramsCount: 3,
     projectsCount: 3,
-    activePrograms: ["Health", "Emergency Relief"],
-    keyProjects: ["Indus Delta Disaster Relief & Mobile Camps"],
+    activePrograms: ["WASH"],
+    keyProjects: ["Indus Delta Water & Sanitation Works"],
     cboCount: 0,
-    description: "Indus Delta coastal region. Mobile healthcare and clean drinking water during coastal emergencies.",
+    description: "Indus Delta coastal region. Clean drinking water and sanitation services for remote delta settlements.",
     svgPath: "M 135,345 L 205,350 L 195,445 L 120,420 Z",
     labelCoords: { x: 165, y: 395 }
   },
@@ -274,3 +325,14 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     labelCoords: { x: 100, y: 398 }
   }
 ];
+
+// The four districts DIN Pakistan actively operates field programmes in today.
+export const CORE_OPERATING_DISTRICT_IDS = ["shikarpur", "jacobabad", "kashmor", "larkana"] as const;
+
+export const CORE_OPERATING_DISTRICTS: DistrictInfo[] = CORE_OPERATING_DISTRICT_IDS.map((id) => {
+  const district = SINDH_DISTRICTS.find((d) => d.id === id);
+  if (!district) {
+    throw new Error(`CORE_OPERATING_DISTRICT_IDS references unknown district: ${id}`);
+  }
+  return district;
+});

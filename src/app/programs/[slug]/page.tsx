@@ -32,7 +32,7 @@ export default async function ProgramDetailPage({ params }: { params: Promise<{ 
             className="inline-flex items-center space-x-1.5 text-xs font-mono text-amber-400 hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to All 8 Programs</span>
+            <span>Back to All {PROGRAM_AREAS.length} Programs</span>
           </Link>
 
           <div>

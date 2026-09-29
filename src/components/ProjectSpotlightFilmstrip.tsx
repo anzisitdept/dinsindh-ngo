@@ -3,13 +3,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ArrowUpRight, Calendar, MapPin, Award, X, ZoomIn } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight, MapPin, X, ZoomIn } from "lucide-react";
+import { SPOTLIGHT_PROJECTS, SpotlightProject } from "@/lib/data/spotlightProjects";
 
 export default function ProjectSpotlightFilmstrip() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Modal Popup state
-  const [activeModalProject, setActiveModalProject] = useState<any | null>(null);
+  const [activeModalProject, setActiveModalProject] = useState<SpotlightProject | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   // Close modal on ESC key
@@ -31,142 +32,6 @@ export default function ProjectSpotlightFilmstrip() {
     };
   }, [activeModalProject]);
 
-  // Custom Spotlight Projects List with image gallery arrays
-  const spotlightProjects = [
-    {
-      id: "spot-1",
-      title: "Ambulance Donated to BHU Haji Khuwasti District Shikarpur",
-      district: "District Shikarpur",
-      programTitle: "Emergency Health Relief",
-      donor: "DIN Pakistan Donor Support",
-      summary: "Emergency medical transfer vehicle donated to Basic Health Unit (BHU) Haji Khuwasti to ensure immediate 24/7 life-saving patient transport for rural villagers.",
-      beneficiaryCount: "25,000+ Villagers",
-      featuredImage: "/amb.jpeg",
-      gallery: ["/ambulance/1.jpeg", "/ambulance/2.jpeg", "/ambulance/3.jpeg", "/ambulance/4.jpeg", "/ambulance/5.jpeg"],
-      slug: "ambulance-donated-bhu-haji-khuwasti"
-    },
-    {
-      id: "spot-incubators",
-      title: "Provision and Installation of Incubators",
-      district: "District Shikarpur Healthcare Facilities",
-      programTitle: "Healthcare & Neonatal Life-Support",
-      donor: "Muslim Charity Pakistan & DIN",
-      summary: "Provision and installation of specialized medical infant incubators at public healthcare facilities to support vulnerable newborns and reduce infant mortality.",
-      beneficiaryCount: "1,200+ Newborn Infants & Mothers",
-      featuredImage: "/incubators.jpeg",
-      gallery: ["/incubators/1.jpeg", "/incubators/2.jpeg", "/incubators/3.jpeg", "/incubators/4.jpeg", "/incubators/5.jpeg", "/incubators/6.jpeg"],
-      slug: "provision-installation-incubators"
-    },
-    {
-      id: "spot-2",
-      title: "Installation of Electric Water Cooler at RBUT Hospital District Shikarpur",
-      district: "District Shikarpur",
-      programTitle: "Public WASH & Healthcare",
-      donor: "Community Welfare Support",
-      summary: "Installing heavy-duty electric water cooling filtration units at Rai Bahadur Udhavdas Tarachand (RBUT) Civil Hospital to serve daily patients & visitors.",
-      beneficiaryCount: "1,500+ Daily Patients",
-      featuredImage: "/water-cooler.jpeg",
-      gallery: ["/water-cooler/1.jpeg", "/water-cooler/2.jpeg", "/water-cooler/3.jpeg", "/water-cooler/4.jpeg", "/water-cooler/5.jpeg", "/water-cooler/6.jpeg"],
-      slug: "electric-water-cooler-rbut-hospital"
-    },
-    {
-      id: "spot-3",
-      title: "Construction of Solar Water Well",
-      district: "Rural Sindh",
-      programTitle: "Clean Water Infrastructure",
-      donor: "DIN Water Relief Drive",
-      summary: "Installing solar-powered deep water tubewells to provide reliable, zero-carbon clean drinking water access for remote off-grid communities.",
-      beneficiaryCount: "3,200+ Household Members",
-      featuredImage: "/soler-water-wall.jpeg",
-      gallery: ["/soler-water-wall/1.jpeg", "/soler-water-wall/2.jpeg", "/soler-water-wall/3.jpeg", "/soler-water-wall/4.jpeg", "/soler-water-wall/5.jpeg"],
-      slug: "construction-solar-water-well"
-    },
-    {
-      id: "spot-handpump",
-      title: "Installation of Hand Pump",
-      district: "Rural Sindh Villages",
-      programTitle: "WASH & Clean Drinking Water",
-      donor: "Muslim Charity & DIN Pakistan",
-      summary: "Installing communal deep water handpumps to provide safe, accessible drinking water for unserved rural village households.",
-      beneficiaryCount: "2,500+ Rural Villagers",
-      featuredImage: "/hand-pump.jpeg",
-      gallery: ["/hand-pump/1.jpeg", "/hand-pump/2.jpeg", "/hand-pump/3.jpeg", "/hand-pump/4.jpeg", "/hand-pump/5.jpeg", "/hand-pump/6.jpeg"],
-      slug: "installation-communal-hand-pump"
-    },
-    {
-      id: "spot-4",
-      title: "Vegetable Cart Business Start-Up Project (Livelihood)",
-      district: "Shikarpur & Surrounding UC",
-      programTitle: "Livelihood & Economic Aid",
-      donor: "Livelihood Empowerment Fund",
-      summary: "Providing customized mobile vegetable push-carts, fresh produce inventory, and micro-business toolkits to empower deserving individuals with sustainable daily earning opportunities.",
-      beneficiaryCount: "450+ Local Vendors",
-      featuredImage: "/veg-cart.jpeg",
-      gallery: ["/veg-cart.jpeg"],
-      slug: "new-business-startup-livelihood"
-    },
-    {
-      id: "spot-fruit-cart",
-      title: "Fruit Cart Business Start-Up (Livelihood)",
-      district: "Shikarpur & Surrounding UC",
-      programTitle: "Livelihood & Economic Aid",
-      donor: "Livelihood Empowerment Fund",
-      summary: "Providing customized mobile fruit push-carts, seasonal fresh fruit inventory, and micro-enterprise toolkits to empower local vendors with sustainable daily income.",
-      beneficiaryCount: "Local Fruit Vendors",
-      featuredImage: "/f-cart-1.jpeg",
-      gallery: ["/f-cart-2.jpeg", "/f-cart-3.jpeg"],
-      slug: "fruit-cart-business-startup"
-    },
-    {
-      id: "spot-5",
-      title: "Fiddayah & Fitrana Distribution",
-      district: "Flood & Poverty Vulnerable Areas",
-      programTitle: "Emergency Food Security",
-      donor: "Disaster Relief Drive",
-      summary: "Distributing comprehensive monthly food ration packages containing essential flour, cooking oil, pulses, and nutrition items to deserving families.",
-      beneficiaryCount: "5,000+ Families",
-      featuredImage: "/fidaya.jpeg",
-      gallery: ["/Fiddaya & Fitna/1.jpeg", "/Fiddaya & Fitna/2.jpeg", "/Fiddaya & Fitna/3.jpeg", "/Fiddaya & Fitna/4.jpeg", "/Fiddaya & Fitna/5.jpeg", "/Fiddaya & Fitna/6.jpeg", "/Fiddaya & Fitna/7.jpeg", "/Fiddaya & Fitna/8.jpeg"],
-      slug: "ration-distribution-needy-people"
-    },
-    {
-      id: "spot-6",
-      title: "Inauguration of Jamia Masjid",
-      district: "Rural Sindh Community Center",
-      programTitle: "Community Infrastructure",
-      donor: "Local & Donor Philanthropy",
-      summary: "Constructing and opening a community Jamia Masjid center to serve as a hub for local spiritual worship, social gatherings, and community unity.",
-      beneficiaryCount: "Local Village Community",
-      featuredImage: "/masjid-cover.jpeg",
-      gallery: ["/masjid-construction/1.jpeg", "/masjid-construction/2.jpeg", "/masjid-construction/3.jpeg", "/masjid-construction/4.jpeg", "/masjid-construction/5.jpeg", "/masjid-construction/6.jpeg", "/masjid-construction/7.jpeg", "/masjid-construction/8.jpeg"],
-      slug: "inauguration-jamia-masjid"
-    },
-    {
-      id: "spot-7",
-      title: "Chips Fries Cart Start-Up (Livelihood)",
-      district: "District Shikarpur & Rural UCs",
-      programTitle: "Livelihood & Micro-Enterprise",
-      donor: "Livelihood Support Program",
-      summary: "Providing equipped mobile french-fry and snacks push-carts with cooking equipment and starter supplies to enable sustainable daily micro-enterprise earnings.",
-      beneficiaryCount: "Local Micro-Entrepreneurs",
-      featuredImage: "/chips-fries.jpeg",
-      gallery: ["/chips-fries.jpeg"],
-      slug: "chips-fries-cart-startup"
-    },
-    {
-      id: "spot-8",
-      title: "Confectionery Cabin Start-Up (Livelihood)",
-      district: "District Shikarpur & Surrounding Areas",
-      programTitle: "Livelihood & Micro-Enterprise",
-      donor: "Livelihood Support Program",
-      summary: "Establishing roadside confectionery cabins stocked with retail snacks and goods to empower vulnerable heads of households with stable daily income.",
-      beneficiaryCount: "Micro-Retail Vendors",
-      featuredImage: "/cabin.jpeg",
-      gallery: ["/cabin.jpeg"],
-      slug: "confectionery-cabin-startup"
-    }
-  ];
-
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
       const scrollAmount = direction === "left" ? -420 : 420;
@@ -174,7 +39,7 @@ export default function ProjectSpotlightFilmstrip() {
     }
   };
 
-  const openProjectGallery = (project: any) => {
+  const openProjectGallery = (project: SpotlightProject) => {
     setActiveModalProject(project);
     setActiveImageIndex(0);
   };
@@ -225,7 +90,7 @@ export default function ProjectSpotlightFilmstrip() {
           className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-6"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {spotlightProjects.map((project) => (
+          {SPOTLIGHT_PROJECTS.map((project) => (
             <div
               key={project.id}
               className="shrink-0 w-[320px] sm:w-[380px] lg:w-[420px] bg-white border border-[#E2DDD5] shadow-sm snap-start group flex flex-col justify-between"

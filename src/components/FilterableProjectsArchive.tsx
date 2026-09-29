@@ -3,14 +3,27 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { PROJECTS_DATA, ProjectItem } from "@/lib/data/projects";
+import { PROGRAM_AREAS } from "@/lib/data/programs";
 import { Search, Filter, Calendar, MapPin, Building2, CheckCircle2, RefreshCw } from "lucide-react";
 
-export default function FilterableProjectsArchive({ initialDistrict }: { initialDistrict?: string }) {
+export default function FilterableProjectsArchive({
+  initialDistrict,
+  initialStatus,
+}: {
+  initialDistrict?: string;
+  initialStatus?: ProjectItem["status"];
+}) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedStatus, setSelectedStatus] = useState<string>("All");
+  const [selectedStatus, setSelectedStatus] = useState<string>(initialStatus || "All");
   const [selectedProgram, setSelectedProgram] = useState<string>("All");
   const [selectedDonor, setSelectedDonor] = useState<string>("All");
   const [selectedDistrict, setSelectedDistrict] = useState<string>(initialDistrict || "All");
+
+  const ongoingCount = useMemo(
+    () => PROJECTS_DATA.filter((p) => p.status === "Ongoing").length,
+    []
+  );
+  const completedCount = PROJECTS_DATA.length - ongoingCount;
 
   // Extract unique donors
   const uniqueDonors = useMemo(() => {
@@ -41,7 +54,7 @@ export default function FilterableProjectsArchive({ initialDistrict }: { initial
 
   const resetFilters = () => {
     setSearchQuery("");
-    setSelectedStatus("All");
+    setSelectedStatus(initialStatus || "All");
     setSelectedProgram("All");
     setSelectedDonor("All");
     setSelectedDistrict("All");
@@ -89,9 +102,9 @@ export default function FilterableProjectsArchive({ initialDistrict }: { initial
               onChange={(e) => setSelectedStatus(e.target.value)}
               className="w-full bg-[#0E1726] border border-[#253754] text-neutral-200 py-2 px-3 text-xs focus:outline-none focus:border-amber-400"
             >
-              <option value="All">All Statuses (18 Total)</option>
-              <option value="Ongoing">Ongoing (3 Active)</option>
-              <option value="Completed">Completed (15 Archive)</option>
+              <option value="All">All Statuses ({PROJECTS_DATA.length} Total)</option>
+              <option value="Ongoing">Ongoing ({ongoingCount} Active)</option>
+              <option value="Completed">Completed ({completedCount} Archive)</option>
             </select>
           </div>
 
@@ -119,15 +132,12 @@ export default function FilterableProjectsArchive({ initialDistrict }: { initial
               onChange={(e) => setSelectedProgram(e.target.value)}
               className="w-full bg-[#0E1726] border border-[#253754] text-neutral-200 py-2 px-3 text-xs focus:outline-none focus:border-amber-400"
             >
-              <option value="All">All 8 Thematic Programs</option>
-              <option value="WASH & Community Infrastructure">WASH & Infrastructure</option>
-              <option value="Peace & Interfaith Harmony">Peace & Interfaith Harmony</option>
-              <option value="Livelihoods & Food Security">Livelihoods & Food Security</option>
-              <option value="Emergency Response & Relief">Emergency Relief</option>
-              <option value="Child Protection & Rights">Child Protection & Rights</option>
-              <option value="Human Rights & Civic Empowerment">Human Rights</option>
-              <option value="Education & Literacy Revival">Education Revival</option>
-              <option value="Public Health & Maternal Care">Public Health</option>
+              <option value="All">All {PROGRAM_AREAS.length} Thematic Programs</option>
+              {PROGRAM_AREAS.map((program) => (
+                <option key={program.slug} value={program.title}>
+                  {program.shortTitle}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -170,7 +180,7 @@ export default function FilterableProjectsArchive({ initialDistrict }: { initial
               onClick={resetFilters}
               className="mt-3 text-xs font-bold text-[#8C241D] uppercase tracking-wider underline"
             >
-              Reset Search & View All 18 Projects
+              Reset Search &amp; View All {PROJECTS_DATA.length} Projects
             </button>
           </div>
         ) : (

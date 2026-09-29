@@ -14,7 +14,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
     name: "Save the Children International",
     category: "Donor & UN Agency",
     acronym: "SCI",
-    description: "International humanitarian organization collaborating with DIN on child protection, Child-Friendly Safe Spaces, and emergency relief.",
+    description: "International humanitarian organization collaborating with DIN on child safeguarding, community safe spaces, and protection awareness.",
     logoText: "Save the Children",
     projectsCollaborated: 4
   },
@@ -50,7 +50,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
     name: "ACTED International",
     category: "Donor & UN Agency",
     acronym: "ACTED",
-    description: "French international NGO providing disaster emergency shelter kits and rapid flood response assistance.",
+    description: "French international NGO supporting WASH infrastructure, shelter construction, and rapid post-flood recovery assistance.",
     logoText: "ACTED France",
     projectsCollaborated: 2
   },
@@ -59,7 +59,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
     name: "Muslim Charity UK",
     category: "Donor & UN Agency",
     acronym: "MC UK",
-    description: "UK-based international relief agency supporting maternal health clinics and flood-affected women livelihood toolkits.",
+    description: "UK-based international development agency supporting women enterprise centers and rural livelihood toolkits.",
     logoText: "Muslim Charity UK",
     projectsCollaborated: 3
   },
@@ -70,15 +70,6 @@ export const PARTNERS_DATA: PartnerItem[] = [
     acronym: "BBSYDP",
     description: "Benazir Bhutto Shaheed Youth Development Program, Department of Youth Affairs, Government of Sindh.",
     logoText: "Govt of Sindh BBSYDP",
-    projectsCollaborated: 2
-  },
-  {
-    id: "sef",
-    name: "Sindh Education Foundation (SEF)",
-    category: "Government Institution",
-    acronym: "SEF",
-    description: "Government of Sindh autonomous body supporting the reactivation of closed rural primary schools and community literacy centers.",
-    logoText: "Sindh Education Foundation",
     projectsCollaborated: 2
   },
   {
@@ -104,7 +95,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
     name: "Strengthening Participatory Organization (SPO)",
     category: "National & International Network",
     acronym: "SPO",
-    description: "National rights-based NGO collaborating with DIN on Hari sharecropper rights and women's political empowerment.",
+    description: "National rights-based NGO collaborating with DIN on Hari sharecropper rights and women's legal awareness.",
     logoText: "SPO Sindh",
     projectsCollaborated: 3
   },
