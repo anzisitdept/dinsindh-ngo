@@ -14,35 +14,123 @@ export interface ProgramArea {
 
 export const PROGRAM_AREAS: ProgramArea[] = [
   {
-    slug: "livelihoods-food-security",
-    title: "Livelihoods & Food Security",
-    shortTitle: "Livelihoods",
-    tagline: "Restoring sustainable rural income, vocational micro-enterprises, and resilient rural assets.",
+    slug: "livelihoods-new-business-startups",
+    title: "Livelihoods & New Business Startups",
+    shortTitle: "Business Startups",
+    tagline: "Empowering vulnerable families with micro-business push-carts, retail cabins, and vendor toolkits.",
     iconName: "Briefcase",
-    description: "Empowering landless households, women artisans, and vulnerable rural families with productive livestock, micro-enterprise toolkits, and climate-resilient income techniques.",
-    longDescription: "DIN's Livelihoods program addresses economic vulnerability across northern and central Sindh. In partnership with Save the Children, ACTED, and TVO, DIN has established livestock starter packs, vocational sewing & embroidery centers for women, and small shop starter kits. We emphasize sustainable rural asset creation, market linkages for indigenous artisans, and community savings groups.",
+    description: "Providing customized mobile vegetable push-carts, fruit carts, french-fry carts, retail confectionery cabins, and trade starter packages to enable sustainable daily micro-enterprise earnings.",
+    longDescription: "DIN's Livelihoods & Business Startups program addresses rural unemployment and income vulnerability across Sindh. We equip deserving heads of households, widowed women, and young entrepreneurs with mobile push-carts (vegetable, fruit, chips/fries) and roadside retail cabins stocked with starter inventory. This creates immediate self-reliance and daily cash flow for poverty-stricken families.",
     keyPillars: [
-      "Livestock asset distribution for landless women",
-      "Vocational training & micro-shop starter toolkits",
-      "Climate-resilient rural enterprise & market linkages",
-      "CBO-led micro-credit & village savings groups"
+      "Mobile vegetable & fruit push-cart business packages",
+      "Confectionery & retail cabin startup installations",
+      "French-fry & snack cart micro-enterprise toolkits",
+      "Financial literacy & vendor micro-enterprise training"
     ],
     activeDistricts: ["Shikarpur", "Jacobabad", "Kashmor", "Sukkur", "Ghotki", "Khairpur"],
     impactStats: [
-      { label: "Families Supported", value: "8,500+" },
-      { label: "Women Micro-shops", value: "450+" },
-      { label: "Livestock Units Handed Over", value: "1,200+" }
+      { label: "Vendor Startups Created", value: "650+" },
+      { label: "Retail Cabins Established", value: "180+" },
+      { label: "Daily Earnings Increased", value: "300%" }
     ],
-    featuredImage: "https://images.unsplash.com/photo-1590682680695-43b964a3ae17?q=80&w=1200&auto=format&fit=crop"
+    featuredImage: "/veg-cart.jpeg"
+  },
+  {
+    slug: "shelter-resilient-housing",
+    title: "Shelter & 2-Room Housing Construction",
+    shortTitle: "2-Room Shelters",
+    tagline: "Constructing low-cost 2-room flood-resistant shelters and durable housing for climate-vulnerable families.",
+    iconName: "Home",
+    description: "Building durable 2-room climate-resilient shelters, elevated foundations, and weather-proof brick housing for low-income rural households displaced by heavy monsoon inundation.",
+    longDescription: "Extreme weather events in Upper Sindh regularly destroy mud-brick rural homes. DIN's Shelter & Resilient Housing initiative builds low-cost 2-room disaster-resistant houses with reinforced plinths, brick walls, and weather-sealed roofs. Every housing unit is planned alongside village committees to ensure safety, dignity, and privacy for vulnerable families.",
+    keyPillars: [
+      "Construction of low-cost 2-room climate shelters",
+      "Elevated flood-resistant plinth & brick masonry",
+      "Latrine & sanitation block integration",
+      "Community-led shelter beneficiary selection"
+    ],
+    activeDistricts: ["Shikarpur", "Jacobabad", "Kashmor", "Larkana", "Dadu"],
+    impactStats: [
+      { label: "2-Room Shelters Built", value: "420+" },
+      { label: "Families Housed", value: "2,800+" },
+      { label: "Flood Resilience", value: "100%" }
+    ],
+    featuredImage: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    slug: "disaster-response-climate-relief",
+    title: "Disaster Risk Reduction & Emergency Relief",
+    shortTitle: "Disaster Relief",
+    tagline: "Rapid emergency flood response, Fiddayah food ration packs, and emergency disaster recovery.",
+    iconName: "ShieldAlert",
+    description: "Delivering immediate disaster relief packages, monthly food ration drives (Fiddayah & Fitrana), emergency drinking water kits, and post-monsoon flood recovery for affected hamlets.",
+    longDescription: "DIN Pakistan maintains rapid-response disaster relief mechanisms across border districts of Sindh. During monsoon emergencies and climate crises, DIN mobilizes food ration drives containing flour, oil, pulses, and hygiene kits, alongside emergency medical relief camps and clean water support.",
+    keyPillars: [
+      "Emergency Fiddayah & Fitrana food ration pack drives",
+      "Monsoon flood rescue & emergency relief camps",
+      "Clean water container & hygiene pack distribution",
+      "Disaster Risk Reduction (DRR) village committees"
+    ],
+    activeDistricts: ["Shikarpur", "Jacobabad", "Kashmor", "Dadu", "Sukkur"],
+    impactStats: [
+      { label: "Ration Packs Distributed", value: "12,000+" },
+      { label: "Flood Victims Assisted", value: "45,000+" },
+      { label: "Emergency Response Camps", value: "95+" }
+    ],
+    featuredImage: "/fidaya.jpeg"
+  },
+  {
+    slug: "disability-inclusion-rehabilitation",
+    title: "Disability Inclusion & Special Rehabilitation",
+    shortTitle: "Disability Aid",
+    tagline: "Promoting basic rights, assistive toolkits, and accessible infrastructure for PWDs and especially-abled groups.",
+    iconName: "HeartHandshake",
+    description: "Supporting Persons with Disabilities (PWDs) and especially-abled individuals through specialized education centers, wheelchair & assistive device distribution, and accessible community infrastructure.",
+    longDescription: "Especially-abled individuals face severe social exclusion and physical barriers in rural Sindh. DIN prioritizes PWD inclusion by supporting special education centers, installing accessible handpumps and ramps, providing vocational trade toolkits, and advocating for equal human rights and dignity.",
+    keyPillars: [
+      "Support for special education & rehabilitation centers",
+      "Assistive device & mobility toolkit distribution",
+      "Accessible WASH handpumps & ramp construction",
+      "Paralegal rights advocacy for PWDs & minorities"
+    ],
+    activeDistricts: ["Shikarpur", "Jacobabad", "Kashmor", "Larkana", "Sukkur"],
+    impactStats: [
+      { label: "PWDs Supported", value: "1,400+" },
+      { label: "Assistive Devices Given", value: "350+" },
+      { label: "Accessible Water Points", value: "120+" }
+    ],
+    featuredImage: "/incubators.jpeg"
+  },
+  {
+    slug: "water-sanitation-infrastructure",
+    title: "WASH & Clean Water Facilities",
+    shortTitle: "WASH & Clean Water",
+    tagline: "Installing communal hand pumps, solar water wells, electric water coolers, and sanitation units.",
+    iconName: "Droplets",
+    description: "Installing deep hand pumps, solar-powered tubewells, heavy-duty electric water coolers at hospitals, and public sanitation latrines for unserved rural communities.",
+    longDescription: "Access to clean drinking water is a basic human right. DIN constructs communal deep hand pumps, solar filtration wells, and hospital electric water cooling units to protect rural children and mothers from waterborne diseases.",
+    keyPillars: [
+      "Deep communal hand pump installation in hamlets",
+      "Solar-powered deep water tubewell construction",
+      "Electric water cooler installation at hospitals (RBUT)",
+      "Public sanitation latrines & open-defecation-free drives"
+    ],
+    activeDistricts: ["Shikarpur", "Jacobabad", "Kashmor", "Ghotki", "Sukkur"],
+    impactStats: [
+      { label: "Hand Pumps Installed", value: "520+" },
+      { label: "Solar Wells Operational", value: "45+" },
+      { label: "Clean Water Beneficiaries", value: "75,000+" }
+    ],
+    featuredImage: "/hand-pump.jpeg"
   },
   {
     slug: "peace-and-harmony",
     title: "Peace & Interfaith Harmony",
     shortTitle: "Peace & Harmony",
     tagline: "Reviving indigenous cultural traditions and cross-community dialogue to prevent conflict in Sindh.",
-    iconName: "HeartHandshake",
+    iconName: "Heart",
     description: "Fostering communal cohesion, interfaith dialogue, and peaceful conflict resolution by reviving indigenous folk theater (Natak Mandali) and youth peace councils across multi-religious districts.",
-    longDescription: "Sindh has historically been a land of Sufi tolerance and pluralism. Through initiatives funded by DAI-USAID and DTCE/UNDP, DIN revives traditional 'Natak Mandli' street theater troupes as powerful instruments for peacebuilding, social cohesion, and anti-extremism awareness in Shikarpur and surrounding districts. We bring together Muslim, Hindu, and minority community leaders in localized peace committees.",
+    longDescription: "Sindh has historically been a land of Sufi tolerance and pluralism. Through initiatives funded by DAI-USAID and DTCE/UNDP, DIN revives traditional 'Natak Mandli' street theater troupes as powerful instruments for peacebuilding, social cohesion, and anti-extremism awareness.",
     keyPillars: [
       "Revival of traditional Natak Mandali street theater",
       "Interfaith peace committees & dialogue forums",
@@ -56,28 +144,6 @@ export const PROGRAM_AREAS: ProgramArea[] = [
       { label: "Audience Reached", value: "45,000+" }
     ],
     featuredImage: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    slug: "water-sanitation-infrastructure",
-    title: "WASH & Community Infrastructure",
-    shortTitle: "WASH & Infrastructure",
-    tagline: "Installing deep water pumps, community latrines, and disaster-resilient shelter construction.",
-    iconName: "Droplets",
-    description: "Constructing safe drinking water installations, solar-powered deep wells, low-cost disaster-resistant housing units, and village sanitation facilities.",
-    longDescription: "Clean drinking water access remains a major health crisis in rural Sindh where groundwater is often saline or contaminated. DIN constructs communal hand-pumps, solar-powered filtration pumps, public sanitation latrines, and resilient single-room shelter units for low-income rural households.",
-    keyPillars: [
-      "Installation of deep communal hand-pumps & solar wells",
-      "Low-cost flood-resistant shelter construction",
-      "Public sanitation latrines & open-defecation-free campaigns",
-      "Community WASH committee formation & maintenance"
-    ],
-    activeDistricts: ["Shikarpur", "Jacobabad", "Kashmor", "Ghotki", "Tharparkar"],
-    impactStats: [
-      { label: "Hand-pumps Installed", value: "480+" },
-      { label: "Shelter Units Built", value: "350+" },
-      { label: "People with Clean Water", value: "65,000+" }
-    ],
-    featuredImage: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1200&auto=format&fit=crop"
   }
 ];
 

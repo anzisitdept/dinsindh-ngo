@@ -42,7 +42,13 @@ const FIELD_SLIDES: FieldSlide[] = [
     image: "/h-5.jpeg",
     alt: "DIN Pakistan livelihood support activity",
     caption: "Livelihood & micro-enterprise support"
-  }
+  },
+  {
+    id: "field-6",
+    image: "/h-6.jpeg",
+    alt: "DIN Pakistan clean water intervention",
+    caption: "Clean water infrastructure for unserved villages"
+  },
 ];
 
 const AUTOPLAY_MS = 6000;
@@ -83,7 +89,7 @@ export default function FieldGalleryStrip() {
               <span>In The Field</span>
             </div>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white mt-2">
-              Life On The Ground, Across Sindh
+              Across District Areas
             </h2>
           </div>
 
@@ -123,9 +129,8 @@ export default function FieldGalleryStrip() {
           {FIELD_SLIDES.map((slide, idx) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                idx === current ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${idx === current ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
               aria-hidden={idx !== current}
             >
               <Image
@@ -146,9 +151,8 @@ export default function FieldGalleryStrip() {
             <button
               key={slide.id}
               onClick={() => go(idx)}
-              className={`h-1.5 rounded-full transition-all ${
-                idx === current ? "w-7 bg-[#C68E2B]" : "w-1.5 bg-neutral-600 hover:bg-neutral-400"
-              }`}
+              className={`h-1.5 rounded-full transition-all ${idx === current ? "w-7 bg-[#C68E2B]" : "w-1.5 bg-neutral-600 hover:bg-neutral-400"
+                }`}
               aria-label={`Go to photo ${idx + 1}: ${slide.caption}`}
               aria-current={idx === current}
             />

@@ -13,7 +13,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24 sm:pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
-          
+
           {/* Column 1: Org Profile & Legal Verification */}
           <div className="sm:col-span-2 lg:col-span-4 space-y-5">
             <div className="flex items-center">
@@ -45,54 +45,56 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Navigation */}
-          <div className="sm:col-span-1 lg:col-span-3">
-            <h4 className="font-heading font-semibold text-white text-sm tracking-widest uppercase mb-4 border-b border-[#253754] pb-2">
-              Navigation
-            </h4>
-            <ul className="space-y-2 text-xs text-neutral-300">
-              <li>
-                <Link href="/" className="hover:text-amber-400 transition-colors block py-0.5">Home</Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-amber-400 transition-colors block py-0.5">About DIN & Story</Link>
-              </li>
-              <li>
-                <Link href="/about/governance" className="hover:text-amber-400 transition-colors block py-0.5">Executive Leadership & Organogram</Link>
-              </li>
-              <li>
-                <Link href="/projects" className="hover:text-amber-400 transition-colors block py-0.5">Project Archive (18 Projects)</Link>
-              </li>
-              <li>
-                <Link href="/where-we-work" className="hover:text-amber-400 transition-colors block py-0.5">Ongoing Projects</Link>
-              </li>
-              <li>
-                <Link href="/gallery" className="hover:text-amber-400 transition-colors block py-0.5">Field Photo Gallery</Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-amber-400 transition-colors block py-0.5">Contact Headquarters</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Core Programs */}
-          <div className="sm:col-span-1 lg:col-span-2">
-            <h4 className="font-heading font-semibold text-white text-sm tracking-widest uppercase mb-4 border-b border-[#253754] pb-2">
-              Program Areas
-            </h4>
-            <ul className="space-y-2 text-xs text-neutral-300">
-              {PROGRAM_AREAS.map((prog) => (
-                <li key={prog.slug}>
-                  <Link
-                    href={`/programs/${prog.slug}`}
-                    className="hover:text-amber-400 transition-colors flex items-start space-x-2 py-0.5 group"
-                  >
-                    <span className="text-amber-400 font-serif mt-0.5 shrink-0 text-xs group-hover:translate-x-0.5 transition-transform">•</span>
-                    <span className="leading-tight">{prog.title}</span>
-                  </Link>
+          <div className="grid grid-cols-2 gap-x-5 sm:contents">
+            {/* Column 2: Navigation */}
+            <div className="sm:col-span-1 lg:col-span-3">
+              <h4 className="font-heading font-semibold text-white text-sm tracking-widest uppercase mb-4 border-b border-[#253754] pb-2">
+                Navigation
+              </h4>
+              <ul className="space-y-2 text-xs text-neutral-300">
+                <li>
+                  <Link href="/" className="hover:text-amber-400 transition-colors block py-0.5">Home</Link>
                 </li>
-              ))}
-            </ul>
+                <li>
+                  <Link href="/about" className="hover:text-amber-400 transition-colors block py-0.5">About DIN</Link>
+                </li>
+                <li>
+                  <Link href="/about/governance" className="hover:text-amber-400 transition-colors block py-0.5">Executive Leadership & Organogram</Link>
+                </li>
+                <li>
+                  <Link href="/projects" className="hover:text-amber-400 transition-colors block py-0.5">Completed Projects</Link>
+                </li>
+                <li>
+                  <Link href="/where-we-work" className="hover:text-amber-400 transition-colors block py-0.5">Ongoing Projects</Link>
+                </li>
+                <li>
+                  <Link href="/gallery" className="hover:text-amber-400 transition-colors block py-0.5">Field Photo Gallery</Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-amber-400 transition-colors block py-0.5">Contact Headquarters</Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Core Programs */}
+            <div className="sm:col-span-1 lg:col-span-2">
+              <h4 className="font-heading font-semibold text-white text-sm tracking-widest uppercase mb-4 border-b border-[#253754] pb-2">
+                Program Areas
+              </h4>
+              <ul className="space-y-2 text-xs text-neutral-300">
+                {PROGRAM_AREAS.map((prog) => (
+                  <li key={prog.slug}>
+                    <Link
+                      href={`/programs/${prog.slug}`}
+                      className="hover:text-amber-400 transition-colors flex items-start space-x-2 py-0.5 group"
+                    >
+                      <span className="text-amber-400 font-serif mt-0.5 shrink-0 text-xs group-hover:translate-x-0.5 transition-transform">•</span>
+                      <span className="leading-tight">{prog.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Column 4: Contact & Office */}
@@ -100,7 +102,7 @@ export default function Footer() {
             <h4 className="font-heading font-semibold text-white text-sm tracking-widest uppercase mb-4 border-b border-[#253754] pb-2">
               Headquarters
             </h4>
-            
+
             <div className="space-y-3 text-xs text-neutral-300">
               <a href={CONTACT_LINKS.map} target="_blank" rel="noopener noreferrer" className="flex items-start space-x-2.5 hover:text-amber-400 transition-colors group">
                 <MapPin className="w-4 h-4 text-rose-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />

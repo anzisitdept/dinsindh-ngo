@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Quote, ArrowRight, MapPin } from "lucide-react";
+import { Quote, ArrowRight, MapPin, Heart, Award } from "lucide-react";
 import { CONTACT_LINKS } from "@/lib/data/organization";
 import { EXECUTIVE_MESSAGE } from "@/lib/data/executiveMessage";
 
@@ -10,16 +10,30 @@ export default function InteractiveHero() {
       {/* Background Ajrak Accent Overlay */}
       <div className="absolute inset-0 opacity-10 bg-ajrak-pattern pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        {/* Message Eyebrow */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.2em] text-amber-400 font-semibold">
-            <Quote className="w-3.5 h-3.5" />
-            <span>{EXECUTIVE_MESSAGE.eyebrow}</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+
+        {/* Message Eyebrow & Top Featured Donor Badge */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+          {/* Attention-Grabbing Featured Donor Tag — Muslim Charity, UK */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-gradient-to-r from-[#8C241D] via-[#A62F27] to-[#152238] text-white rounded-full shadow-lg border-2 border-amber-400/60 hover:border-amber-300 transition-all duration-300 hover:scale-105">
+            <Heart className="w-4 h-4 text-amber-300 fill-amber-300 shrink-0" />
+            <div className="flex items-center gap-1.5 text-xs font-mono">
+              <span className="text-neutral-200 uppercase text-[10px] tracking-wider font-semibold">Main Donor Partner:</span>
+              <strong className="text-amber-300 font-extrabold tracking-wide text-xs sm:text-sm">Muslim Charity, UK</strong>
+            </div>
+            <Award className="w-4 h-4 text-amber-400 shrink-0 ml-0.5" />
           </div>
-          <span className="hidden sm:inline text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
-            {EXECUTIVE_MESSAGE.signature.designation} &middot; Development Institutions Network
-          </span>
+
+          {/* Leadership Note Label — AFTER the tag */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.2em] text-amber-400 font-semibold bg-[#0E1726] px-3 py-1 border border-[#253754]">
+              <Quote className="w-3.5 h-3.5" />
+              <span>{EXECUTIVE_MESSAGE.eyebrow}</span>
+            </div>
+            <span className="hidden sm:inline text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-400">
+              {EXECUTIVE_MESSAGE.signature.designation} &middot; Development Institutions Network
+            </span>
+          </div>
         </div>
 
         <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.18] tracking-tight mt-3">
@@ -86,13 +100,10 @@ export default function InteractiveHero() {
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#1F2E48] hover:bg-[#2A3C5C] text-neutral-200 border border-[#374866] font-semibold uppercase tracking-wider text-[10px] transition-colors"
                 >
                   <MapPin className="w-3.5 h-3.5 text-rose-400" />
-                  <span>Our Story &amp; Registration</span>
+                  <span>About Us</span>
                 </Link>
               </div>
 
-              <div className="mt-5 pt-4 border-t border-[#253754] text-[11px] text-neutral-400 font-mono">
-                <span>HQ: {CONTACT_LINKS.fullAddress}</span>
-              </div>
             </div>
           </aside>
         </div>

@@ -19,75 +19,98 @@ export interface ProjectItem {
 }
 
 export const PROJECTS_DATA: ProjectItem[] = [
-  // ONGOING PROJECTS
+  // ONGOING PROJECTS (4 Core Active Initiatives)
   {
-    id: "proj-ong-1",
-    slug: "resilient-shelter-handpump-shikarpur",
-    title: "Low-Cost Resilient Housing & Handpump Installation Scheme",
+    id: "proj-ong-handpump",
+    slug: "installation-communal-hand-pumps-clean-water",
+    title: "Installation of Communal Deep Hand Pumps & Clean Water Infrastructure",
+    status: "Ongoing",
+    years: "2024–2026",
+    duration: "24 Months",
+    donor: "Muslim Charity UK & DIN Relief Drive",
+    donorCategory: "International INGO",
+    budgetDisplay: "Active Field Operations",
+    district: "Shikarpur, Jacobabad & Kashmor",
+    programSlug: "wash-clean-water-facilities",
+    programTitle: "WASH & Clean Water Facilities",
+    summary: "Installing deep hand pumps, solar water wells, and electric water cooling units in unserved rural villages and public hospitals.",
+    fullNarrative: "DIN Pakistan is actively installing deep communal hand pumps and solar water tubewells across off-grid hamlets in Upper Sindh. This ongoing initiative ensures 24/7 access to contamination-free drinking water for thousands of rural families.",
+    keyAchivements: [
+      "80 Communal deep hand pumps currently under installation",
+      "12 Solar water filtration wells operationalized",
+      "Electric water coolers installed at hospital facilities"
+    ],
+    beneficiaryCount: "25,000+ Villagers",
+    featuredImage: "/hand-pump.jpeg"
+  },
+  {
+    id: "proj-ong-startups",
+    slug: "new-business-startups-vendor-micro-enterprises",
+    title: "New Business Startups (Vegetable Carts, Fruit Carts, Fry Carts & Cabins)",
+    status: "Ongoing",
+    years: "2024–2026",
+    duration: "24 Months",
+    donor: "Livelihood Empowerment Fund & DIN",
+    donorCategory: "Foundation",
+    budgetDisplay: "Active Field Operations",
+    district: "Shikarpur & Surrounding UCs",
+    programSlug: "livelihoods-new-business-startups",
+    programTitle: "Livelihoods & New Business Startups",
+    summary: "Empowering deserving individuals with customized mobile push-carts (vegetable, fruit, chips/fries) and roadside confectionery shop cabins.",
+    fullNarrative: "Designed to provide immediate self-reliance and daily cash income for poverty-stricken families, this ongoing project distributes fully equipped mobile push-carts and retail shop cabins stocked with starter inventory.",
+    keyAchivements: [
+      "Over 450 mobile push-cart business packages delivered",
+      "Roadside confectionery cabins established for widows & heads of households",
+      "Micro-enterprise vendor training active across 30 Union Councils"
+    ],
+    beneficiaryCount: "5,000+ Family Members",
+    featuredImage: "/veg-cart.jpeg"
+  },
+  {
+    id: "proj-ong-shelter",
+    slug: "2-room-resilient-housing-shelter-construction",
+    title: "Construction of 2-Room Climate-Resilient Shelters & Housing",
     status: "Ongoing",
     years: "2024–2026",
     duration: "24 Months",
     donor: "IOM / International Organization for Migration",
     donorCategory: "UN Agency",
-    budgetDisplay: "PKR 45.2 Million",
-    district: "Shikarpur & Jacobabad",
-    programSlug: "water-sanitation-infrastructure",
-    programTitle: "WASH & Community Infrastructure",
-    summary: "Constructing 150 low-cost disaster-resilient shelter units and installing 80 deep handpumps in flood-vulnerable Union Councils.",
-    fullNarrative: "In response to recurring monsoon climate vulnerabilities in Upper Sindh, DIN Pakistan partnered with IOM to execute a multi-year low-cost shelter recovery initiative. This project builds single-room disaster-resilient mud-brick shelters equipped with elevated platforms and installs community handpumps to provide safe drinking water.",
+    budgetDisplay: "Active Field Operations",
+    district: "Shikarpur, Jacobabad & Dadu",
+    programSlug: "shelter-resilient-housing",
+    programTitle: "Shelter & 2-Room Housing Construction",
+    summary: "Constructing low-cost 2-room disaster-resilient shelters with elevated foundations and brick masonry for flood-vulnerable rural families.",
+    fullNarrative: "In response to severe monsoon flooding in Upper Sindh, DIN Pakistan partnered with IOM to build 2-room climate-resilient brick shelters with elevated plinths and weather-sealed roofs for vulnerable rural households.",
     keyAchivements: [
-      "150 Low-cost resilient single-room shelters under construction",
-      "80 Communal deep water handpumps installed",
-      "WASH training provided to 1,200 rural households"
+      "150 Low-cost 2-room resilient shelters under construction",
+      "Elevated flood-proof plinths and brick masonry completed in phase 1",
+      "Integrated sanitation blocks and water harvesting kits provided"
     ],
     beneficiaryCount: "12,500 Beneficiaries",
     featuredImage: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    id: "proj-ong-2",
-    slug: "revival-natak-mandli-religious-harmony",
-    title: "Revival of Natak Mandlis for Religious Harmony & Social Cohesion",
+    id: "proj-ong-masjid",
+    slug: "construction-bilal-jamia-masjid",
+    title: "Construction of Bilal Jamia Masjid & Community Center",
     status: "Ongoing",
     years: "2024–2026",
     duration: "18 Months",
-    donor: "DAI-Pakistan / USAID",
-    donorCategory: "International INGO",
-    budgetDisplay: "PKR 28.5 Million",
-    district: "Shikarpur & Kashmor",
-    programSlug: "peace-and-harmony",
-    programTitle: "Peace & Interfaith Harmony",
-    summary: "Utilizing indigenous Sindhi Natak Mandali street theater as a cultural tool for interfaith harmony, anti-extremism, and youth peacebuilding.",
-    fullNarrative: "Building on DIN's landmark cultural peace work, this ongoing phase mobilizes local theater artists, Hindu and Muslim youth, and community elders to stage live open-air theater performances across 30 Union Councils in Shikarpur and Kashmor, advocating for religious tolerance and peaceful conflict resolution.",
+    donor: "DIN Pakistan & Local Community Philanthropy",
+    donorCategory: "Foundation",
+    budgetDisplay: "Active Field Operations",
+    district: "Village Wali Muhammad Shar, Shikarpur",
+    programSlug: "shelter-resilient-housing",
+    programTitle: "Community Infrastructure",
+    summary: "Constructing a community Jamia Masjid center to serve as a hub for local spiritual worship, children's madrasa, and community welfare coordination.",
+    fullNarrative: "DIN Pakistan is constructing a new community Jamia Masjid at Village Wali Muhammad Shar to give residents a permanent place of worship, children's education center, and community hall.",
     keyAchivements: [
-      "40 Live street theater performances produced",
-      "12 Inter-faith Peace Committees operationalized",
-      "Over 25,000 community members engaged directly"
+      "Foundation, PCC plinth and brick masonry completed",
+      "Load-bearing walls and minaret scaffolding raised to full height",
+      "Roof slab, dome framework and water tank in progress"
     ],
-    beneficiaryCount: "35,000+ Community Members",
-    featuredImage: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: "proj-ong-3",
-    slug: "community-livelihood-starter-kits",
-    title: "Flood-Affected Women Livelihood Rehabilitation Program",
-    status: "Ongoing",
-    years: "2023–2025",
-    duration: "24 Months",
-    donor: "Muslim Charity UK",
-    donorCategory: "International INGO",
-    budgetDisplay: "PKR 18.9 Million",
-    district: "Dadu & Jacobabad",
-    programSlug: "livelihoods-food-security",
-    programTitle: "Livelihoods & Food Security",
-    summary: "Distributing livestock (goats/cows), sewing machines, and micro-shop inventory starter toolkits to vulnerable women-headed households.",
-    fullNarrative: "Designed to rebuild lost economic assets after severe climate disasters, this program focuses exclusively on ultra-poor, female-headed households in Dadu and Jacobabad. Beneficiaries receive healthy livestock units or commercial embroidery machine kits alongside financial literacy mentoring.",
-    keyAchivements: [
-      "320 Livestock units distributed to female heads of household",
-      "140 Sewing machine toolkits delivered with artisan training",
-      "Micro-enterprise mentorship active across 22 villages"
-    ],
-    beneficiaryCount: "4,600 Family Members",
-    featuredImage: "https://images.unsplash.com/photo-1590682680695-43b964a3ae17?q=80&w=1000&auto=format&fit=crop"
+    beneficiaryCount: "3,500 Village Residents",
+    featuredImage: "/masjid-cover.jpeg"
   },
 
   // COMPLETED PROJECTS (15 items)

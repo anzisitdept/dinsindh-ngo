@@ -35,7 +35,7 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     cboCount: 12,
     description: "Foundational headquarters of DIN Pakistan. Central operational base managing all community mobilization, peace building, rural livelihoods, and clean water access.",
     landmarkName: "Shahi Bazaar & Historic Secretariat",
-    landmarkImage: "/h-1.jpeg",
+    landmarkImage: "/shikarpur.jpg",
     shortKeyPoints: [
       "Provincial Headquarters & Command Base",
       "Peace & Tolerance Cultural Caravan Hub",
@@ -60,7 +60,7 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     cboCount: 6,
     description: "Border district characterized by extreme summer temperatures and high flood risk. Focus area for WASH infrastructure, peace building, and rural livelihoods.",
     landmarkName: "Victoria Clock Tower & Frontier Base",
-    landmarkImage: "/h-2.jpeg",
+    landmarkImage: "/jacbd.jfif",
     shortKeyPoints: [
       "Post-Flood Recovery & Water Access Base",
       "WASH Clean Water & Solar Pump Stations",
@@ -84,7 +84,7 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     cboCount: 5,
     description: "Border district along the Indus riverbed, with Kandhkot as a key operational union council. Focus on inter-tribal peace building, rural livelihoods, and clean water access.",
     landmarkName: "Guddu Barrage & Indus River Basin",
-    landmarkImage: "/soler-water-wall.jpeg",
+    landmarkImage: "/kashmore.jfif",
     shortKeyPoints: [
       "Natak Mandali Peace & Harmony Revival",
       "Women Artisan Enterprise Network",
@@ -108,7 +108,7 @@ export const SINDH_DISTRICTS: DistrictInfo[] = [
     cboCount: 4,
     description: "Northern Sindh plains district where DIN holds its Societies Act registration and runs rural livelihood and clean water interventions alongside federated village committees.",
     landmarkName: "Mohenjo-Daro UNESCO World Heritage",
-    landmarkImage: "/h-5.jpeg",
+    landmarkImage: "/larakana.jfif",
     shortKeyPoints: [
       "DIN Official Charter & Registration Base",
       "Community Water Point Construction",

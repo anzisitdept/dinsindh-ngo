@@ -39,7 +39,7 @@ export default function WhereWeWorkSection() {
             >
               {/* Image */}
               <Image
-                src={district.landmarkImage || "/h-1.jpeg"}
+                src={district.landmarkImage || "/shikarpur.jpg"}
                 alt={district.name}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -49,14 +49,7 @@ export default function WhereWeWorkSection() {
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0E1726]/90 via-[#0E1726]/30 to-transparent group-hover:from-[#8C241D]/90 group-hover:via-[#0E1726]/40 transition-colors duration-300" />
 
-              {/* Top Badge (Headquarters) */}
-              {district.isHeadquarters && (
-                <div className="absolute top-4 left-4">
-                  <span className="px-2.5 py-1 bg-[#8C241D] text-white font-mono text-[10px] font-bold uppercase tracking-widest shadow-xs">
-                    Headquarters
-                  </span>
-                </div>
-              )}
+
 
               {/* Title & Heading Overlay on Image */}
               <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end">

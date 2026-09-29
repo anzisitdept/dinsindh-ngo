@@ -117,7 +117,7 @@ export default function Header() {
                     className="block px-4 py-2.5 text-sm text-[#152238] hover:bg-[#FBF9F5] hover:text-[#8C241D] transition-colors"
                   >
                     <div className="font-semibold">Overview & Mission</div>
-                    <div className="text-xs text-neutral-500">Our 25-year story & vision</div>
+                    <div className="text-xs text-neutral-500">Our story & vision</div>
                   </Link>
                   <Link
                     href="/about/governance"
@@ -147,7 +147,7 @@ export default function Header() {
                 : "text-[#152238] hover:text-[#8C241D]"
                 }`}
             >
-              Project Archive
+              Completed Projects
             </Link>
 
             <Link
@@ -237,7 +237,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-semibold text-[#152238] hover:text-[#8C241D]"
             >
-              Project Archive (18 Projects)
+              Completed Projects (18 Projects)
             </Link>
             <Link
               href="/where-we-work"
