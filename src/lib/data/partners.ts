@@ -8,7 +8,7 @@ export interface PartnerItem {
   projectsCollaborated: number;
 }
 
-export const PARTNERS_DATA: PartnerItem[] = [
+export const DONORS_DATA: PartnerItem[] = [
   {
     id: "save-the-children",
     name: "Save the Children International",
@@ -51,7 +51,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
     category: "Donor & UN Agency",
     acronym: "ACTED",
     description: "French international NGO supporting WASH infrastructure, shelter construction, and rapid post-flood recovery assistance.",
-    logoText: "ACTED France",
+    logoText: "ACTED International France",
     projectsCollaborated: 2
   },
   {
@@ -62,15 +62,6 @@ export const PARTNERS_DATA: PartnerItem[] = [
     description: "UK-based international development agency supporting women enterprise centers and rural livelihood toolkits.",
     logoText: "Muslim Charity UK",
     projectsCollaborated: 3
-  },
-  {
-    id: "bbsydp",
-    name: "BBSYDP — Government of Sindh",
-    category: "Government Institution",
-    acronym: "BBSYDP",
-    description: "Benazir Bhutto Shaheed Youth Development Program, Department of Youth Affairs, Government of Sindh.",
-    logoText: "Govt of Sindh BBSYDP",
-    projectsCollaborated: 2
   },
   {
     id: "tvo",
@@ -98,7 +89,10 @@ export const PARTNERS_DATA: PartnerItem[] = [
     description: "National rights-based NGO collaborating with DIN on Hari sharecropper rights and women's legal awareness.",
     logoText: "SPO Sindh",
     projectsCollaborated: 3
-  },
+  }
+];
+
+export const PARTNERS_DATA: PartnerItem[] = [
   {
     id: "fansa",
     name: "Freshwater Action Network South Asia (FANSA)",

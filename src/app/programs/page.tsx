@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PROGRAM_AREAS } from "@/lib/data/programs";
-import { ArrowUpRight, MapPin, CheckCircle2 } from "lucide-react";
+import { galleryHref } from "@/lib/data/gallery";
+import { Images, MapPin, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
   title: "Programs — 3 Core Thematic Focus Areas | DIN Pakistan",
@@ -79,11 +80,11 @@ export default function ProgramsIndexPage() {
                 {/* Action Button */}
                 <div className="pt-3">
                   <Link
-                    href={`/programs/${program.slug}`}
+                    href={galleryHref(program.galleryCategory)}
                     className="inline-flex items-center space-x-2 px-6 py-3 bg-[#152238] hover:bg-[#8C241D] text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
                   >
-                    <span>Inspect Full Program Scope</span>
-                    <ArrowUpRight className="w-4 h-4 text-amber-300" />
+                    <Images className="w-4 h-4 text-amber-300" />
+                    <span>View Work Gallery</span>
                   </Link>
                 </div>
               </div>

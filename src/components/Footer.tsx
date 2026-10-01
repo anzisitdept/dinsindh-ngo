@@ -3,7 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ORGANIZATION_DATA, CONTACT_LINKS } from "@/lib/data/organization";
 import { PROGRAM_AREAS } from "@/lib/data/programs";
-import { MapPin, Phone, Mail, ShieldCheck, FileText, Globe, MessageCircle, Heart } from "lucide-react";
+import { galleryHref } from "@/lib/data/gallery";
+import { MapPin, Phone, Mail, ShieldCheck, Globe, MessageCircle, Heart } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -85,7 +86,7 @@ export default function Footer() {
                 {PROGRAM_AREAS.map((prog) => (
                   <li key={prog.slug}>
                     <Link
-                      href={`/programs/${prog.slug}`}
+                      href={galleryHref(prog.galleryCategory)}
                       className="hover:text-amber-400 transition-colors flex items-start space-x-2 py-0.5 group"
                     >
                       <span className="text-amber-400 font-serif mt-0.5 shrink-0 text-xs group-hover:translate-x-0.5 transition-transform">•</span>
@@ -144,7 +145,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-[#253754]/80 flex flex-col md:flex-row justify-between items-center text-xs text-neutral-400 gap-4 text-center md:text-left">
           <div>
-            © {new Date().getFullYear()} DIN Pakistan (Development Institutions' Network). All rights reserved.
+            © {new Date().getFullYear()} DIN Pakistan (Development Institutions&rsquo; Network). All rights reserved.
           </div>
 
           {/* Centered Watermark */}

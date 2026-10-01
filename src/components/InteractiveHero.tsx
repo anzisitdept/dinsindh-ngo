@@ -53,15 +53,31 @@ export default function InteractiveHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-8">
             <div className="columns-1 md:columns-2 gap-8 space-y-4">
-              {EXECUTIVE_MESSAGE.paragraphs.map((paragraph, idx) => (
-                <p
-                  key={idx}
-                  className={`text-sm leading-relaxed text-neutral-300 break-inside-avoid mb-4 ${idx === 0 ? "text-base text-neutral-100 font-medium" : ""
-                    }`}
-                >
-                  {paragraph}
-                </p>
-              ))}
+              {EXECUTIVE_MESSAGE.paragraphs.map((paragraph, idx) => {
+                const parts = paragraph.split(/(\*\*.*?\*\*)/g);
+                return (
+                  <p
+                    key={idx}
+                    className={`text-sm leading-relaxed text-neutral-300 break-inside-avoid mb-4 ${idx === 0 ? "text-base text-neutral-100 font-medium" : ""
+                      }`}
+                  >
+                    {parts.map((part, pIdx) => {
+                      if (part.startsWith("**") && part.endsWith("**")) {
+                        const content = part.slice(2, -2);
+                        return (
+                          <strong
+                            key={pIdx}
+                            className="font-extrabold text-amber-300 inline-block text-sm"
+                          >
+                            {content}
+                          </strong>
+                        );
+                      }
+                      return part;
+                    })}
+                  </p>
+                );
+              })}
             </div>
           </div>
 

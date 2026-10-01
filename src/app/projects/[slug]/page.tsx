@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getProjectBySlug, PROJECTS_DATA } from "@/lib/data/projects";
+import { getProgramBySlug } from "@/lib/data/programs";
+import { galleryHref } from "@/lib/data/gallery";
 import { ArrowLeft, MapPin, Building2, Calendar, ShieldCheck, CheckCircle2, Award } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -180,10 +182,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
               <div className="pt-2 border-t border-[#E2DDD5]">
                 <Link
-                  href={`/programs/${project.programSlug}`}
+                  href={galleryHref(project.galleryCategory ?? getProgramBySlug(project.programSlug)?.galleryCategory)}
                   className="block text-center w-full py-2 bg-[#152238] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#8C241D] transition-colors"
                 >
-                  View Related Program Pillar
+                  View Related Work Gallery
                 </Link>
               </div>
             </div>

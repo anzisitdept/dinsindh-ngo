@@ -28,6 +28,11 @@ export function isGalleryFilter(value: string): value is GalleryFilter {
   return (GALLERY_CATEGORIES as string[]).includes(value);
 }
 
+export function galleryHref(category?: string): string {
+  if (!category) return "/gallery";
+  return `/gallery?category=${encodeURIComponent(category)}`;
+}
+
 export const GALLERY_DATA: GalleryItem[] = [
   // WASH & INFRASTRUCTURE
   { id: "w-1", src: "/hand-pump.jpeg", category: "WASH & Infrastructure" },

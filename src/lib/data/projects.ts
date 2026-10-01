@@ -93,7 +93,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "Integrated sanitation blocks and water harvesting kits provided"
     ],
     beneficiaryCount: "12,500 Beneficiaries",
-    featuredImage: "/h-5.jpeg"
+    featuredImage: "/soler-water-wall.jpeg",
+    featuredImages: [
+      "/soler-water-wall.jpeg",
+      "/water-wall.jpeg"
+    ],
+    galleryCategory: "WASH & Infrastructure"
   },
   {
     id: "proj-ong-masjid",
@@ -262,7 +267,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "proj-comp-7",
     slug: "monsoon-flood-rehab-2011",
-    title: "Post-Flood Emergency WASH & Shelter Restoration",
+    title: "WASH & Shelter Restoration",
     status: "Completed",
     years: "2011–2012",
     duration: "18 Months",
@@ -271,7 +276,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     district: "Jacobabad, Shikarpur & Kashmor",
     programSlug: "water-sanitation-infrastructure",
     programTitle: "WASH & Community Infrastructure",
-    summary: "Rebuilding 400 destroyed shelters and installing 120 communal handpumps following the devastation of the 2011 Sindh floods.",
+    summary: "Rebuilding 400 destroyed shelters and installing 120 handpumps following the devastation of the 2011 Sindh floods.",
     fullNarrative: "Upper Sindh suffered catastrophic flooding in consecutive years. DIN delivered long-term shelter recovery, building mud-stabilized brick units with elevated foundations.",
     keyAchivements: [
       "400 Shelter structures constructed",
@@ -282,59 +287,15 @@ export const PROJECTS_DATA: ProjectItem[] = [
     featuredImage: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    id: "proj-comp-8",
-    slug: "historic-2010-super-flood-relief",
-    title: "Super Flood Emergency Relief & Medical Mobile Response",
-    status: "Completed",
-    years: "2010–2011",
-    duration: "12 Months",
-    donor: "TVO / Muslim Charity UK",
-    donorCategory: "International INGO",
-    district: "Shikarpur & Sukkur",
-    programSlug: "water-sanitation-infrastructure",
-    programTitle: "WASH & Community Infrastructure",
-    summary: "Operation of 4 mobile emergency medical teams, cooked food kitchens, and clean water tankers during the 2010 Pakistan Super Floods.",
-    fullNarrative: "During the catastrophic 2010 floods that submerged one-fifth of Pakistan, DIN mounted round-the-clock relief operations along the Indus highway, providing emergency medical care to over 18,000 displaced patients.",
-    keyAchivements: [
-      "18,400 Patients treated at mobile medical camps",
-      "45,000 Cooked meal portions delivered in relief camps",
-      "1,200 Emergency tents provided"
-    ],
-    beneficiaryCount: "50,000+ Displaced Persons",
-    featuredImage: "https://images.unsplash.com/photo-1547683905-f686c993aae5?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: "proj-comp-9",
-    slug: "girls-not-brides-campaign",
-    title: "Early Child Marriage Prevention & Campaigning",
-    status: "Completed",
-    years: "2009–2010",
-    duration: "12 Months",
-    donor: "Girls Not Brides Network / SPO",
-    donorCategory: "National Network",
-    district: "Shikarpur & Khairpur",
-    programSlug: "peace-and-harmony",
-    programTitle: "Peace & Interfaith Harmony",
-    summary: "District-wide legal awareness campaign highlighting the Sindh Child Marriage Restraint Act among nikah registrars and village elders.",
-    fullNarrative: "Underage marriage remains a barrier to girls' health and education in rural Sindh. DIN conducted awareness workshops targeting marriage registrars, local police officials, and union council secretaries.",
-    keyAchivements: [
-      "80 Marriage registrars sensitized on child marriage laws",
-      "45 Village vigilance committees established",
-      "14 Underage child marriages prevented via legal intervention"
-    ],
-    beneficiaryCount: "8,500 Community Members",
-    featuredImage: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
     id: "proj-comp-10",
     slug: "cbo-capacity-building-network",
     title: "Institutional Strengthening of 40 Affiliated CBOs",
     status: "Completed",
     years: "2007–2009",
     duration: "24 Months",
-    donor: "Trust for Voluntary Organizations (TVO)",
+    donor: "SPO",
     donorCategory: "Government",
-    district: "Across 10 Districts of Sindh",
+    district: "District Shikarpur",
     programSlug: "peace-and-harmony",
     programTitle: "Peace & Interfaith Harmony",
     summary: "Capacity training in financial management, project proposal writing, and governance for 40 grassroots Community-Based Organizations.",
@@ -347,58 +308,15 @@ export const PROJECTS_DATA: ProjectItem[] = [
     beneficiaryCount: "40 Grassroots CBOs",
     featuredImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop"
   },
-  {
-    id: "proj-comp-11",
-    slug: "maternal-health-clinic-shikarpur",
-    title: "Community Mother & Child Healthcare Facility Support",
-    status: "Completed",
-    years: "2006–2008",
-    duration: "24 Months",
-    donor: "Muslim Charity UK",
-    donorCategory: "International INGO",
-    district: "Shikarpur",
-    programSlug: "water-sanitation-infrastructure",
-    programTitle: "WASH & Community Infrastructure",
-    summary: "Setting up a community maternal health clinic equipped with female medical officers and free prescription medications.",
-    fullNarrative: "To combat high maternal mortality in rural Union Councils of Shikarpur, DIN established a community clinic offering antenatal checkups, safe delivery referral services, and free essential medicines.",
-    keyAchivements: [
-      "14,200 Maternal & pediatric outpatient consultations",
-      "850 Safe deliveries facilitated via trained midwives",
-      "Free nutrition supplements distributed to 3,100 mothers"
-    ],
-    beneficiaryCount: "14,200 Women & Children",
-    featuredImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: "proj-comp-12",
-    slug: "women-artisan-embroidery-center",
-    title: "Sindhi Rilli & Embroidery Women Enterprise",
-    status: "Completed",
-    years: "2005–2007",
-    duration: "24 Months",
-    donor: "SPO Hyderabad / TVO",
-    donorCategory: "National Network",
-    district: "Shikarpur & Sukkur",
-    programSlug: "livelihoods-food-security",
-    programTitle: "Livelihoods & Food Security",
-    summary: "Establishing women artisan cooperatives to market traditional Sindhi Rilli patchwork quilts and hand-embroidery to urban markets.",
-    fullNarrative: "Rural women in Upper Sindh possess rich traditional craft skills in Rilli quilt making and mirror work embroidery. DIN organized 180 women into artisan guilds, connecting their products to exhibitions in Karachi.",
-    keyAchivements: [
-      "180 Women artisans organized into micro-cooperatives",
-      "Average monthly household income increased by 65%",
-      "3 Craft exhibitions hosted in Karachi and Hyderabad"
-    ],
-    beneficiaryCount: "180 Women Artisans",
-    featuredImage: "https://images.unsplash.com/photo-1590682680695-43b964a3ae17?q=80&w=1000&auto=format&fit=crop"
-  },
+
   {
     id: "proj-comp-13",
     slug: "clean-drinking-water-pumps-2005",
-    title: "Rural Drinking Water Handpump Project",
+    title: "Installation of safe Water Rural Drinking",
     status: "Completed",
     years: "2004–2005",
     duration: "12 Months",
-    donor: "FANSA (Freshwater Action Network South Asia)",
+    donor: "Muslim Charity UK",
     donorCategory: "International INGO",
     district: "Shikarpur & Jacobabad",
     programSlug: "water-sanitation-infrastructure",
@@ -434,28 +352,6 @@ export const PROJECTS_DATA: ProjectItem[] = [
     ],
     beneficiaryCount: "1,200 Sharecropper Families",
     featuredImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: "proj-comp-15",
-    slug: "inaugural-cbo-mobilization-2004",
-    title: "Grassroots CBO Network Formation & Registration",
-    status: "Completed",
-    years: "2004",
-    duration: "6 Months",
-    donor: "TVO (Trust for Voluntary Organizations)",
-    donorCategory: "National Network",
-    district: "Shikarpur",
-    programSlug: "peace-and-harmony",
-    programTitle: "Peace & Interfaith Harmony",
-    summary: "Initial mobilization of 15 community organizations in Shikarpur district to form the foundation of DIN Pakistan.",
-    fullNarrative: "The foundational project that formally united independent village committees in Shikarpur under the institutional umbrella of DIN Pakistan, establishing democratically elected CBO executive bodies.",
-    keyAchivements: [
-      "15 Community-Based Organizations formally federated",
-      "Initial registration under Social Welfare Department completed",
-      "District baseline development survey published"
-    ],
-    beneficiaryCount: "15 Village Communities",
-    featuredImage: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1000&auto=format&fit=crop"
   }
 ];
 

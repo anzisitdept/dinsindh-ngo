@@ -1,16 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { PROJECTS_DATA } from "@/lib/data/projects";
+import { galleryHref } from "@/lib/data/gallery";
 import OngoingProjectCardImage from "@/components/OngoingProjectCardImage";
 import { Building2, Images } from "lucide-react";
 
 const ONGOING_PROJECTS = PROJECTS_DATA.filter((p) => p.status === "Ongoing");
-
-function galleryHref(category?: string) {
-  return category && category !== "All"
-    ? `/gallery?category=${encodeURIComponent(category)}`
-    : "/gallery";
-}
 
 export default function OngoingProjectsList() {
   return (

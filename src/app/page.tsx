@@ -6,13 +6,14 @@ import OngoingProjectSpotlight from "@/components/OngoingProjectSpotlight";
 import ProjectSpotlightFilmstrip from "@/components/ProjectSpotlightFilmstrip";
 import WhereWeWorkSection from "@/components/WhereWeWorkSection";
 import { PROGRAM_AREAS } from "@/lib/data/programs";
-import { PARTNERS_DATA } from "@/lib/data/partners";
+import { galleryHref } from "@/lib/data/gallery";
+import { DONORS_DATA, PARTNERS_DATA } from "@/lib/data/partners";
 import { ArrowUpRight } from "lucide-react";
 
 export default function HomePage() {
   return (
     <div className="w-full font-sans bg-[#FBF9F5]">
-      
+
       {/* 1. Asymmetric Interactive Hero — Executive Message */}
       <InteractiveHero />
 
@@ -25,7 +26,7 @@ export default function HomePage() {
       {/* 4. Featured Programs */}
       <section className="w-full bg-[#152238] text-white py-16 border-b border-[#253754]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#253754]">
             <div>
               <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
@@ -53,12 +54,9 @@ export default function HomePage() {
                   <span className="font-heading font-extrabold text-2xl sm:text-3xl text-rose-500 font-mono">
                     0{idx + 1}
                   </span>
-                  <Link
-                    href={`/programs/${program.slug}`}
-                    className="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-amber-400 transition-colors"
-                  >
+                  <span className="font-heading font-bold text-xl sm:text-2xl text-white">
                     {program.title}
-                  </Link>
+                  </span>
                 </div>
 
                 {/* Description */}
@@ -69,10 +67,10 @@ export default function HomePage() {
                 {/* Arrow Action */}
                 <div className="lg:col-span-2 text-left lg:text-right pt-2 lg:pt-0">
                   <Link
-                    href={`/programs/${program.slug}`}
+                    href={galleryHref(program.galleryCategory)}
                     className="inline-flex items-center space-x-1 text-xs font-bold uppercase tracking-wider text-amber-400 group-hover:text-white transition-colors"
                   >
-                    <span>Inspect Scope</span>
+                    <span>View Gallery</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -89,37 +87,64 @@ export default function HomePage() {
       {/* 6. Where We Work - Core Operating Districts */}
       <WhereWeWorkSection />
 
-      {/* 7. Donor & CBO Registry Strip */}
+      {/* 7. Donors & Partners Registry Section */}
       <section className="w-full bg-[#F5F3ED] py-14 border-b border-[#E2DDD5] text-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center mb-8">
-            <h3 className="inline-block font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#152238] leading-tight relative pb-3">
-              Our Donors
-              <span className="absolute left-0 bottom-0 h-1 w-full bg-[#8C241D]" />
-              <span className="absolute left-0 bottom-0 h-1 w-1/3 bg-amber-400" />
-            </h3>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+
+          {/* Donors Subsection */}
+          <div>
+            <div className="text-center mb-8">
+              <h3 className="inline-block font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#152238] leading-tight relative pb-3">
+                Our Donors
+                <span className="absolute left-0 bottom-0 h-1 w-full bg-[#8C241D]" />
+                <span className="absolute left-0 bottom-0 h-1 w-1/3 bg-amber-400" />
+              </h3>
+            </div>
+
+            {/* Typographic Donor Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+              {DONORS_DATA.map((donor) => (
+                <div
+                  key={donor.id}
+                  className="p-3.5 bg-white border border-[#E2DDD5] text-center flex flex-col justify-center items-center shadow-xs hover:border-[#8C241D] transition-all min-h-[95px] w-full overflow-hidden"
+                >
+                  <div className="font-heading font-extrabold text-xs sm:text-sm text-[#152238] uppercase tracking-wide leading-snug break-words w-full text-center">
+                    {donor.logoText}
+                  </div>
+                  <div className="text-[10px] text-neutral-500 font-mono mt-1 break-words w-full text-center">
+                    {donor.category}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Typographic Donor Badges */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
-            {PARTNERS_DATA.map((partner) => (
-              <div
-                key={partner.id}
-                className="p-3 bg-white border border-[#E2DDD5] text-center flex flex-col justify-center items-center shadow-xs hover:border-[#8C241D] transition-colors"
-              >
-                <div className="font-heading font-extrabold text-xs sm:text-sm text-[#152238] uppercase tracking-wide">
-                  {partner.logoText}
-                </div>
-                <div className="text-[9px] text-neutral-500 font-mono mt-0.5">
-                  {partner.category}
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Partners Subsection */}
+          <div className="pt-8 border-t border-[#E2DDD5]">
+            <div className="text-center mb-8">
+              <h3 className="inline-block font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#152238] leading-tight relative pb-3">
+                Our Partners
+                <span className="absolute left-0 bottom-0 h-1 w-full bg-[#8C241D]" />
+                <span className="absolute left-0 bottom-0 h-1 w-1/3 bg-amber-400" />
+              </h3>
+            </div>
 
-          <div className="text-center mt-6 text-xs font-mono text-neutral-500">
-            Partnering with {PARTNERS_DATA.length} institutional donors, UN agencies and government departments.
+            {/* Typographic Partner Badges */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 max-w-4xl mx-auto gap-4">
+              {PARTNERS_DATA.map((partner) => (
+                <div
+                  key={partner.id}
+                  className="p-4 bg-white border border-[#E2DDD5] text-center flex flex-col justify-center items-center shadow-xs hover:border-[#8C241D] transition-all min-h-[95px] w-full overflow-hidden"
+                >
+                  <div className="font-heading font-extrabold text-xs sm:text-sm text-[#152238] uppercase tracking-wide leading-snug break-words w-full text-center">
+                    {partner.logoText}
+                  </div>
+                  <div className="text-[10px] text-neutral-500 font-mono mt-1 break-words w-full text-center">
+                    {partner.category}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>

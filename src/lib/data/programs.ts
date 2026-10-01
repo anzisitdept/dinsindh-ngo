@@ -1,3 +1,5 @@
+import type { GalleryFilter } from "./gallery";
+
 export interface ProgramArea {
   slug: string;
   title: string;
@@ -10,12 +12,13 @@ export interface ProgramArea {
   activeDistricts: string[];
   impactStats: { label: string; value: string }[];
   featuredImage: string;
+  galleryCategory: GalleryFilter;
 }
 
 export const PROGRAM_AREAS: ProgramArea[] = [
   {
-    slug: "livelihoods-new-business-startups",
-    title: "Livelihoods & New Business Startups",
+    slug: "livelihoods-new-business-startup",
+    title: "Livelihoods & New Business Startups project",
     shortTitle: "Business Startups",
     tagline: "Empowering vulnerable families with micro-business push-carts, retail cabins, and vendor toolkits.",
     iconName: "Briefcase",
@@ -33,33 +36,35 @@ export const PROGRAM_AREAS: ProgramArea[] = [
       { label: "Retail Cabins Established", value: "180+" },
       { label: "Daily Earnings Increased", value: "300%" }
     ],
-    featuredImage: "/veg-cart.jpeg"
+    featuredImage: "/veg-cart.jpeg",
+    galleryCategory: "Livelihoods"
   },
   {
     slug: "shelter-resilient-housing",
-    title: "Shelter & 2-Room Housing Construction",
-    shortTitle: "2-Room Shelters",
-    tagline: "Constructing low-cost 2-room flood-resistant shelters and durable housing for climate-vulnerable families.",
+    title: "Shelter & 1-Room House Construction project",
+    shortTitle: "1-Room Shelters",
+    tagline: "Constructing low-cost 1-room flood-resistant shelters and durable housing for climate-vulnerable families.",
     iconName: "Home",
-    description: "Building durable 2-room climate-resilient shelters, elevated foundations, and weather-proof brick housing for low-income rural households displaced by heavy monsoon inundation.",
-    longDescription: "Extreme weather events in Upper Sindh regularly destroy mud-brick rural homes. DIN's Shelter & Resilient Housing initiative builds low-cost 2-room disaster-resistant houses with reinforced plinths, brick walls, and weather-sealed roofs. Every housing unit is planned alongside village committees to ensure safety, dignity, and privacy for vulnerable families.",
+    description: "Building 1-room climate-resilient shelters, elevated foundations, and weather-proof brick housing for low-income rural households displaced by heavy monsoon inundation.",
+    longDescription: "Extreme weather events in Upper Sindh regularly destroy mud-brick rural homes. DIN's Shelter & Resilient Housing initiative builds low-cost 1-room disaster-resistant houses with reinforced plinths, brick walls, and weather-sealed roofs. Every housing unit is planned alongside village committees to ensure safety, dignity, and privacy for vulnerable families.",
     keyPillars: [
-      "Construction of low-cost 2-room climate shelters",
+      "Construction of low-cost 1-room climate shelters",
       "Elevated flood-resistant plinth & brick masonry",
       "Latrine & sanitation block integration",
       "Community-led shelter beneficiary selection"
     ],
     activeDistricts: ["Shikarpur", "Jacobabad", "Kashmor", "Larkana", "Dadu"],
     impactStats: [
-      { label: "2-Room Shelters Built", value: "420+" },
-      { label: "Families Housed", value: "2,800+" },
+      { label: "1-Room Shelters Built", value: "120+" },
+      { label: "Families Housed", value: "120+" },
       { label: "Flood Resilience", value: "100%" }
     ],
-    featuredImage: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1200&auto=format&fit=crop"
+    featuredImage: "/h-5.jpeg",
+    galleryCategory: "WASH & Infrastructure"
   },
   {
     slug: "disaster-response-climate-relief",
-    title: "Disaster Risk Reduction & Emergency Relief",
+    title: "Disaster Risk Reduction & Emergency Relief Project",
     shortTitle: "Disaster Relief",
     tagline: "Rapid emergency flood response, Fiddayah food ration packs, and emergency disaster recovery.",
     iconName: "ShieldAlert",
@@ -77,11 +82,12 @@ export const PROGRAM_AREAS: ProgramArea[] = [
       { label: "Flood Victims Assisted", value: "45,000+" },
       { label: "Emergency Response Camps", value: "95+" }
     ],
-    featuredImage: "/fidaya.jpeg"
+    featuredImage: "/Fiddaya & Fitna/5.jpeg",
+    galleryCategory: "Fiddayah & Fitrana"
   },
   {
     slug: "disability-inclusion-rehabilitation",
-    title: "Disability Inclusion & Special Rehabilitation",
+    title: "Disability Inclusion & Special Rehabilitation project",
     shortTitle: "Disability Aid",
     tagline: "Promoting basic rights, assistive toolkits, and accessible infrastructure for PWDs and especially-abled groups.",
     iconName: "HeartHandshake",
@@ -99,33 +105,34 @@ export const PROGRAM_AREAS: ProgramArea[] = [
       { label: "Assistive Devices Given", value: "350+" },
       { label: "Accessible Water Points", value: "120+" }
     ],
-    featuredImage: "/incubators.jpeg"
+    featuredImage: "/startups/WhatsApp Image 2026-09-19 at 9.28.05 PM.jpeg",
+    galleryCategory: "Public Health"
   },
   {
     slug: "water-sanitation-infrastructure",
-    title: "WASH & Clean Water Facilities",
+    title: "WASH Project",
     shortTitle: "WASH & Clean Water",
-    tagline: "Installing communal hand pumps, solar water wells, electric water coolers, and sanitation units.",
+    tagline: "Installing hand pumps, solar water wells, water coolers, and sanitation units.",
     iconName: "Droplets",
     description: "Installing deep hand pumps, solar-powered tubewells, heavy-duty electric water coolers at hospitals, and public sanitation latrines for unserved rural communities.",
     longDescription: "Access to clean drinking water is a basic human right. DIN constructs communal deep hand pumps, solar filtration wells, and hospital electric water cooling units to protect rural children and mothers from waterborne diseases.",
     keyPillars: [
-      "Deep communal hand pump installation in hamlets",
+      "hand pump installation in hamlets",
       "Solar-powered deep water tubewell construction",
       "Electric water cooler installation at hospitals (RBUT)",
       "Public sanitation latrines & open-defecation-free drives"
     ],
     activeDistricts: ["Shikarpur", "Jacobabad", "Kashmor", "Ghotki", "Sukkur"],
     impactStats: [
-      { label: "Hand Pumps Installed", value: "520+" },
-      { label: "Solar Wells Operational", value: "45+" },
-      { label: "Clean Water Beneficiaries", value: "75,000+" }
+      { label: "Hand Pumps Installed", value: "943+" },
+
     ],
-    featuredImage: "/hand-pump.jpeg"
+    featuredImage: "/hand-pump.jpeg",
+    galleryCategory: "WASH & Infrastructure"
   },
   {
     slug: "peace-and-harmony",
-    title: "Peace & Interfaith Harmony",
+    title: "Peace & Interfaith Harmony Project",
     shortTitle: "Peace & Harmony",
     tagline: "Reviving indigenous cultural traditions and cross-community dialogue to prevent conflict in Sindh.",
     iconName: "Heart",
@@ -143,7 +150,8 @@ export const PROGRAM_AREAS: ProgramArea[] = [
       { label: "Peace Committee Members", value: "620+" },
       { label: "Audience Reached", value: "45,000+" }
     ],
-    featuredImage: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop"
+    featuredImage: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop",
+    galleryCategory: "Community & Mosque"
   }
 ];
 
